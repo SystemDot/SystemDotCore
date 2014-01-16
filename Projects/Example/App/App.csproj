@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F5B17B9B-982B-45E3-A600-140F332859C7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>App</RootNamespace>
+    <AssemblyName>App</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Profile7</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- A reference to the entire .NET Framework is automatically included -->
+    <ProjectReference Include="..\..\SystemDot.Configuration\SystemDot.Configuration.csproj">
+      <Project>{6F8ADB8F-FE74-4B19-BDBD-53C3FCF54B67}</Project>
+      <Name>SystemDot.Configuration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SystemDot.Core\SystemDot.Core.csproj">
+      <Project>{924FFA17-B0D7-4B57-99C8-73811048C7DD}</Project>
+      <Name>SystemDot.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SystemDot.EventSourcing\SystemDot.EventSourcing.csproj">
+      <Project>{44526A4F-ABB1-47D4-99A6-3ADF373E09B2}</Project>
+      <Name>SystemDot.EventSourcing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SystemDot.Ioc\SystemDot.Ioc.csproj">
+      <Project>{251DA554-25F0-4F5B-9540-5E617481C85D}</Project>
+      <Name>SystemDot.Ioc</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SystemDot.Messaging.Handling\SystemDot.Messaging.Handling.csproj">
+      <Project>{287a49e4-0564-47dc-b545-da7ec8b01de4}</Project>
+      <Name>SystemDot.Messaging.Handling</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SystemDot.Messaging.Simple\SystemDot.Messaging.Simple.csproj">
+      <Project>{D9300BE3-41A5-4242-AC31-9B83A3797F46}</Project>
+      <Name>SystemDot.Messaging.Simple</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SystemDot.Querying\SystemDot.Querying.csproj">
+      <Project>{FFCCE633-9B19-410A-B870-D81A703EB027}</Project>
+      <Name>SystemDot.Querying</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Domain\Domain.csproj">
+      <Project>{A318E29C-3BD3-4782-A58E-92C8645422D2}</Project>
+      <Name>Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Configuration\BuilderConfigurationExtensions.cs" />
+    <Compile Include="Configuration\IocContainerExtensions.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VendorListItem.cs" />
+    <Compile Include="VendorListMapper.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
