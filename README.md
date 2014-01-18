@@ -1,4 +1,4 @@
 SystemDotCore
 =============
 
-Core libraries for cross platform development on Android, iOS and WinRT
+Inversion of control container and core libraries for cross platform development on Android, iOS and WinRT
