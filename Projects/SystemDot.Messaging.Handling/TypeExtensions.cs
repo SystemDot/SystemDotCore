@@ -2,7 +2,7 @@
 using System.Reflection;
 using SystemDot.Core;
 
-namespace SystemDot.Messaging.Simple
+namespace SystemDot.Messaging.Handling
 {
     static class TypeExtensions
     {

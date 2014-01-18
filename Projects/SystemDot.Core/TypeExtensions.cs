@@ -93,9 +93,9 @@ namespace SystemDot.Core
                             t.GetBaseInterfaces().Contains(typeof(TImplemented)));
         }
 
-        public static IEnumerable<MethodInfo> GetMethodsByName(this Type type, Action genMethod)
+        public static IEnumerable<MethodInfo> GetMethodsByName(this Type type, string methodName)
         {
-            return type.GetTypeInfo().DeclaredMethods.Where(m => m.Name == "RegisterInstance");
+            return type.GetTypeInfo().DeclaredMethods.Where(m => m.Name == methodName);
         }
     }
 }

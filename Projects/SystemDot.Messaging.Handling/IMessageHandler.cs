@@ -1,4 +1,4 @@
-namespace SystemDot.Messaging.Simple
+namespace SystemDot.Messaging.Handling
 {
     public interface IMessageHandler
     {

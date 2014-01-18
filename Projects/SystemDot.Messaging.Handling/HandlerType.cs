@@ -1,7 +1,7 @@
 ﻿using System;
 using SystemDot.Ioc;
 
-namespace SystemDot.Messaging.Simple
+namespace SystemDot.Messaging.Handling
 {
     class HandlerType
     {

@@ -39,8 +39,13 @@ namespace SystemDot.Ioc
 
         MethodInfo GetRegisterInstanceConcreteByInterface(Type plugin, Type concrete)
         {
-            var methods = iocContainer.GetType().GetMethodsByName(GetRegisterInstanceTConcreteAction(iocContainer));
+            var methods = iocContainer
+                .GetType()
+                .GetMethodsByName(GetRegisterInstanceTConcreteAction(iocContainer)
+                .GetMethodInfo().Name);
+
             var method = GetMethodByGenericParamentName(methods, "TPlugin", "TConcrete");
+
             return method.MakeGenericMethod(plugin, concrete);
         }
 

@@ -1,4 +1,5 @@
 using SystemDot.Ioc;
+using SystemDot.Messaging.Handling;
 
 namespace SystemDot.Messaging.Simple
 {

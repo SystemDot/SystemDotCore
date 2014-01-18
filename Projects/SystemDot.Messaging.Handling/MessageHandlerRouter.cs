@@ -4,7 +4,7 @@ using System.Linq;
 using SystemDot.Core;
 using SystemDot.Ioc;
 
-namespace SystemDot.Messaging.Simple
+namespace SystemDot.Messaging.Handling
 {
     public class MessageHandlerRouter
     {

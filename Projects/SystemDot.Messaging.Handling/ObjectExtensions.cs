@@ -1,6 +1,6 @@
 ﻿using System.Reflection;
 
-namespace SystemDot.Messaging.Simple
+namespace SystemDot.Messaging.Handling
 {
     static class ObjectExtensions
     {
