@@ -7,7 +7,7 @@
     <ProjectGuid>{E7BC866E-0627-4FB4-9429-D7CA17C00C68}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SystemDot.Files.Windows</RootNamespace>
+    <RootNamespace>SystemDot.Files</RootNamespace>
     <AssemblyName>SystemDot.Files.Windows</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
