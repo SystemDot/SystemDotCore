@@ -5,12 +5,12 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{8D49DB90-55FC-452F-BFEF-D72AAC9F0F5E}</ProjectGuid>
+    <ProjectGuid>{7E41DFCB-FDF5-4531-8129-8C1BD3550534}</ProjectGuid>
     <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SystemDot.Environment</RootNamespace>
-    <AssemblyName>SystemDot.Environment.Android</AssemblyName>
+    <RootNamespace>SystemDot.Logging</RootNamespace>
+    <AssemblyName>SystemDot.Logging.Android</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
@@ -41,18 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\SystemDot.Environment.Windows\*.cs">
-      <Link>%(RecursiveDir)%(FileName)</Link>
+    <Compile Include="..\SystemDot.Logging.Windows\ConsoleLoggingMechanism.cs">
+      <Link>ConsoleLoggingMechanism.cs</Link>
     </Compile>
-    <Compile Include="..\SystemDot.Environment.Windows\*\*.cs">
-      <Link>%(RecursiveDir)%(FileName)</Link>
-    </Compile>
-    <Compile Include="..\SystemDot.Environment.Windows\*\*\*.cs">
-      <Link>%(RecursiveDir)%(FileName)</Link>
-    </Compile>
-    <Compile Include="..\SystemDot.Environment.Windows\*\*\*\*.cs">
-      <Link>%(RecursiveDir)%(FileName)</Link>
-    </Compile>
+    <Compile Include="Resources\Resource.Designer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -61,16 +54,11 @@
     <AndroidResource Include="Resources\Values\Strings.xml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SystemDot.Environment\SystemDot.Environment.csproj">
-      <Project>{E45BB506-3B61-45CE-85BC-4B099A99E412}</Project>
-      <Name>SystemDot.Environment</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SystemDot.Ioc\SystemDot.Ioc.csproj">
-      <Project>{251DA554-25F0-4F5B-9540-5E617481C85D}</Project>
-      <Name>SystemDot.Ioc</Name>
+    <ProjectReference Include="..\SystemDot.Logging\SystemDot.Logging.csproj">
+      <Project>{286EA592-2156-4AB6-ACCD-E593FCFAAC66}</Project>
+      <Name>SystemDot.Logging</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

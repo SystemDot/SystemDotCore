@@ -1,7 +1,7 @@
 using System;
 using System.Diagnostics.Contracts;
 
-namespace SystemDot.ThreadMashalling
+namespace SystemDot.ThreadMarshalling
 {
     [ContractClass(typeof(IMainThreadMarshallerContract))]
     public interface IMainThreadMarshaller
