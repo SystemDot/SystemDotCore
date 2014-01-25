@@ -1,21 +1,24 @@
 ﻿using System;
 using System.IO;
+using SystemDot.Core;
 using Windows.Storage;
 
 namespace SystemDot.Files
 {
     public class FileSystem : IFileSystem
     {
-        public bool FileExists(string path)
-        {
-            path = path.Replace(ApplicationData.Current.LocalFolder.Path + "\\", "");
+        readonly FileLocationDictionary locations;
 
+        public FileSystem()
+        {
+            locations = new FileLocationDictionary();
+        }
+
+        public bool FileExists(string fileName, FileLocation location)
+        {
             try
             {
-                ApplicationData.Current.LocalFolder
-                    .GetFileAsync(path)
-                    .GetAwaiter()
-                    .GetResult();
+                LoadStorageFile(fileName, location);
             }
             catch (FileNotFoundException)
             {
@@ -23,6 +26,28 @@ namespace SystemDot.Files
             }
 
             return true;
+        }
+
+        public Stream LoadFile(string fileName, FileLocation location)
+        {
+            return LoadStorageFile(fileName, location)
+                .OpenAsync(FileAccessMode.Read)
+                .GetAwaiter()
+                .GetResult()
+                .AsStream();
+        }
+
+        StorageFile LoadStorageFile(string fileName, FileLocation location)
+        {
+            return GetStorageFolder(location)
+                .GetFileAsync(fileName)
+                .GetAwaiter()
+                .GetResult();
+        }
+
+        StorageFolder GetStorageFolder(FileLocation location)
+        {
+            return locations.GetLocation(location);
         }
     }
 }

@@ -1,7 +1,10 @@
-﻿namespace SystemDot.Files
+﻿using System.IO;
+
+namespace SystemDot.Files
 {
     public interface IFileSystem
     {
-        bool FileExists(string path);
+        bool FileExists(string fileName, FileLocation location);
+        Stream LoadFile(string fileName, FileLocation location);
     }
 }

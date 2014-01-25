@@ -100,6 +100,10 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
+    <ProjectReference Include="..\SystemDot.Core\SystemDot.Core.csproj">
+      <Project>{924FFA17-B0D7-4B57-99C8-73811048C7DD}</Project>
+      <Name>SystemDot.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SystemDot.Files\SystemDot.Files.csproj">
       <Project>{90EA063D-3013-4FBD-913A-A34C2A0D6C9B}</Project>
       <Name>SystemDot.Files</Name>
@@ -111,6 +115,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configuration\IocContainerExtensions.cs" />
+    <Compile Include="FileLocationDictionary.cs" />
     <Compile Include="FileSystem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
