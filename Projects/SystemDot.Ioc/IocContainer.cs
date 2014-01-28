@@ -82,12 +82,5 @@ namespace SystemDot.Ioc
 
             return concreteType.SetObjectInstance(constructorInfo.Invoke(parameterInstances));
         }
-
-        public void RegisterFromAssemblyOf<TAssemblyOf>()
-        {
-            new AutoRegistrar(this)
-                .Register(typeof(TAssemblyOf)
-                    .GetTypesInAssembly().WhereNormalConcrete());
-        }
     }
 }

@@ -8,7 +8,13 @@ namespace SystemDot.Messaging.Handling
     {
         public static MethodInfo GetHandleMethodForMessage(this Type type, object message)
         {
-            return type.GetMethod("Handle", new[] { message.GetType() });
+            return type.GetMethod("Handle", GetMessageType(message));
+
+        }
+
+        static Type[] GetMessageType(object message)
+        {
+            return new[] { message.GetType() };
         }
     }
 }

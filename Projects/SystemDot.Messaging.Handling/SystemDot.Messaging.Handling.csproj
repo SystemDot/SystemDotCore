@@ -44,9 +44,13 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActionHandler.cs" />
+    <Compile Include="HandlerInstanceList.cs" />
     <Compile Include="HandlerType.cs" />
+    <Compile Include="HandlerTypeList.cs" />
     <Compile Include="IMessageHandler.cs" />
     <Compile Include="MessageHandlerRouter.cs" />
+    <Compile Include="HandlerActionList.cs" />
     <Compile Include="ObjectExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TypeExtensions.cs" />

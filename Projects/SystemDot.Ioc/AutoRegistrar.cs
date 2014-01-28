@@ -6,11 +6,11 @@ using SystemDot.Core;
 
 namespace SystemDot.Ioc
 {
-    internal class AutoRegistrar
+    public class AutoRegistrar
     {
-        readonly IocContainer iocContainer;
+        readonly IIocContainer iocContainer;
 
-        public AutoRegistrar(IocContainer iocContainer)
+        public AutoRegistrar(IIocContainer iocContainer)
         {
             this.iocContainer = iocContainer;
         }

@@ -9,7 +9,5 @@ namespace SystemDot.Ioc
         void RegisterInstance<TPlugin, TConcrete>()
             where TPlugin : class
             where TConcrete : class;
-
-        void RegisterFromAssemblyOf<TAssemblyOf>();
     }
 }
