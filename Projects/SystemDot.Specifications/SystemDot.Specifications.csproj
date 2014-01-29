@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{64C9484E-CC64-4C6D-AAB6-62CCA020D4DC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SystemDot.Specifications</RootNamespace>
+    <AssemblyName>SystemDot.Specifications</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Machine.Fakes, Version=0.2.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Dependencies\Mspec\Machine.Fakes.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Fakes.Adapters.RhinoMocks, Version=0.2.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Dependencies\Mspec\Machine.Fakes.Adapters.RhinoMocks.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications, Version=0.5.16.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Dependencies\Mspec\Machine.Specifications.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="blocking_queue\when_dequeueing_with_no_items.cs" />
+    <Compile Include="blocking_queue\when_item_is_queued_delayed_on_another_thread.cs" />
+    <Compile Include="blocking_queue\when_queuing_an_item.cs" />
+    <Compile Include="blocking_queue\when_queuing_two_items.cs" />
+    <Compile Include="http\when_creating_a_fixed_port_address_with_a_server_specified.cs" />
+    <Compile Include="ioc\TestTypes\AnotherInheritingComponent.cs" />
+    <Compile Include="ioc\TestTypes\AnotherTestComponent.cs" />
+    <Compile Include="ioc\TestTypes\IAnotherTestComponent.cs" />
+    <Compile Include="ioc\TestTypes\ITestComponent.cs" />
+    <Compile Include="ioc\TestTypes\ITestComponentWithParameters.cs" />
+    <Compile Include="ioc\TestTypes\ITestInterface1.cs" />
+    <Compile Include="ioc\TestTypes\ITestInterfaceOnBaseConcreteType.cs" />
+    <Compile Include="ioc\TestTypes\ITestInterfaceOnDerivedConcreteType.cs" />
+    <Compile Include="ioc\TestTypes\ITestInterfaceWithNoConcreteImplementation.cs" />
+    <Compile Include="ioc\TestTypes\IThirdTestComponent.cs" />
+    <Compile Include="ioc\TestTypes\TestAbstractConcreteType.cs" />
+    <Compile Include="ioc\TestTypes\TestBaseConcreteType.cs" />
+    <Compile Include="ioc\TestTypes\TestComponent.cs" />
+    <Compile Include="ioc\TestTypes\TestComponentWithParameters.cs" />
+    <Compile Include="ioc\TestTypes\TestDerivedConcreteType.cs" />
+    <Compile Include="ioc\TestTypes\TestOpenGenericType.cs" />
+    <Compile Include="ioc\TestTypes\TestStruct.cs" />
+    <Compile Include="ioc\TestTypes\TestTypeImplementingAnInterface.cs" />
+    <Compile Include="ioc\TestTypes\TestTypeNotImplementingAnInterface.cs" />
+    <Compile Include="ioc\TestTypes\ThirdTestComponent.cs" />
+    <Compile Include="ioc\when_auto_registering_types_in_the_container_from_an_assembly.cs" />
+    <Compile Include="ioc\when_auto_registering_types_in_the_container_from_an_assembly_containing_a.cs" />
+    <Compile Include="ioc\when_auto_registering_types_in_the_container_from_an_assembly_containing_an_open_generic_type.cs" />
+    <Compile Include="ioc\when_auto_registering_types_in_the_container_from_an_assembly_the_second_time.cs" />
+    <Compile Include="ioc\when_manually_registering_an_instance_in_the_container.cs" />
+    <Compile Include="ioc\when_manually_registering_an_instance_in_the_container_for_the_second_time.cs" />
+    <Compile Include="ioc\when_registering_an_instance_in_the_container.cs" />
+    <Compile Include="ioc\when_registering_an_instance_in_the_container_for_the_second_time.cs" />
+    <Compile Include="ioc\when_registering_an_instance_with_parameters_in_the_container.cs" />
+    <Compile Include="ioc\when_resolving_an_instance_in_the_container_for_the_second_time.cs" />
+    <Compile Include="ioc\when_resolving_a_type_not_registered.cs" />
+    <Compile Include="messenger\SpecificationGroup.cs" />
+    <Compile Include="messenger\when_resetting_the_messenger_after_registering_a_handler_and_then_sending_a_message.cs" />
+    <Compile Include="messenger\when_sending_a_message_with_a_handler_for_another_message_type_registered.cs" />
+    <Compile Include="messenger\when_sending_a_message_with_a_handler_registered.cs" />
+    <Compile Include="messenger\when_sending_a_message_with_two_handlers_registered.cs" />
+    <Compile Include="messenger\when_unregistering_an_action_after_registering_it_and_then_sending_a_message.cs" />
+    <Compile Include="messenger\when_unregistering_an_unregistered_action_and_then_sending_a_message.cs" />
+    <Compile Include="parallelism\when_starting_task_repeating_with_a_task_registered_and_the_time_delay_has_passed_twice.cs" />
+    <Compile Include="parallelism\when_starting_task_repeating_with_two_tasks_registered.cs" />
+    <Compile Include="parallelism\ZeroTimespanPassThroughTaskScheduler.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="serialisation\when_serialising_an_object_to_json.cs" />
+    <Compile Include="StreamExtensions.cs" />
+    <Compile Include="TestSystemTime.cs" />
+    <Compile Include="TestSystemTimeAdvanced.cs" />
+    <Compile Include="TestTaskScheduler.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SystemDot.Core\SystemDot.Core.csproj">
+      <Project>{924FFA17-B0D7-4B57-99C8-73811048C7DD}</Project>
+      <Name>SystemDot.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SystemDot.Http\SystemDot.Http.csproj">
+      <Project>{7DC08100-3F8B-4D5E-B743-1E2948F55FCA}</Project>
+      <Name>SystemDot.Http</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SystemDot.Ioc\SystemDot.Ioc.csproj">
+      <Project>{251DA554-25F0-4F5B-9540-5E617481C85D}</Project>
+      <Name>SystemDot.Ioc</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SystemDot.Messaging.Simple\SystemDot.Messaging.Simple.csproj">
+      <Project>{D9300BE3-41A5-4242-AC31-9B83A3797F46}</Project>
+      <Name>SystemDot.Messaging.Simple</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SystemDot.Parallelism\SystemDot.Parallelism.csproj">
+      <Project>{1D68C6B5-A097-49DB-BDF8-F19125DABA98}</Project>
+      <Name>SystemDot.Parallelism</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SystemDot.Serialisation.Windows\SystemDot.Serialisation.Windows.csproj">
+      <Project>{D0448C30-82BC-4B0C-8283-6D059C3CC96E}</Project>
+      <Name>SystemDot.Serialisation.Windows</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SystemDot.Serialisation\SystemDot.Serialisation.csproj">
+      <Project>{6DCF6FC0-804B-4C7F-BAF7-5E410F255F1A}</Project>
+      <Name>SystemDot.Serialisation</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
