@@ -1,13 +1,14 @@
 using System.Collections.Generic;
 using SystemDot.Core;
+using SystemDot.Core.Collections;
 
-namespace SystemDot.Messaging.Handling
+namespace SystemDot.Messaging.Handling.Instances
 {
-    class HandlerInstanceList
+    class InstanceHandlerList
     {
         readonly List<object> inner;
 
-        public HandlerInstanceList()
+        public InstanceHandlerList()
         {
             inner = new List<object>();
         }
@@ -24,7 +25,7 @@ namespace SystemDot.Messaging.Handling
 
         public void RouteMessageToHandlers(object message)
         {
-            inner.ForEach(handler => handler.Invoke(message));
+            inner.ForEach(handler => handler.InvokeHandler(message));
         }
     }
 }

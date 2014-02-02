@@ -42,5 +42,10 @@ namespace SystemDot.Messaging.Simple
         {
             Router.RouteMessageToHandlers(message);
         }
+
+        public static void Reset()
+        {
+            Router.ClearAllHandlers();
+        }
     }
 }

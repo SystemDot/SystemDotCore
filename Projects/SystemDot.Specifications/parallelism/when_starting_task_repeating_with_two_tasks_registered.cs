@@ -6,20 +6,21 @@ using Machine.Specifications;
 namespace SystemDot.Specifications.parallelism
 {
     [Subject("parallelism")]
-    public class when_starting_task_repeating_with_two_tasks_registered : WithSubject<TaskRepeater>
+    public class when_starting_task_repeating_with_two_tasks_registered
     {
         static bool repeated1;
         static bool repeated2;
+        static TaskRepeater repeater;
 
         Establish context = () =>
         {
-            Configure<ITaskScheduler>(new ZeroTimespanPassThroughTaskScheduler());
+            repeater = new TaskRepeater(new ZeroTimespanPassThroughTaskScheduler());
 
-            Subject.Register(new TimeSpan(0, 0, 1), () => repeated1 = true);
-            Subject.Register(new TimeSpan(0, 0, 1), () => repeated2 = true);
+            repeater.Register(new TimeSpan(0, 0, 1), () => repeated1 = true);
+            repeater.Register(new TimeSpan(0, 0, 1), () => repeated2 = true);
         };
 
-        Because of = () => Subject.Start();
+        Because of = () => repeater.Start();
 
         It should_repeat_the_first_task = () => repeated1.ShouldBeTrue();
 

@@ -1,6 +1,6 @@
 using System;
 
-namespace SystemDot.Messaging.Handling
+namespace SystemDot.Messaging.Handling.Actions
 {
     public class ActionHandler<T> : IMessageHandler<T>
     {

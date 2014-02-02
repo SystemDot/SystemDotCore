@@ -6,11 +6,11 @@ using Machine.Specifications;
 namespace SystemDot.Specifications.ioc
 {
     [Subject("Ioc")]
-    public class when_resolving_a_type_not_registered : WithSubject<IocContainer>
+    public class when_resolving_a_type_not_registere
     {
         static Exception exception;
 
-        Because of = () => exception = Catch.Exception(() => Subject.Resolve<object>());
+        Because of = () => exception = Catch.Exception(() => new IocContainer().Resolve<object>());
 
         It should_throw_a_type_not_registered_exception = () => exception.ShouldBeOfType<TypeNotRegisteredException>();
 

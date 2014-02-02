@@ -1,20 +1,24 @@
 ﻿using System;
 using SystemDot.Core;
+using SystemDot.Core.Collections;
 using SystemDot.Ioc;
+using SystemDot.Messaging.Handling.Actions;
+using SystemDot.Messaging.Handling.Instances;
+using SystemDot.Messaging.Handling.Types;
 
 namespace SystemDot.Messaging.Handling
 {
     public class MessageHandlerRouter
     {
-        readonly HandlerInstanceList handlersByInstance;
-        readonly HandlerTypeList handlersByType;
-        readonly HandlerActionList handlersByAction;
+        readonly InstanceHandlerList handlersByInstance;
+        readonly TypeHandlerList handlersByType;
+        readonly ActionHandlerList handlersByAction;
 
         public MessageHandlerRouter()
         {
-            handlersByInstance = new HandlerInstanceList();
-            handlersByType = new HandlerTypeList();
-            handlersByAction = new HandlerActionList();
+            handlersByInstance = new InstanceHandlerList();
+            handlersByType = new TypeHandlerList();
+            handlersByAction = new ActionHandlerList();
         }
 
         public void RegisterHandlersFromContainer<TMessageHandler>(IIocContainer container)
@@ -55,6 +59,11 @@ namespace SystemDot.Messaging.Handling
             handlersByInstance.RouteMessageToHandlers(message); 
             handlersByType.RouteMessageToHandlers(message);
             handlersByAction.RouteMessageToHandlers(message);
+        }
+
+        public void ClearAllHandlers()
+        {
+            handlersByAction.Clear();
         }
     }
 }

@@ -6,7 +6,7 @@ using Machine.Specifications;
 namespace SystemDot.Specifications.messenger
 {
     [Subject(SpecificationGroup.Description)]
-    public class when_resetting_the_messenger_after_registering_a_handler_and_then_sending_a_message : WithSubject<TaskRepeater>
+    public class when_resetting_the_messenger_after_registering_a_handler_and_then_sending_a_message
     {
         static object handledMessage;
         static object message;
@@ -14,7 +14,7 @@ namespace SystemDot.Specifications.messenger
         Establish context = () =>
         {
             Messenger.RegisterHandler<object>(m => handledMessage = m);
-            //Messenger.Reset();
+            Messenger.Reset();
             message = new object();
         };
 

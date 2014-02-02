@@ -2,15 +2,16 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using SystemDot.Core;
+using SystemDot.Core.Collections;
 using SystemDot.Ioc;
 
-namespace SystemDot.Messaging.Handling
+namespace SystemDot.Messaging.Handling.Types
 {
-    class HandlerTypeList
+    class TypeHandlerList
     {
         readonly List<HandlerType> inner;
 
-        public HandlerTypeList()
+        public TypeHandlerList()
         {
             inner = new List<HandlerType>();
         }
@@ -25,7 +26,7 @@ namespace SystemDot.Messaging.Handling
         {
             inner
                 .Where(handler => HandlesMessageType(handler.Type, message))
-                .ForEach(type => ObjectExtensions.Invoke(type.Resolver.Resolve(type.Type), message));
+                .ForEach(type => type.Resolver.Resolve(type.Type).InvokeHandler(message));
         }
 
         bool HandlesMessageType(Type type, object message)

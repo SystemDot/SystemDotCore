@@ -7,18 +7,20 @@ using Machine.Specifications.Model;
 namespace SystemDot.Specifications.ioc
 {
     [Subject("Ioc")]
-    public class when_manually_registering_an_instance_in_the_container : WithSubject<IocContainer>
+    public class when_manually_registering_an_instance_in_the_container 
     {
         static AnotherInheritingComponent created;
+        static IocContainer container;
 
-        Establish context = () =>
+        Establish context = () => 
         {
+            container = new IocContainer();
             created = new AnotherInheritingComponent();
-            Subject.RegisterInstance<IThirdTestComponent, ThirdTestComponent>();
+            container.RegisterInstance<IThirdTestComponent, ThirdTestComponent>();
         };
 
-        Because of = () => Subject.RegisterInstance<IAnotherTestComponent>(() => created);
+        Because of = () => container.RegisterInstance<IAnotherTestComponent>(() => created);
 
-        It should_be_able_to_be_resolved = () => Subject.Resolve<IAnotherTestComponent>().ShouldBeTheSameAs(created);
+        It should_be_able_to_be_resolved = () => container.Resolve<IAnotherTestComponent>().ShouldBeTheSameAs(created);
     }
 }

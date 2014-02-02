@@ -61,6 +61,10 @@
     <AndroidResource Include="Resources\Values\Strings.xml" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\SystemDot.Configuration\SystemDot.Configuration.csproj">
+      <Project>{6f8adb8f-fe74-4b19-bdbd-53c3fcf54b67}</Project>
+      <Name>SystemDot.Configuration</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SystemDot.Logging\SystemDot.Logging.csproj">
       <Project>{286ea592-2156-4ab6-accd-e593fcfaac66}</Project>
       <Name>SystemDot.Logging</Name>

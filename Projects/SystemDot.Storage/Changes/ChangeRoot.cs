@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Diagnostics.Contracts;
 using System.Linq;
 using SystemDot.Core;
+using SystemDot.Core.Collections;
 
 namespace SystemDot.Storage.Changes
 {

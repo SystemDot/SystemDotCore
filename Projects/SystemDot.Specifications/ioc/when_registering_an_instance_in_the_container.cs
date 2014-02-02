@@ -7,17 +7,22 @@ using Machine.Specifications;
 namespace SystemDot.Specifications.ioc
 {
     [Subject("Ioc")]
-    public class when_registering_an_instance_in_the_container : WithSubject<IocContainer>
+    public class when_registering_an_instance_in_the_container 
     {
         static ITestComponent resolvedByGenericParamater;
         static ITestComponent resolvedByTypeOf;
+        static IocContainer container;
 
-        Establish context = () => Subject.RegisterInstance<ITestComponent, TestComponent>();
+        Establish context = () =>
+        {
+            container = new IocContainer();
+            container.RegisterInstance<ITestComponent, TestComponent>();
+        };
 
         Because of = () =>
         {
-            resolvedByGenericParamater = Subject.Resolve<ITestComponent>();
-            resolvedByTypeOf = Subject.Resolve(typeof(ITestComponent)).As<ITestComponent>();
+            resolvedByGenericParamater = container.Resolve<ITestComponent>();
+            resolvedByTypeOf = container.Resolve(typeof(ITestComponent)).As<ITestComponent>();
         };
 
         It should_be_able_to_be_resolved_by_generic_parameter = () => resolvedByGenericParamater.ShouldBeOfType<TestComponent>();

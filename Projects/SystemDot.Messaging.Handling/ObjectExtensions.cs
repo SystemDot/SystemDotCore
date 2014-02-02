@@ -4,7 +4,7 @@ namespace SystemDot.Messaging.Handling
 {
     static class ObjectExtensions
     {
-        public static void Invoke(this object handler, object message)
+        public static void InvokeHandler(this object handler, object message)
         {
             MethodInfo method = GetHandlerMethodInfo(handler, message);
             if (method == null) return;

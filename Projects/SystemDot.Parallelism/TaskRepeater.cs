@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics.Contracts;
 using SystemDot.Core;
+using SystemDot.Core.Collections;
 
 namespace SystemDot.Parallelism
 {

@@ -6,7 +6,7 @@ using Machine.Specifications;
 namespace SystemDot.Specifications.messenger
 {
     [Subject(SpecificationGroup.Description)]
-    public class when_sending_a_message_with_a_handler_registered : WithSubject<TaskRepeater>
+    public class when_sending_a_message_with_a_handler_registered
     {
         static object handledMessage;
         static object message;
