@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+    <metadata>
+        <id>SystemDotCore</id>
+        <version>0.9.9</version>
+        <title>SystemDotCore</title>
+        <authors>Chris Sampson,James Goodenough</authors>
+        <owners>Chris Sampson,James Goodenough</owners>
+        <projectUrl>https://github.com/SystemDot/SystemDotCore</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>Inversion of control container and core libraries for cross platform development on Android, iOS and WinRT</description>
+        <summary>Inversion of control container and core libraries for cross platform development on Android, iOS and WinRT</summary>
+        <copyright>SystemDot 2014</copyright>
+        <language>en-GB</language>
+        <tags>Ioc, Cross Platform</tags>
+    </metadata>
+    <files>
+        <file src="Dependencies\Json.Net\android\Newtonsoft.Json.dll" target="lib\MonoAndroid\Newtonsoft.Json.dll" />
+        <file src="Build\SystemDot.Configuration.dll" target="lib\MonoAndroid\SystemDot.Configuration.dll" />
+        <file src="Build\SystemDot.Core.dll" target="lib\MonoAndroid\SystemDot.Core.dll" />
+        <file src="Build\SystemDot.Environment.Android.dll" target="lib\MonoAndroid\SystemDot.Environment.Android.dll" />
+        <file src="Build\SystemDot.Environment.dll" target="lib\MonoAndroid\SystemDot.Environment.dll" />
+        <file src="Build\SystemDot.Files.Android.dll" target="lib\MonoAndroid\SystemDot.Files.Android.dll" />
+        <file src="Build\SystemDot.Files.dll" target="lib\MonoAndroid\SystemDot.Files.dll" />
+        <file src="Build\SystemDot.Http.Android.dll" target="lib\MonoAndroid\SystemDot.Http.Android.dll" />
+        <file src="Build\SystemDot.Http.dll" target="lib\MonoAndroid\SystemDot.Http.dll" />
+        <file src="Build\SystemDot.Ioc.dll" target="lib\MonoAndroid\SystemDot.Ioc.dll" />
+        <file src="Build\SystemDot.Logging.Android.dll" target="lib\MonoAndroid\SystemDot.Logging.Android.dll" />
+        <file src="Build\SystemDot.Logging.dll" target="lib\MonoAndroid\SystemDot.Logging.dll" />
+        <file src="Build\SystemDot.Messaging.Handling.dll" target="lib\MonoAndroid\SystemDot.Messaging.Handling.dll" />
+        <file src="Build\SystemDot.Messaging.Simple.dll" target="lib\MonoAndroid\SystemDot.Messaging.Simple.dll" />
+        <file src="Build\SystemDot.Parallelism.Android.dll" target="lib\MonoAndroid\SystemDot.Parallelism.Android.dll" />
+        <file src="Build\SystemDot.Parallelism.dll" target="lib\MonoAndroid\SystemDot.Parallelism.dll" />
+        <file src="Build\SystemDot.Serialisation.Android.dll" target="lib\MonoAndroid\SystemDot.Serialisation.Android.dll" />
+        <file src="Build\SystemDot.Serialisation.dll" target="lib\MonoAndroid\SystemDot.Serialisation.dll" />
+        <file src="Build\SystemDot.Storage.dll" target="lib\MonoAndroid\SystemDot.Storage.dll" />
+        <file src="Build\SystemDot.ThreadMarshalling.Android.dll" target="lib\MonoAndroid\SystemDot.ThreadMarshalling.Android.dll" />
+        <file src="Build\SystemDot.ThreadMarshalling.dll" target="lib\MonoAndroid\SystemDot.ThreadMarshalling.dll" />
+        <file src="Dependencies\Json.Net\net40\Newtonsoft.Json.dll" target="lib\net\Newtonsoft.Json.dll" />
+        <file src="Build\SystemDot.Configuration.dll" target="lib\net\SystemDot.Configuration.dll" />
+        <file src="Build\SystemDot.Core.dll" target="lib\net\SystemDot.Core.dll" />
+        <file src="Build\SystemDot.Environment.dll" target="lib\net\SystemDot.Environment.dll" />
+        <file src="Build\SystemDot.Environment.Windows.dll" target="lib\net\SystemDot.Environment.Windows.dll" />
+        <file src="Build\SystemDot.Files.dll" target="lib\net\SystemDot.Files.dll" />
+        <file src="Build\SystemDot.Files.Windows.dll" target="lib\net\SystemDot.Files.Windows.dll" />
+        <file src="Build\SystemDot.Http.dll" target="lib\net\SystemDot.Http.dll" />
+        <file src="Build\SystemDot.Http.Windows.dll" target="lib\net\SystemDot.Http.Windows.dll" />
+        <file src="Build\SystemDot.Ioc.dll" target="lib\net\SystemDot.Ioc.dll" />
+        <file src="Build\SystemDot.Logging.dll" target="lib\net\SystemDot.Logging.dll" />
+        <file src="Build\SystemDot.Logging.Windows.dll" target="lib\net\SystemDot.Logging.Windows.dll" />
+        <file src="Build\SystemDot.Messaging.Handling.dll" target="lib\net\SystemDot.Messaging.Handling.dll" />
+        <file src="Build\SystemDot.Messaging.Simple.dll" target="lib\net\SystemDot.Messaging.Simple.dll" />
+        <file src="Build\SystemDot.Parallelism.dll" target="lib\net\SystemDot.Parallelism.dll" />
+        <file src="Build\SystemDot.Parallelism.Windows.dll" target="lib\net\SystemDot.Parallelism.Windows.dll" />
+        <file src="Build\SystemDot.Serialisation.dll" target="lib\net\SystemDot.Serialisation.dll" />
+        <file src="Build\SystemDot.Serialisation.Windows.dll" target="lib\net\SystemDot.Serialisation.Windows.dll" />
+        <file src="Build\SystemDot.Storage.dll" target="lib\net\SystemDot.Storage.dll" />
+        <file src="Build\SystemDot.ThreadMarshalling.dll" target="lib\net\SystemDot.ThreadMarshalling.dll" />
+        <file src="Build\SystemDot.ThreadMarshalling.Windows.dll" target="lib\net\SystemDot.ThreadMarshalling.Windows.dll" />
+        <file src="Dependencies\Json.Net\metro\Newtonsoft.Json.dll" target="lib\netcore\Newtonsoft.Json.dll" />
+        <file src="Build\SystemDot.Configuration.dll" target="lib\netcore\SystemDot.Configuration.dll" />
+        <file src="Build\SystemDot.Core.dll" target="lib\netcore\SystemDot.Core.dll" />
+        <file src="Build\SystemDot.Environment.dll" target="lib\netcore\SystemDot.Environment.dll" />
+        <file src="Build\SystemDot.Environment.WinRT.dll" target="lib\netcore\SystemDot.Environment.WinRT.dll" />
+        <file src="Build\SystemDot.Files.dll" target="lib\netcore\SystemDot.Files.dll" />
+        <file src="Build\SystemDot.Files.WinRT.dll" target="lib\netcore\SystemDot.Files.WinRT.dll" />
+        <file src="Build\SystemDot.Http.dll" target="lib\netcore\SystemDot.Http.dll" />
+        <file src="Build\SystemDot.Http.WinRT.dll" target="lib\netcore\SystemDot.Http.WinRT.dll" />
+        <file src="Build\SystemDot.Ioc.dll" target="lib\netcore\SystemDot.Ioc.dll" />
+        <file src="Build\SystemDot.Logging.dll" target="lib\netcore\SystemDot.Logging.dll" />
+        <file src="Build\SystemDot.Logging.WinRT.dll" target="lib\netcore\SystemDot.Logging.WinRT.dll" />
+        <file src="Build\SystemDot.Messaging.Handling.dll" target="lib\netcore\SystemDot.Messaging.Handling.dll" />
+        <file src="Build\SystemDot.Messaging.Simple.dll" target="lib\netcore\SystemDot.Messaging.Simple.dll" />
+        <file src="Build\SystemDot.Parallelism.dll" target="lib\netcore\SystemDot.Parallelism.dll" />
+        <file src="Build\SystemDot.Parallelism.WinRT.dll" target="lib\netcore\SystemDot.Parallelism.WinRT.dll" />
+        <file src="Build\SystemDot.Serialisation.dll" target="lib\netcore\SystemDot.Serialisation.dll" />
+        <file src="Build\SystemDot.Serialisation.WinRT.dll" target="lib\netcore\SystemDot.Serialisation.WinRT.dll" />
+        <file src="Build\SystemDot.Storage.dll" target="lib\netcore\SystemDot.Storage.dll" />
+        <file src="Build\SystemDot.ThreadMarshalling.dll" target="lib\netcore\SystemDot.ThreadMarshalling.dll" />
+        <file src="Build\SystemDot.ThreadMarshalling.WinRT.dll" target="lib\netcore\SystemDot.ThreadMarshalling.WinRT.dll" />
+        <file src="Build\SystemDot.Configuration.dll" target="lib\portable-net4+win8\SystemDot.Configuration.dll" />
+        <file src="Build\SystemDot.Core.dll" target="lib\portable-net4+win8\SystemDot.Core.dll" />
+        <file src="Build\SystemDot.Environment.dll" target="lib\portable-net4+win8\SystemDot.Environment.dll" />
+        <file src="Build\SystemDot.Files.dll" target="lib\portable-net4+win8\SystemDot.Files.dll" />
+        <file src="Build\SystemDot.Http.dll" target="lib\portable-net4+win8\SystemDot.Http.dll" />
+        <file src="Build\SystemDot.Ioc.dll" target="lib\portable-net4+win8\SystemDot.Ioc.dll" />
+        <file src="Build\SystemDot.Logging.dll" target="lib\portable-net4+win8\SystemDot.Logging.dll" />
+        <file src="Build\SystemDot.Messaging.Handling.dll" target="lib\portable-net4+win8\SystemDot.Messaging.Handling.dll" />
+        <file src="Build\SystemDot.Messaging.Simple.dll" target="lib\portable-net4+win8\SystemDot.Messaging.Simple.dll" />
+        <file src="Build\SystemDot.Parallelism.dll" target="lib\portable-net4+win8\SystemDot.Parallelism.dll" />
+        <file src="Build\SystemDot.Serialisation.dll" target="lib\portable-net4+win8\SystemDot.Serialisation.dll" />
+        <file src="Build\SystemDot.Storage.dll" target="lib\portable-net4+win8\SystemDot.Storage.dll" />
+        <file src="Build\SystemDot.ThreadMarshalling.dll" target="lib\portable-net4+win8\SystemDot.ThreadMarshalling.dll" />
+    </files>
+</package>
