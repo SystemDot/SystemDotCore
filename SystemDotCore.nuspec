@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
     <metadata>
         <id>SystemDotCore</id>
-        <version>0.9.9</version>
+        <version>1.0.0</version>
         <title>SystemDotCore</title>
         <authors>Chris Sampson,James Goodenough</authors>
         <owners>Chris Sampson,James Goodenough</owners>
@@ -78,18 +78,18 @@
         <file src="Build\SystemDot.Storage.dll" target="lib\netcore\SystemDot.Storage.dll" />
         <file src="Build\SystemDot.ThreadMarshalling.dll" target="lib\netcore\SystemDot.ThreadMarshalling.dll" />
         <file src="Build\SystemDot.ThreadMarshalling.WinRT.dll" target="lib\netcore\SystemDot.ThreadMarshalling.WinRT.dll" />
-        <file src="Build\SystemDot.Configuration.dll" target="lib\portable-net4+win8\SystemDot.Configuration.dll" />
-        <file src="Build\SystemDot.Core.dll" target="lib\portable-net4+win8\SystemDot.Core.dll" />
-        <file src="Build\SystemDot.Environment.dll" target="lib\portable-net4+win8\SystemDot.Environment.dll" />
-        <file src="Build\SystemDot.Files.dll" target="lib\portable-net4+win8\SystemDot.Files.dll" />
-        <file src="Build\SystemDot.Http.dll" target="lib\portable-net4+win8\SystemDot.Http.dll" />
-        <file src="Build\SystemDot.Ioc.dll" target="lib\portable-net4+win8\SystemDot.Ioc.dll" />
-        <file src="Build\SystemDot.Logging.dll" target="lib\portable-net4+win8\SystemDot.Logging.dll" />
-        <file src="Build\SystemDot.Messaging.Handling.dll" target="lib\portable-net4+win8\SystemDot.Messaging.Handling.dll" />
-        <file src="Build\SystemDot.Messaging.Simple.dll" target="lib\portable-net4+win8\SystemDot.Messaging.Simple.dll" />
-        <file src="Build\SystemDot.Parallelism.dll" target="lib\portable-net4+win8\SystemDot.Parallelism.dll" />
-        <file src="Build\SystemDot.Serialisation.dll" target="lib\portable-net4+win8\SystemDot.Serialisation.dll" />
-        <file src="Build\SystemDot.Storage.dll" target="lib\portable-net4+win8\SystemDot.Storage.dll" />
-        <file src="Build\SystemDot.ThreadMarshalling.dll" target="lib\portable-net4+win8\SystemDot.ThreadMarshalling.dll" />
+        <file src="Build\SystemDot.Configuration.dll" target="lib\portable-win+net45+MonoAndroid+MonoTouch+win8\SystemDot.Configuration.dll" />
+        <file src="Build\SystemDot.Core.dll" target="lib\portable-win+net45+MonoAndroid+MonoTouch+win8\SystemDot.Core.dll" />
+        <file src="Build\SystemDot.Environment.dll" target="lib\portable-win+net45+MonoAndroid+MonoTouch+win8\SystemDot.Environment.dll" />
+        <file src="Build\SystemDot.Files.dll" target="lib\portable-win+net45+MonoAndroid+MonoTouch+win8\SystemDot.Files.dll" />
+        <file src="Build\SystemDot.Http.dll" target="lib\portable-win+net45+MonoAndroid+MonoTouch+win8\SystemDot.Http.dll" />
+        <file src="Build\SystemDot.Ioc.dll" target="lib\portable-win+net45+MonoAndroid+MonoTouch+win8\SystemDot.Ioc.dll" />
+        <file src="Build\SystemDot.Logging.dll" target="lib\portable-win+net45+MonoAndroid+MonoTouch+win8\SystemDot.Logging.dll" />
+        <file src="Build\SystemDot.Messaging.Handling.dll" target="lib\portable-win+net45+MonoAndroid+MonoTouch+win8\SystemDot.Messaging.Handling.dll" />
+        <file src="Build\SystemDot.Messaging.Simple.dll" target="lib\portable-win+net45+MonoAndroid+MonoTouch+win8\SystemDot.Messaging.Simple.dll" />
+        <file src="Build\SystemDot.Parallelism.dll" target="lib\portable-win+net45+MonoAndroid+MonoTouch+win8\SystemDot.Parallelism.dll" />
+        <file src="Build\SystemDot.Serialisation.dll" target="lib\portable-win+net45+MonoAndroid+MonoTouch+win8\SystemDot.Serialisation.dll" />
+        <file src="Build\SystemDot.Storage.dll" target="lib\portable-win+net45+MonoAndroid+MonoTouch+win8\SystemDot.Storage.dll" />
+        <file src="Build\SystemDot.ThreadMarshalling.dll" target="lib\portable-win+net45+MonoAndroid+MonoTouch+win8\SystemDot.ThreadMarshalling.dll" />
     </files>
 </package>
