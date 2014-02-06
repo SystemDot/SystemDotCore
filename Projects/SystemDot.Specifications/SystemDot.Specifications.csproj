@@ -30,18 +30,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Machine.Fakes, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Solutions\packages\Machine.Fakes.2.0.0\lib\net40\Machine.Fakes.dll</HintPath>
-    </Reference>
     <Reference Include="Machine.Specifications, Version=0.6.2.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Solutions\packages\Machine.Specifications.0.6.2\lib\net45\Machine.Specifications.dll</HintPath>
     </Reference>
-    <Reference Include="Machine.Specifications.Clr4">
+    <Reference Include="Machine.Specifications.Clr4, Version=0.6.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Solutions\packages\Machine.Specifications.0.6.2\lib\net45\Machine.Specifications.Clr4.dll</HintPath>
     </Reference>
-    <Reference Include="Machine.Specifications.Should">
+    <Reference Include="Machine.Specifications.Should, Version=0.6.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Solutions\packages\Machine.Specifications.0.6.2\lib\net45\Machine.Specifications.Should.dll</HintPath>
     </Reference>
     <Reference Include="System" />
@@ -111,6 +109,14 @@
       <Project>{924FFA17-B0D7-4B57-99C8-73811048C7DD}</Project>
       <Name>SystemDot.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SystemDot.Environment.Windows\SystemDot.Environment.Windows.csproj">
+      <Project>{A8627B3A-C1AC-492E-A2B9-0F3306B72E41}</Project>
+      <Name>SystemDot.Environment.Windows</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SystemDot.Environment\SystemDot.Environment.csproj">
+      <Project>{E45BB506-3B61-45CE-85BC-4B099A99E412}</Project>
+      <Name>SystemDot.Environment</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SystemDot.Http\SystemDot.Http.csproj">
       <Project>{7DC08100-3F8B-4D5E-B743-1E2948F55FCA}</Project>
       <Name>SystemDot.Http</Name>
@@ -127,13 +133,13 @@
       <Project>{1D68C6B5-A097-49DB-BDF8-F19125DABA98}</Project>
       <Name>SystemDot.Parallelism</Name>
     </ProjectReference>
-    <ProjectReference Include="..\SystemDot.Serialisation.Windows\SystemDot.Serialisation.Windows.csproj">
-      <Project>{D0448C30-82BC-4B0C-8283-6D059C3CC96E}</Project>
-      <Name>SystemDot.Serialisation.Windows</Name>
-    </ProjectReference>
     <ProjectReference Include="..\SystemDot.Serialisation\SystemDot.Serialisation.csproj">
       <Project>{6DCF6FC0-804B-4C7F-BAF7-5E410F255F1A}</Project>
       <Name>SystemDot.Serialisation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SystemDot.Storage\SystemDot.Storage.csproj">
+      <Project>{D3DD9DC9-BC87-4D3C-B15D-D6C5322D3535}</Project>
+      <Name>SystemDot.Storage</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

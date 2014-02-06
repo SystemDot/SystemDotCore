@@ -40,7 +40,7 @@ namespace SystemDot.Ioc
             return components.Keys;
         }
 
-        public TPlugin Resolve<TPlugin>() where TPlugin : class
+        public TPlugin Resolve<TPlugin>()
         {
             return (TPlugin)Resolve(typeof(TPlugin));
         }

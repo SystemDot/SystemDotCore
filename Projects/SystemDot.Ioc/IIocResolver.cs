@@ -5,7 +5,7 @@ namespace SystemDot.Ioc
 {
     public interface IIocResolver
     {
-        TPlugin Resolve<TPlugin>() where TPlugin : class;
+        TPlugin Resolve<TPlugin>();
 
         object Resolve(Type type);
 

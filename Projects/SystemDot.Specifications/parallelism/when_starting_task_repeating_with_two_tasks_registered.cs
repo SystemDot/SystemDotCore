@@ -1,6 +1,5 @@
 using System;
 using SystemDot.Parallelism;
-using Machine.Fakes;
 using Machine.Specifications;
 
 namespace SystemDot.Specifications.parallelism

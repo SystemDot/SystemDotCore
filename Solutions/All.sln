@@ -59,12 +59,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SystemDot.Parallelism.Windo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SystemDot.Parallelism.Android", "..\Projects\SystemDot.Parallelism.Android\SystemDot.Parallelism.Android.csproj", "{77FB8184-5C43-49FC-886A-9791441C9396}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SystemDot.Serialisation.Windows", "..\Projects\SystemDot.Serialisation.Windows\SystemDot.Serialisation.Windows.csproj", "{D0448C30-82BC-4B0C-8283-6D059C3CC96E}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SystemDot.Serialisation.Android", "..\Projects\SystemDot.Serialisation.Android\SystemDot.Serialisation.Android.csproj", "{B9C8E60C-6E6F-4F52-97C5-A6E7CD53E855}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SystemDot.Serialisation.WinRT", "..\Projects\SystemDot.Serialisation.WinRT\SystemDot.Serialisation.WinRT.csproj", "{0FDE09B5-787A-4757-81A7-CBB125BC15FC}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SystemDot.ThreadMarshalling.WinRT", "..\Projects\SystemDot.ThreadMarshalling.WinRT\SystemDot.ThreadMarshalling.WinRT.csproj", "{75A663CB-9E7D-4B17-977F-6203CD2364B2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SystemDot.ThreadMarshalling.Windows", "..\Projects\SystemDot.ThreadMarshalling.Windows\SystemDot.ThreadMarshalling.Windows.csproj", "{F9DE550B-11A8-4198-8224-F3A3CAB74A91}"
@@ -84,8 +78,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SystemDot.Logging.iOS", "..\Projects\SystemDot.Logging.iOS\SystemDot.Logging.iOS.csproj", "{8E1227A3-0051-49FE-A4A9-8171C64221F0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SystemDot.Parallelism.iOS", "..\Projects\SystemDot.Parallelism.iOS\SystemDot.Parallelism.iOS.csproj", "{165CD0F9-96DD-4234-8DAB-0EA18AD43825}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SystemDot.Serialisation.iOS", "..\Projects\SystemDot.Serialisation.iOS\SystemDot.Serialisation.iOS.csproj", "{EE26C623-6378-4E40-BA31-71C71BCFBE7B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SystemDot.ThreadMarshalling.iOS", "..\Projects\SystemDot.ThreadMarshalling.iOS\SystemDot.ThreadMarshalling.iOS.csproj", "{988BEA2E-0A25-4429-9724-381B8FEFABDD}"
 EndProject
@@ -411,42 +403,6 @@ Global
 		{77FB8184-5C43-49FC-886A-9791441C9396}.Release|ARM.ActiveCfg = Release|Any CPU
 		{77FB8184-5C43-49FC-886A-9791441C9396}.Release|x64.ActiveCfg = Release|Any CPU
 		{77FB8184-5C43-49FC-886A-9791441C9396}.Release|x86.ActiveCfg = Release|Any CPU
-		{D0448C30-82BC-4B0C-8283-6D059C3CC96E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D0448C30-82BC-4B0C-8283-6D059C3CC96E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D0448C30-82BC-4B0C-8283-6D059C3CC96E}.Debug|ARM.ActiveCfg = Debug|Any CPU
-		{D0448C30-82BC-4B0C-8283-6D059C3CC96E}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{D0448C30-82BC-4B0C-8283-6D059C3CC96E}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{D0448C30-82BC-4B0C-8283-6D059C3CC96E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D0448C30-82BC-4B0C-8283-6D059C3CC96E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D0448C30-82BC-4B0C-8283-6D059C3CC96E}.Release|ARM.ActiveCfg = Release|Any CPU
-		{D0448C30-82BC-4B0C-8283-6D059C3CC96E}.Release|x64.ActiveCfg = Release|Any CPU
-		{D0448C30-82BC-4B0C-8283-6D059C3CC96E}.Release|x86.ActiveCfg = Release|Any CPU
-		{B9C8E60C-6E6F-4F52-97C5-A6E7CD53E855}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B9C8E60C-6E6F-4F52-97C5-A6E7CD53E855}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B9C8E60C-6E6F-4F52-97C5-A6E7CD53E855}.Debug|ARM.ActiveCfg = Debug|Any CPU
-		{B9C8E60C-6E6F-4F52-97C5-A6E7CD53E855}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{B9C8E60C-6E6F-4F52-97C5-A6E7CD53E855}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{B9C8E60C-6E6F-4F52-97C5-A6E7CD53E855}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B9C8E60C-6E6F-4F52-97C5-A6E7CD53E855}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B9C8E60C-6E6F-4F52-97C5-A6E7CD53E855}.Release|ARM.ActiveCfg = Release|Any CPU
-		{B9C8E60C-6E6F-4F52-97C5-A6E7CD53E855}.Release|x64.ActiveCfg = Release|Any CPU
-		{B9C8E60C-6E6F-4F52-97C5-A6E7CD53E855}.Release|x86.ActiveCfg = Release|Any CPU
-		{0FDE09B5-787A-4757-81A7-CBB125BC15FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0FDE09B5-787A-4757-81A7-CBB125BC15FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0FDE09B5-787A-4757-81A7-CBB125BC15FC}.Debug|ARM.ActiveCfg = Debug|ARM
-		{0FDE09B5-787A-4757-81A7-CBB125BC15FC}.Debug|ARM.Build.0 = Debug|ARM
-		{0FDE09B5-787A-4757-81A7-CBB125BC15FC}.Debug|x64.ActiveCfg = Debug|x64
-		{0FDE09B5-787A-4757-81A7-CBB125BC15FC}.Debug|x64.Build.0 = Debug|x64
-		{0FDE09B5-787A-4757-81A7-CBB125BC15FC}.Debug|x86.ActiveCfg = Debug|x86
-		{0FDE09B5-787A-4757-81A7-CBB125BC15FC}.Debug|x86.Build.0 = Debug|x86
-		{0FDE09B5-787A-4757-81A7-CBB125BC15FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0FDE09B5-787A-4757-81A7-CBB125BC15FC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0FDE09B5-787A-4757-81A7-CBB125BC15FC}.Release|ARM.ActiveCfg = Release|ARM
-		{0FDE09B5-787A-4757-81A7-CBB125BC15FC}.Release|ARM.Build.0 = Release|ARM
-		{0FDE09B5-787A-4757-81A7-CBB125BC15FC}.Release|x64.ActiveCfg = Release|x64
-		{0FDE09B5-787A-4757-81A7-CBB125BC15FC}.Release|x64.Build.0 = Release|x64
-		{0FDE09B5-787A-4757-81A7-CBB125BC15FC}.Release|x86.ActiveCfg = Release|x86
-		{0FDE09B5-787A-4757-81A7-CBB125BC15FC}.Release|x86.Build.0 = Release|x86
 		{75A663CB-9E7D-4B17-977F-6203CD2364B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{75A663CB-9E7D-4B17-977F-6203CD2364B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{75A663CB-9E7D-4B17-977F-6203CD2364B2}.Debug|ARM.ActiveCfg = Debug|ARM
@@ -543,16 +499,6 @@ Global
 		{165CD0F9-96DD-4234-8DAB-0EA18AD43825}.Release|ARM.ActiveCfg = Release|Any CPU
 		{165CD0F9-96DD-4234-8DAB-0EA18AD43825}.Release|x64.ActiveCfg = Release|Any CPU
 		{165CD0F9-96DD-4234-8DAB-0EA18AD43825}.Release|x86.ActiveCfg = Release|Any CPU
-		{EE26C623-6378-4E40-BA31-71C71BCFBE7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EE26C623-6378-4E40-BA31-71C71BCFBE7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EE26C623-6378-4E40-BA31-71C71BCFBE7B}.Debug|ARM.ActiveCfg = Debug|Any CPU
-		{EE26C623-6378-4E40-BA31-71C71BCFBE7B}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{EE26C623-6378-4E40-BA31-71C71BCFBE7B}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{EE26C623-6378-4E40-BA31-71C71BCFBE7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EE26C623-6378-4E40-BA31-71C71BCFBE7B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EE26C623-6378-4E40-BA31-71C71BCFBE7B}.Release|ARM.ActiveCfg = Release|Any CPU
-		{EE26C623-6378-4E40-BA31-71C71BCFBE7B}.Release|x64.ActiveCfg = Release|Any CPU
-		{EE26C623-6378-4E40-BA31-71C71BCFBE7B}.Release|x86.ActiveCfg = Release|Any CPU
 		{988BEA2E-0A25-4429-9724-381B8FEFABDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{988BEA2E-0A25-4429-9724-381B8FEFABDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{988BEA2E-0A25-4429-9724-381B8FEFABDD}.Debug|ARM.ActiveCfg = Debug|Any CPU

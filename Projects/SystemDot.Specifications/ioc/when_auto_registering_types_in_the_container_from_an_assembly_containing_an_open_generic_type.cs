@@ -1,6 +1,5 @@
 using System;
 using SystemDot.Ioc;
-using Machine.Fakes;
 using Machine.Specifications;
 
 namespace SystemDot.Specifications.ioc

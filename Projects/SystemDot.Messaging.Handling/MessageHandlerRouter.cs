@@ -21,12 +21,12 @@ namespace SystemDot.Messaging.Handling
             handlersByAction = new ActionHandlerList();
         }
 
-        public void RegisterHandlersFromContainer<TMessageHandler>(IIocContainer container)
+        public void RegisterHandlersFromContainer<TMessageHandler>(IIocResolver resolver)
         {
-            container
+            resolver
                 .GetAllRegisteredTypes()
                 .WhereImplements<TMessageHandler>()
-                .ForEach(type => RegisterHandler(type, container));
+                .ForEach(type => RegisterHandler(type, resolver));
         }
 
         void RegisterHandler(Type handlerType, IIocResolver container)
