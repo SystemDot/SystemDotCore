@@ -8,11 +8,11 @@ namespace SystemDot.Messaging.Handling.Actions
 {
     internal class PerMessageActionHandlerList<TMessage> : IPerMessageActionHandlerList
     {
-        readonly ConcurrentDictionary<Action<TMessage>, WeaklyReferencedActionHandler<TMessage>> handlers;
+        readonly ConcurrentDictionary<ActionSubscriptionToken, WeaklyReferencedActionHandler<TMessage>> handlers;
 
         public PerMessageActionHandlerList()
         {
-            handlers = new ConcurrentDictionary<Action<TMessage>, WeaklyReferencedActionHandler<TMessage>>();
+            handlers = new ConcurrentDictionary<ActionSubscriptionToken, WeaklyReferencedActionHandler<TMessage>>();
         }
 
         public void RouteMessageToHandlers(object message)
@@ -26,10 +26,15 @@ namespace SystemDot.Messaging.Handling.Actions
             return this.As<PerMessageActionHandlerList<T>>();
         }
 
-        public void RegisterHandler(Action<TMessage> toRegister)
+        public ActionSubscriptionToken RegisterHandler(Action<TMessage> toRegister)
         {
             RemoveGarbageCollectedHandlers();
-            handlers.TryAdd(toRegister, CreateHandler(toRegister));
+
+            var token = new ActionSubscriptionToken(toRegister);
+
+            handlers.TryAdd(token, CreateHandler(toRegister));
+
+            return token;
         }
 
         static WeaklyReferencedActionHandler<TMessage> CreateHandler(Action<TMessage> toRegister)
@@ -37,7 +42,7 @@ namespace SystemDot.Messaging.Handling.Actions
             return new WeaklyReferencedActionHandler<TMessage>(toRegister);
         }
 
-        public void UnregisterHandler(Action<TMessage> toUnregister)
+        public void UnregisterHandler(ActionSubscriptionToken toUnregister)
         {
             RemoveGarbageCollectedHandlers();
             handlers.TryRemove(toUnregister);

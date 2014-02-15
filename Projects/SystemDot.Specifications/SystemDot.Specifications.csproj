@@ -125,6 +125,10 @@
       <Project>{251DA554-25F0-4F5B-9540-5E617481C85D}</Project>
       <Name>SystemDot.Ioc</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SystemDot.Messaging.Handling\SystemDot.Messaging.Handling.csproj">
+      <Project>{287A49E4-0564-47DC-B545-DA7EC8B01DE4}</Project>
+      <Name>SystemDot.Messaging.Handling</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SystemDot.Messaging.Simple\SystemDot.Messaging.Simple.csproj">
       <Project>{D9300BE3-41A5-4242-AC31-9B83A3797F46}</Project>
       <Name>SystemDot.Messaging.Simple</Name>

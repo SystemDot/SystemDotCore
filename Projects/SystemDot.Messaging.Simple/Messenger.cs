@@ -1,6 +1,7 @@
 using System;
 using SystemDot.Ioc;
 using SystemDot.Messaging.Handling;
+using SystemDot.Messaging.Handling.Actions;
 
 namespace SystemDot.Messaging.Simple
 {
@@ -28,14 +29,14 @@ namespace SystemDot.Messaging.Simple
             Router.UnregisterHandler(toUnregister);
         }
 
-        public static void RegisterHandler<TMessage>(Action<TMessage> toRegister)
+        public static ActionSubscriptionToken RegisterHandler<TMessage>(Action<TMessage> toRegister)
         {
-            Router.RegisterHandler(toRegister);
+            return Router.RegisterHandler(toRegister);
         }
 
-        public static void UnregisterHandler<TMessage>(Action<TMessage> toUnregister)
+        public static void UnregisterHandler<TMessage>(ActionSubscriptionToken toUnregister)
         {
-            Router.UnregisterHandler(toUnregister);
+            Router.UnregisterHandler<TMessage>(toUnregister);
         }
 
         public static void Send<TMessage>(TMessage message)

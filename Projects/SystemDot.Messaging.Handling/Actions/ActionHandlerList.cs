@@ -17,12 +17,19 @@ namespace SystemDot.Messaging.Handling.Actions
             return handlers.ContainsKey<TMessage>();
         }
 
-        public void RegisterHandler<TMessage>(Action<TMessage> toRegister)
+        public ActionSubscriptionToken RegisterHandler<TMessage>(Action<TMessage> toRegister)
         {
             if (!ContainsHandler<TMessage>())
                 AddPerMessageList<TMessage>();
 
-            handlers.ExecuteIfExists<TMessage>(list => list.ForMessage<TMessage>().RegisterHandler(toRegister));
+            ActionSubscriptionToken token = null;
+
+            handlers.ExecuteIfExists<TMessage>(list =>
+            {
+               token = list.ForMessage<TMessage>().RegisterHandler(toRegister); 
+            });
+
+            return token;
         }
 
         void AddPerMessageList<TMessage>()
@@ -30,7 +37,7 @@ namespace SystemDot.Messaging.Handling.Actions
             handlers.TryAdd<TMessage>(new PerMessageActionHandlerList<TMessage>());
         }
 
-        public void UnregisterHandler<TMessage>(Action<TMessage> toUnregister)
+        public void UnregisterHandler<TMessage>(ActionSubscriptionToken toUnregister)
         {
             if (!ContainsHandler<TMessage>()) return;
             handlers.ExecuteIfExists<TMessage>(list => list.ForMessage<TMessage>().UnregisterHandler(toUnregister));

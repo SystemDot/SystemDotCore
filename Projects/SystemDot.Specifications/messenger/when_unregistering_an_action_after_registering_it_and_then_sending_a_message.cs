@@ -1,4 +1,5 @@
 using System;
+using SystemDot.Messaging.Handling.Actions;
 using SystemDot.Messaging.Simple;
 using Machine.Specifications;
 
@@ -13,8 +14,8 @@ namespace SystemDot.Specifications.messenger
         Establish context = () =>
         {
             Action<object> action = m => handledMessage = m;
-            Messenger.RegisterHandler(action);
-            Messenger.UnregisterHandler(action);
+            ActionSubscriptionToken token = Messenger.RegisterHandler(action);
+            Messenger.UnregisterHandler<object>(token);
             message = new object();
         };
 
