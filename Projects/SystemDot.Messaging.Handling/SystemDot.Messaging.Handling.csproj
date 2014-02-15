@@ -44,8 +44,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Actions\ActionHandler.cs" />
     <Compile Include="Actions\ActionSubscriptionToken.cs" />
+    <Compile Include="Actions\IActionSubscriptionToken.cs" />
     <Compile Include="Actions\WeaklyReferencedActionHandler.cs" />
     <Compile Include="Instances\InstanceHandlerList.cs" />
     <Compile Include="Types\HandlerType.cs" />

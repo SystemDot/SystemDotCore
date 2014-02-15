@@ -44,14 +44,14 @@ namespace SystemDot.Messaging.Handling
             handlersByInstance.Unregister(toUnregister);
         }
 
-        public ActionSubscriptionToken RegisterHandler<TMessage>(Action<TMessage> toRegister)
+        public ActionSubscriptionToken<TMessage> RegisterHandler<TMessage>(Action<TMessage> toRegister)
         {
             return handlersByAction.RegisterHandler(toRegister);
         }
 
-        public void UnregisterHandler<TMessage>(ActionSubscriptionToken toUnregister)
+        public void UnregisterHandler<TMessage>(ActionSubscriptionToken<TMessage> toUnregister)
         {
-            handlersByAction.UnregisterHandler<TMessage>(toUnregister);
+            handlersByAction.UnregisterHandler(toUnregister);
         }
 
         public void RouteMessageToHandlers(object message)

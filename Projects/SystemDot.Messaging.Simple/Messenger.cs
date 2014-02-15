@@ -29,14 +29,14 @@ namespace SystemDot.Messaging.Simple
             Router.UnregisterHandler(toUnregister);
         }
 
-        public static ActionSubscriptionToken RegisterHandler<TMessage>(Action<TMessage> toRegister)
+        public static ActionSubscriptionToken<TMessage> RegisterHandler<TMessage>(Action<TMessage> toRegister)
         {
             return Router.RegisterHandler(toRegister);
         }
 
-        public static void UnregisterHandler<TMessage>(ActionSubscriptionToken toUnregister)
+        public static void UnregisterHandler<TMessage>(ActionSubscriptionToken<TMessage> toUnregister)
         {
-            Router.UnregisterHandler<TMessage>(toUnregister);
+            Router.UnregisterHandler(toUnregister);
         }
 
         public static void Send<TMessage>(TMessage message)

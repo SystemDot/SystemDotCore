@@ -1,20 +1,26 @@
+using System;
 using SystemDot.Core;
 
 namespace SystemDot.Messaging.Handling.Actions
 {
-    public class ActionSubscriptionToken : Disposable
+    public class ActionSubscriptionToken<TMessage> : Disposable, IActionSubscriptionToken
     {
-        public object Handler { get; private set; }
+        Action<TMessage> handler;
 
-        public ActionSubscriptionToken(object handler)
+        public ActionSubscriptionToken(Action<TMessage> handler)
         {
-            Handler = handler;
+            this.handler = handler;
         }
 
         protected override void DisposeOfManagedResources()
         {
-            Handler = null;
+            handler = null;
             base.DisposeOfManagedResources();
+        }
+
+        public void Handle(TMessage message)
+        {
+            handler.Invoke(message);
         }
     }
 }

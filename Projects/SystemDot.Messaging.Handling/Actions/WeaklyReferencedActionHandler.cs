@@ -5,14 +5,14 @@ namespace SystemDot.Messaging.Handling.Actions
 {
     internal class WeaklyReferencedActionHandler<T> : WeakReference
     {
-        public WeaklyReferencedActionHandler(Action<T> action) 
-            : base(new ActionHandler<T>(action))
+        public WeaklyReferencedActionHandler(ActionSubscriptionToken<T> token) 
+            : base(token)
         {
         }
 
         public void Handle(T message)
         {
-            if(IsAlive) Target.As<ActionHandler<T>>().Handle(message);
+            if (IsAlive) Target.As<ActionSubscriptionToken<T>>().Handle(message);
         }
     }
 }

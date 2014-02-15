@@ -14,8 +14,8 @@ namespace SystemDot.Specifications.messenger
         Establish context = () =>
         {
             Action<object> action = m => handledMessage = m;
-            ActionSubscriptionToken token = Messenger.RegisterHandler(action);
-            Messenger.UnregisterHandler<object>(token);
+            ActionSubscriptionToken<object> token = Messenger.RegisterHandler(action);
+            Messenger.UnregisterHandler(token);
             message = new object();
         };
 
