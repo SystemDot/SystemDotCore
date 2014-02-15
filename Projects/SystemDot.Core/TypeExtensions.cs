@@ -7,6 +7,11 @@ namespace SystemDot.Core
 {
     public static class TypeExtensions
     {
+        public static IEnumerable<Type> ThatImplement<TType>(this IEnumerable<Type> types)
+        {
+            return types.WhereNormalConcrete().WhereImplements<TType>();
+        }
+
         public static MethodInfo GetMethod(this Type type, string name, Type[] types)
         {
             return type.GetRuntimeMethod(name, types);

@@ -36,7 +36,6 @@
     <!-- A reference to the entire .NET Framework is automatically included -->
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AssemblyExtensions.cs" />
     <Compile Include="Collections\CouncurrentDictionaryExtensions.cs" />
     <Compile Include="Disposable.cs" />
     <Compile Include="Equatable.cs" />

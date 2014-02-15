@@ -12,7 +12,12 @@ namespace SystemDot.Environment
 {
     public class Application : IApplication
     {
-        public IEnumerable<Assembly> GetAssemblies()
+        public IEnumerable<Type> GetAllTypes()
+        {
+            return GetAssemblies().SelectMany(a => a.ExportedTypes);
+        }
+
+        IEnumerable<Assembly> GetAssemblies()
         {
             return GetAssembliesAsync().GetAwaiter().GetResult();
         }
