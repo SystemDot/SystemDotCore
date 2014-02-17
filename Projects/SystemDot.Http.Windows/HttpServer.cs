@@ -4,7 +4,7 @@ using System.Net;
 using System.Threading.Tasks;
 using SystemDot.Logging;
 
-namespace SystemDot.Http.Builders
+namespace SystemDot.Http
 {
     public class HttpServer : IHttpServer
     {

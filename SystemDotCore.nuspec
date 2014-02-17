@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
     <metadata>
         <id>SystemDotCore</id>
-        <version>1.0.7</version>
+        <version>1.0.9</version>
         <title>SystemDotCore</title>
         <authors>Chris Sampson,James Goodenough</authors>
         <owners>Chris Sampson,James Goodenough</owners>
@@ -37,7 +37,26 @@
         <file src="Build\SystemDot.Storage.dll" target="lib\MonoAndroid\SystemDot.Storage.dll" />
         <file src="Build\SystemDot.ThreadMarshalling.Android.dll" target="lib\MonoAndroid\SystemDot.ThreadMarshalling.Android.dll" />
         <file src="Build\SystemDot.ThreadMarshalling.dll" target="lib\MonoAndroid\SystemDot.ThreadMarshalling.dll" />
-        <file src="Build\SystemDot.Configuration.dll" target="lib\net\SystemDot.Configuration.dll" />
+		<file src="Build\SystemDot.Configuration.dll" target="lib\MonoTouch\SystemDot.Configuration.dll" />
+        <file src="Build\SystemDot.Core.dll" target="lib\MonoTouch\SystemDot.Core.dll" />
+        <file src="Build\SystemDot.Environment.iOS.dll" target="lib\MonoTouch\SystemDot.Environment.iOS.dll" />
+        <file src="Build\SystemDot.Environment.dll" target="lib\MonoTouch\SystemDot.Environment.dll" />
+        <file src="Build\SystemDot.Files.iOS.dll" target="lib\MonoTouch\SystemDot.Files.iOS.dll" />
+        <file src="Build\SystemDot.Files.dll" target="lib\MonoTouch\SystemDot.Files.dll" />
+        <file src="Build\SystemDot.Http.iOS.dll" target="lib\MonoTouch\SystemDot.Http.iOS.dll" />
+        <file src="Build\SystemDot.Http.dll" target="lib\MonoTouch\SystemDot.Http.dll" />
+        <file src="Build\SystemDot.Ioc.dll" target="lib\MonoTouch\SystemDot.Ioc.dll" />
+        <file src="Build\SystemDot.Logging.iOS.dll" target="lib\MonoTouch\SystemDot.Logging.iOS.dll" />
+        <file src="Build\SystemDot.Logging.dll" target="lib\MonoTouch\SystemDot.Logging.dll" />
+        <file src="Build\SystemDot.Messaging.Handling.dll" target="lib\MonoTouch\SystemDot.Messaging.Handling.dll" />
+        <file src="Build\SystemDot.Messaging.Simple.dll" target="lib\MonoTouch\SystemDot.Messaging.Simple.dll" />
+        <file src="Build\SystemDot.Parallelism.iOS.dll" target="lib\MonoTouch\SystemDot.Parallelism.iOS.dll" />
+        <file src="Build\SystemDot.Parallelism.dll" target="lib\MonoTouch\SystemDot.Parallelism.dll" />
+        <file src="Build\SystemDot.Serialisation.dll" target="lib\MonoTouch\SystemDot.Serialisation.dll" />
+        <file src="Build\SystemDot.Storage.dll" target="lib\MonoTouch\SystemDot.Storage.dll" />
+        <file src="Build\SystemDot.ThreadMarshalling.iOS.dll" target="lib\MonoTouch\SystemDot.ThreadMarshalling.iOS.dll" />
+        <file src="Build\SystemDot.ThreadMarshalling.dll" target="lib\MonoTouch\SystemDot.ThreadMarshalling.dll" />
+		<file src="Build\SystemDot.Configuration.dll" target="lib\net\SystemDot.Configuration.dll" />
         <file src="Build\SystemDot.Core.dll" target="lib\net\SystemDot.Core.dll" />
         <file src="Build\SystemDot.Environment.dll" target="lib\net\SystemDot.Environment.dll" />
         <file src="Build\SystemDot.Environment.Windows.dll" target="lib\net\SystemDot.Environment.Windows.dll" />

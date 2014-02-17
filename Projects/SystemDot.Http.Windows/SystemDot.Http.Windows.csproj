@@ -39,8 +39,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Builders\HttpServer.cs" />
+    <Compile Include="HttpServer.cs" />
     <Compile Include="Builders\HttpServerBuilder.cs" />
+    <Compile Include="Configuration\IocContainerExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PutSender.cs" />
     <Compile Include="WebRequestor.cs" />
@@ -49,6 +50,10 @@
     <ProjectReference Include="..\SystemDot.Http\SystemDot.Http.csproj">
       <Project>{7DC08100-3F8B-4D5E-B743-1E2948F55FCA}</Project>
       <Name>SystemDot.Http</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SystemDot.Ioc\SystemDot.Ioc.csproj">
+      <Project>{251DA554-25F0-4F5B-9540-5E617481C85D}</Project>
+      <Name>SystemDot.Ioc</Name>
     </ProjectReference>
     <ProjectReference Include="..\SystemDot.Logging\SystemDot.Logging.csproj">
       <Project>{286EA592-2156-4AB6-ACCD-E593FCFAAC66}</Project>

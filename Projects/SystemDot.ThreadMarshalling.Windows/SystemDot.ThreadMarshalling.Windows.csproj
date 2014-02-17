@@ -40,10 +40,15 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configuration\IocContainerExtensions.cs" />
     <Compile Include="MainThreadMarshaller.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\SystemDot.Ioc\SystemDot.Ioc.csproj">
+      <Project>{251DA554-25F0-4F5B-9540-5E617481C85D}</Project>
+      <Name>SystemDot.Ioc</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SystemDot.ThreadMarshalling\SystemDot.ThreadMarshalling.csproj">
       <Project>{8920AC8B-9D32-49F1-AC5B-494BC22DDBFE}</Project>
       <Name>SystemDot.ThreadMarshalling</Name>

@@ -4,7 +4,7 @@ namespace SystemDot.Environment.Configuration
 {
     public static class IocContainerExtensions
     {
-        public static void RegisterFileSystem(this IIocContainer container)
+        public static void RegisterEnvironment(this IIocContainer container)
         {
             container.RegisterFromAssemblyOf<Application>();
         }
