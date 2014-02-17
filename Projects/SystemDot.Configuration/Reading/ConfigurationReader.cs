@@ -19,6 +19,8 @@ namespace SystemDot.Configuration.Reading
 
         public void Load(string fileName)
         {
+            if (!fileSystem.FileExists(fileName, FileLocation.InstallLocation)) return;
+            
             document = XDocument.Load(XmlReader.Create(GetStream(fileName)));
         }
 
@@ -29,10 +31,9 @@ namespace SystemDot.Configuration.Reading
 
         public IEnumerable<XElement> GetSettingsInSection(string section)
         {
-            return document
-                .Descendants()
-                .Single(d => d.Name == section)
-                    .Descendants();
+            return document == null 
+                ? new List<XElement>() 
+                : document.Descendants().Single(d => d.Name == section).Descendants();
         }
     }
 }
