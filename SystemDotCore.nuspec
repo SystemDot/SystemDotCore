@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
     <metadata>
         <id>SystemDotCore</id>
-        <version>1.0.9</version>
+        <version>1.1.0</version>
         <title>SystemDotCore</title>
         <authors>Chris Sampson,James Goodenough</authors>
         <owners>Chris Sampson,James Goodenough</owners>
@@ -35,9 +35,12 @@
         <file src="Build\SystemDot.Parallelism.dll" target="lib\MonoAndroid\SystemDot.Parallelism.dll" />
         <file src="Build\SystemDot.Serialisation.dll" target="lib\MonoAndroid\SystemDot.Serialisation.dll" />
         <file src="Build\SystemDot.Storage.dll" target="lib\MonoAndroid\SystemDot.Storage.dll" />
+        <file src="Build\SystemDot.Storage.Changes.Sql.Android.dll" target="lib\MonoAndroid\SystemDot.Storage.Changes.Sql.Android.dll" />
+        <file src="Build\SystemDot.Storage.Changes.Sqlite.Android.dll" target="lib\MonoAndroid\SystemDot.Storage.Changes.Sqlite.Android.dll" />
         <file src="Build\SystemDot.ThreadMarshalling.Android.dll" target="lib\MonoAndroid\SystemDot.ThreadMarshalling.Android.dll" />
         <file src="Build\SystemDot.ThreadMarshalling.dll" target="lib\MonoAndroid\SystemDot.ThreadMarshalling.dll" />
-		<file src="Build\SystemDot.Configuration.dll" target="lib\MonoTouch\SystemDot.Configuration.dll" />
+	
+	<file src="Build\SystemDot.Configuration.dll" target="lib\MonoTouch\SystemDot.Configuration.dll" />
         <file src="Build\SystemDot.Core.dll" target="lib\MonoTouch\SystemDot.Core.dll" />
         <file src="Build\SystemDot.Environment.iOS.dll" target="lib\MonoTouch\SystemDot.Environment.iOS.dll" />
         <file src="Build\SystemDot.Environment.dll" target="lib\MonoTouch\SystemDot.Environment.dll" />
@@ -54,9 +57,12 @@
         <file src="Build\SystemDot.Parallelism.dll" target="lib\MonoTouch\SystemDot.Parallelism.dll" />
         <file src="Build\SystemDot.Serialisation.dll" target="lib\MonoTouch\SystemDot.Serialisation.dll" />
         <file src="Build\SystemDot.Storage.dll" target="lib\MonoTouch\SystemDot.Storage.dll" />
+        <file src="Build\SystemDot.Storage.Changes.Sql.iOS.dll" target="lib\MonoTouch\SystemDot.Storage.Changes.Sql.iOS.dll" />
+        <file src="Build\SystemDot.Storage.Changes.Sqlite.iOS.dll" target="lib\MonoTouch\SystemDot.Storage.Changes.Sqlite.iOS.dll" />
         <file src="Build\SystemDot.ThreadMarshalling.iOS.dll" target="lib\MonoTouch\SystemDot.ThreadMarshalling.iOS.dll" />
         <file src="Build\SystemDot.ThreadMarshalling.dll" target="lib\MonoTouch\SystemDot.ThreadMarshalling.dll" />
-		<file src="Build\SystemDot.Configuration.dll" target="lib\net\SystemDot.Configuration.dll" />
+	
+	<file src="Build\SystemDot.Configuration.dll" target="lib\net\SystemDot.Configuration.dll" />
         <file src="Build\SystemDot.Core.dll" target="lib\net\SystemDot.Core.dll" />
         <file src="Build\SystemDot.Environment.dll" target="lib\net\SystemDot.Environment.dll" />
         <file src="Build\SystemDot.Environment.Windows.dll" target="lib\net\SystemDot.Environment.Windows.dll" />
@@ -73,8 +79,13 @@
         <file src="Build\SystemDot.Parallelism.Windows.dll" target="lib\net\SystemDot.Parallelism.Windows.dll" />
         <file src="Build\SystemDot.Serialisation.dll" target="lib\net\SystemDot.Serialisation.dll" />
         <file src="Build\SystemDot.Storage.dll" target="lib\net\SystemDot.Storage.dll" />
+        <file src="Build\SystemDot.Storage.Changes.Sql.Windows.dll" target="lib\net\SystemDot.Storage.Changes.Sql.Windows.dll" />
+        <file src="Build\SystemDot.Storage.Changes.SqlServer.Windows.dll" target="lib\net\SystemDot.Storage.Changes.SqlServer.Windows.dll" />
+        <file src="Build\SystemDot.Storage.Changes.Esent.Windows.dll" target="lib\net\SystemDot.Storage.Changes.Esent.Windows.dll" />
+        <file src="Build\Esent.Interop.dll" target="lib\net\Esent.Interop.dll" />
         <file src="Build\SystemDot.ThreadMarshalling.dll" target="lib\net\SystemDot.ThreadMarshalling.dll" />
         <file src="Build\SystemDot.ThreadMarshalling.Windows.dll" target="lib\net\SystemDot.ThreadMarshalling.Windows.dll" />
+
         <file src="Build\SystemDot.Configuration.dll" target="lib\netcore\SystemDot.Configuration.dll" />
         <file src="Build\SystemDot.Core.dll" target="lib\netcore\SystemDot.Core.dll" />
         <file src="Build\SystemDot.Environment.dll" target="lib\netcore\SystemDot.Environment.dll" />
@@ -92,8 +103,11 @@
         <file src="Build\SystemDot.Parallelism.WinRT.dll" target="lib\netcore\SystemDot.Parallelism.WinRT.dll" />
         <file src="Build\SystemDot.Serialisation.dll" target="lib\netcore\SystemDot.Serialisation.dll" />
         <file src="Build\SystemDot.Storage.dll" target="lib\netcore\SystemDot.Storage.dll" />
+	<file src="Build\SystemDot.Storage.Changes.Esent.WindowsStore.dll" target="lib\netcore\SystemDot.Storage.Changes.Esent.WindowsStore.dll" />
+        <file src="Build\Esent.Interop.dll" target="lib\netcore\Esent.Interop.dll" />
         <file src="Build\SystemDot.ThreadMarshalling.dll" target="lib\netcore\SystemDot.ThreadMarshalling.dll" />
         <file src="Build\SystemDot.ThreadMarshalling.WinRT.dll" target="lib\netcore\SystemDot.ThreadMarshalling.WinRT.dll" />
+
         <file src="Build\SystemDot.Configuration.dll" target="lib\portable-win+net45+MonoAndroid+MonoTouch+win8\SystemDot.Configuration.dll" />
         <file src="Build\SystemDot.Core.dll" target="lib\portable-win+net45+MonoAndroid+MonoTouch+win8\SystemDot.Core.dll" />
         <file src="Build\SystemDot.Environment.dll" target="lib\portable-win+net45+MonoAndroid+MonoTouch+win8\SystemDot.Environment.dll" />
