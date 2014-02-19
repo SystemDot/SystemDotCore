@@ -25,14 +25,23 @@ namespace SystemDot.Ioc
             where TPlugin : class
             where TConcrete : class
         {
-            if(ComponentExists<TPlugin>()) return;        
+            RegisterInstance(typeof(TPlugin), typeof(TConcrete));
+        }
 
-            components[typeof(TPlugin)] = new ConcreteInstance(typeof(TConcrete));
+        public void RegisterInstance(Type plugin, Type concrete)
+        {
+            if (ComponentExists(plugin)) return;
+            components[plugin] = new ConcreteInstance(concrete);
         }
 
         public bool ComponentExists<TPlugin>() 
         {
-            return components.ContainsKey(typeof(TPlugin));
+            return ComponentExists(typeof(TPlugin));
+        }
+
+        public bool ComponentExists(Type toCheck)
+        {
+            return components.ContainsKey(toCheck);
         }
 
         public IEnumerable<Type> GetAllRegisteredTypes()
@@ -47,11 +56,6 @@ namespace SystemDot.Ioc
 
         public object Resolve(Type type)
         {
-            return ResolveType(type);
-        }
-
-        object ResolveType(Type type)
-        {
             if (!components.ContainsKey(type))
                 throw new TypeNotRegisteredException(string.Format(
                     IocContainerResources.TypeHasNotBeenRegisteredMessage, 
@@ -65,12 +69,22 @@ namespace SystemDot.Ioc
             if (concreteType.ObjectFactory != null)
                 return concreteType.SetObjectInstance(concreteType.ObjectFactory.Invoke());
 
-            return CreateObjectInstance(concreteType);
+            return Create(concreteType);
         }
 
-        object CreateObjectInstance(ConcreteInstance concreteType)
+        object Create(ConcreteInstance concreteType)
         {
-            var constructorInfo = concreteType.ObjectType
+            return concreteType.SetObjectInstance(Create(concreteType.ObjectType));
+        }
+
+        public T Create<T>()
+        {
+            return Create(typeof (T)).As<T>();
+        }
+
+        public object Create(Type type)
+        {
+            var constructorInfo = type
                 .GetAllConstructors()
                 .First();
 
@@ -80,7 +94,7 @@ namespace SystemDot.Ioc
 
             for (var i = 0; i < parameters.Count(); i++) parameterInstances[i] = Resolve(parameters[i].ParameterType);
 
-            return concreteType.SetObjectInstance(constructorInfo.Invoke(parameterInstances));
+            return constructorInfo.Invoke(parameterInstances);
         }
     }
 }
