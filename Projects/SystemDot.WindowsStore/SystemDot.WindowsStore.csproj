@@ -6,11 +6,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{078A8821-E418-449E-BEC6-34D7D9F05D73}</ProjectGuid>
+    <ProjectGuid>{B5F85B21-6EEB-4CAF-A8C4-6F4FFF8D01E6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SystemDot.Storage.Changes.Esent</RootNamespace>
-    <AssemblyName>SystemDot.Storage.Changes.Esent.WindowsStore</AssemblyName>
+    <RootNamespace>SystemDot</RootNamespace>
+    <AssemblyName>SystemDot.WindowsStore</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformVersion>8.1</TargetPlatformVersion>
     <MinimumVisualStudioVersion>12</MinimumVisualStudioVersion>
@@ -101,23 +101,28 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="..\SystemDot.Storage.Changes.Esent.Windows\*.cs">
-      <Link>%(RecursiveDir)%(FileName)</Link>
-    </Compile>
-    <Compile Include="..\SystemDot.Storage.Changes.Esent.Windows\*\*.cs">
-      <Link>%(RecursiveDir)%(FileName)</Link>
-    </Compile>
-    <Compile Include="..\SystemDot.Storage.Changes.Esent.Windows\*\*\*.cs">
-      <Link>%(RecursiveDir)%(FileName)</Link>
-    </Compile>
-    <Compile Include="..\SystemDot.Storage.Changes.Esent.Windows\*\*\*\*.cs">
-      <Link>%(RecursiveDir)%(FileName)</Link>
-    </Compile>
+    <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
+    <Folder Include="Logging\" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Esent.Interop">
-      <HintPath>..\..\Dependencies\ManagedEsent\Esent.Interop.dll</HintPath>
-    </Reference>
+    <Compile Include="Environment\Application.cs" />
+    <Compile Include="Environment\Configuration\IocContainerExtensions.cs" />
+    <Compile Include="Environment\LocalMachine.cs" />
+    <Compile Include="Files\Configuration\IocContainerExtensions.cs" />
+    <Compile Include="Files\FileLocationDictionary.cs" />
+    <Compile Include="Files\FileSystem.cs" />
+    <Compile Include="Http\Builders\HttpServerBuilder.cs" />
+    <Compile Include="Http\Configuration\IocContainerExtensions.cs" />
+    <Compile Include="Http\PutSender.cs" />
+    <Compile Include="Http\WebRequestor.cs" />
+    <Compile Include="Parallelism\Configuration\IocContainerExtensions.cs" />
+    <Compile Include="Parallelism\ElapsedEventHandler.cs" />
+    <Compile Include="Parallelism\ElapsedEventHandlerArgs.cs" />
+    <Compile Include="Parallelism\TaskScheduler.cs" />
+    <Compile Include="Parallelism\Timer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ThreadMarshalling\Configuration\IocContainerExtensions.cs" />
+    <Compile Include="ThreadMarshalling\MainThreadMarshaller.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SystemDot\SystemDot.csproj">

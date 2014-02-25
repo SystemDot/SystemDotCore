@@ -48,21 +48,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SystemDot.Core\SystemDot.Core.csproj">
-      <Project>{924FFA17-B0D7-4B57-99C8-73811048C7DD}</Project>
-      <Name>SystemDot.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SystemDot.Files\SystemDot.Files.csproj">
-      <Project>{90EA063D-3013-4FBD-913A-A34C2A0D6C9B}</Project>
-      <Name>SystemDot.Files</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SystemDot.Serialisation\SystemDot.Serialisation.csproj">
-      <Project>{6DCF6FC0-804B-4C7F-BAF7-5E410F255F1A}</Project>
-      <Name>SystemDot.Serialisation</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SystemDot.Storage\SystemDot.Storage.csproj">
-      <Project>{D3DD9DC9-BC87-4D3C-B15D-D6C5322D3535}</Project>
-      <Name>SystemDot.Storage</Name>
+    <ProjectReference Include="..\SystemDot\SystemDot.csproj">
+      <Project>{070f7893-796a-4206-b6a4-8a491909e38c}</Project>
+      <Name>SystemDot</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

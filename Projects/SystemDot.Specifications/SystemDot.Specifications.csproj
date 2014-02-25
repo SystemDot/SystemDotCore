@@ -81,6 +81,7 @@
     <Compile Include="ioc\when_auto_registering_types_in_the_container_from_an_assembly_containing_an_open_generic_type.cs" />
     <Compile Include="ioc\when_auto_registering_types_in_the_container_from_an_assembly_the_second_time.cs" />
     <Compile Include="ioc\when_manually_registering_an_instance_in_the_container.cs" />
+    <Compile Include="ioc\when_manually_registering_an_instance_in_the_container_explicitly_by_type.cs" />
     <Compile Include="ioc\when_manually_registering_an_instance_in_the_container_for_the_second_time.cs" />
     <Compile Include="ioc\when_registering_an_instance_in_the_container.cs" />
     <Compile Include="ioc\when_registering_an_instance_in_the_container_for_the_second_time.cs" />
@@ -105,49 +106,17 @@
     <Compile Include="TestTaskScheduler.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SystemDot.Core\SystemDot.Core.csproj">
-      <Project>{924FFA17-B0D7-4B57-99C8-73811048C7DD}</Project>
-      <Name>SystemDot.Core</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SystemDot.Environment.Windows\SystemDot.Environment.Windows.csproj">
-      <Project>{A8627B3A-C1AC-492E-A2B9-0F3306B72E41}</Project>
-      <Name>SystemDot.Environment.Windows</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SystemDot.Environment\SystemDot.Environment.csproj">
-      <Project>{E45BB506-3B61-45CE-85BC-4B099A99E412}</Project>
-      <Name>SystemDot.Environment</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SystemDot.Http\SystemDot.Http.csproj">
-      <Project>{7DC08100-3F8B-4D5E-B743-1E2948F55FCA}</Project>
-      <Name>SystemDot.Http</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SystemDot.Ioc\SystemDot.Ioc.csproj">
-      <Project>{251DA554-25F0-4F5B-9540-5E617481C85D}</Project>
-      <Name>SystemDot.Ioc</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SystemDot.Messaging.Handling\SystemDot.Messaging.Handling.csproj">
-      <Project>{287A49E4-0564-47DC-B545-DA7EC8B01DE4}</Project>
-      <Name>SystemDot.Messaging.Handling</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SystemDot.Messaging.Simple\SystemDot.Messaging.Simple.csproj">
-      <Project>{D9300BE3-41A5-4242-AC31-9B83A3797F46}</Project>
-      <Name>SystemDot.Messaging.Simple</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SystemDot.Parallelism\SystemDot.Parallelism.csproj">
-      <Project>{1D68C6B5-A097-49DB-BDF8-F19125DABA98}</Project>
-      <Name>SystemDot.Parallelism</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SystemDot.Serialisation\SystemDot.Serialisation.csproj">
-      <Project>{6DCF6FC0-804B-4C7F-BAF7-5E410F255F1A}</Project>
-      <Name>SystemDot.Serialisation</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\SystemDot.Storage\SystemDot.Storage.csproj">
-      <Project>{D3DD9DC9-BC87-4D3C-B15D-D6C5322D3535}</Project>
-      <Name>SystemDot.Storage</Name>
-    </ProjectReference>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <ProjectReference Include="..\SystemDot.Windows\SystemDot.Windows.csproj">
+      <Project>{ea20361f-5cff-434d-82fc-c43d242001cf}</Project>
+      <Name>SystemDot.Windows</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SystemDot\SystemDot.csproj">
+      <Project>{070f7893-796a-4206-b6a4-8a491909e38c}</Project>
+      <Name>SystemDot</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

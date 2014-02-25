@@ -5,15 +5,17 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{88E3C81A-48C3-41F7-B4EC-9142ECBD1215}</ProjectGuid>
+    <ProjectGuid>{E2D12712-988E-4157-9467-F457A26BDAA9}</ProjectGuid>
     <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SystemDot.Storage.Changes.Sql</RootNamespace>
-    <AssemblyName>SystemDot.Storage.Changes.Sql.Android</AssemblyName>
+    <RootNamespace>SystemDot</RootNamespace>
+    <AssemblyName>SystemDot.Android</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <AndroidUseLatestPlatformSdk />
+    <TargetFrameworkVersion>v2.2</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -37,29 +39,51 @@
     <Reference Include="mscorlib" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Data" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\SystemDot.Storage.Changes.Sql.Windows\*.cs">
+    <Compile Include="..\SystemDot.Windows\*.cs">
       <Link>%(RecursiveDir)%(FileName)</Link>
     </Compile>
-    <Compile Include="..\SystemDot.Storage.Changes.Sql.Windows\*\*.cs">
+    <Compile Include="..\SystemDot.Windows\Environment\Application.cs">
+      <Link>Environment\Application</Link>
+    </Compile>
+    <Compile Include="..\SystemDot.Windows\Environment\LocalMachine.cs">
+      <Link>Environment\LocalMachine</Link>
+    </Compile>
+    <Compile Include="..\SystemDot.Windows\Files\FileSystem.cs">
+      <Link>Files\FileSystem</Link>
+    </Compile>
+    <Compile Include="..\SystemDot.Windows\Http\HttpServer.cs">
+      <Link>Http\HttpServer</Link>
+    </Compile>
+    <Compile Include="..\SystemDot.Windows\Http\PutSender.cs">
+      <Link>Http\PutSender</Link>
+    </Compile>
+    <Compile Include="..\SystemDot.Windows\Http\WebRequestor.cs">
+      <Link>Http\WebRequestor</Link>
+    </Compile>
+    <Compile Include="..\SystemDot.Windows\Logging\ConsoleLoggingMechanism.cs">
+      <Link>Logging\ConsoleLoggingMechanism</Link>
+    </Compile>
+    <Compile Include="..\SystemDot.Windows\Logging\Log4NetLoggingMechanism.cs">
+      <Link>Logging\Log4NetLoggingMechanism</Link>
+    </Compile>
+    <Compile Include="..\SystemDot.Windows\Parallelism\TaskScheduler.cs">
+      <Link>Parallelism\TaskScheduler</Link>
+    </Compile>
+    <Compile Include="..\SystemDot.Windows\Properties\AssemblyInfo.cs">
+      <Link>Properties\AssemblyInfo</Link>
+    </Compile>
+    <Compile Include="..\SystemDot.Windows\*\*\*.cs">
       <Link>%(RecursiveDir)%(FileName)</Link>
     </Compile>
-    <Compile Include="..\SystemDot.Storage.Changes.Sql.Windows\*\*\*.cs">
+    <Compile Include="..\SystemDot.Windows\*\*\*\*.cs">
       <Link>%(RecursiveDir)%(FileName)</Link>
     </Compile>
-    <Compile Include="..\SystemDot.Storage.Changes.Sql.Windows\*\*\*\*.cs">
-      <Link>%(RecursiveDir)%(FileName)</Link>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\AboutResources.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\Values\Strings.xml" />
+    <Compile Include="ThreadMarshalling\MainActivityLocator.cs" />
+    <Compile Include="ThreadMarshalling\MainThreadMarshaller.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SystemDot\SystemDot.csproj">
