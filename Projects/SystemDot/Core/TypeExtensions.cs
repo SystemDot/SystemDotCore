@@ -91,11 +91,9 @@ namespace SystemDot.Core
 
         public static IEnumerable<Type> WhereImplements<TImplemented>(this IEnumerable<Type> types)
         {
-            return
-                types.Where(
-                    t =>
-                        t.GetNonBaseInterfaces().Contains(typeof(TImplemented)) ||
-                            t.GetBaseInterfaces().Contains(typeof(TImplemented)));
+            return types.Where(t =>
+                t.GetNonBaseInterfaces().Contains(typeof(TImplemented)) 
+                || t.GetBaseInterfaces().Contains(typeof(TImplemented)));
         }
 
         public static IEnumerable<MethodInfo> GetMethodsByName(this Type type, string methodName)

@@ -46,7 +46,7 @@ namespace SystemDot.Ioc
 
         public IEnumerable<Type> GetAllRegisteredTypes()
         {
-            return components.Keys;
+            return components.Keys.WhereNormalConcrete();
         }
 
         public TPlugin Resolve<TPlugin>()

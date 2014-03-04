@@ -63,6 +63,8 @@ namespace SystemDot.Messaging.Handling
 
         public void ClearAllHandlers()
         {
+            handlersByInstance.Clear();
+            handlersByType.Clear();
             handlersByAction.Clear();
         }
     }

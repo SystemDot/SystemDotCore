@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using SystemDot.Core;
 using SystemDot.Core.Collections;
 
 namespace SystemDot.Messaging.Handling.Instances
@@ -26,6 +25,11 @@ namespace SystemDot.Messaging.Handling.Instances
         public void RouteMessageToHandlers(object message)
         {
             inner.ForEach(handler => handler.InvokeHandler(message));
+        }
+
+        public void Clear()
+        {
+            inner.Clear();
         }
     }
 }

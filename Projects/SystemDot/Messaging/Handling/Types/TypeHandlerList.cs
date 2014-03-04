@@ -33,5 +33,10 @@ namespace SystemDot.Messaging.Handling.Types
         {
             return type.GetHandleMethodForMessage(message) != null;
         }
+
+        public void Clear()
+        {
+            inner.Clear();
+        }
     }
 }

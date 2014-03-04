@@ -79,6 +79,7 @@
     <Compile Include="Messaging\Handling\Actions\IPerMessageActionHandlerList.cs" />
     <Compile Include="Messaging\Handling\Actions\PerMessageActionHandlerList.cs" />
     <Compile Include="Messaging\Handling\Actions\WeaklyReferencedActionHandler.cs" />
+    <Compile Include="Messaging\Handling\Configuration\IocContainerExtensions.cs" />
     <Compile Include="Messaging\Handling\IMessageHandler.cs" />
     <Compile Include="Messaging\Handling\Instances\InstanceHandlerList.cs" />
     <Compile Include="Messaging\Handling\MessageHandlerRouter.cs" />
