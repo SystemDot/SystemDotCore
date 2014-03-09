@@ -7,7 +7,7 @@ namespace SystemDot.Messaging.Handling.Configuration
     {
         public static void RegisterAllMessageHandlers(this IBuilderConfiguration config)
         {
-            config.RegisterBuildAction(Messenger.RegisterHandlersFromContainer<IMessageHandler>, BuildOrder.SystemOnlyLast);
+            config.RegisterBuildAction(Messenger.RegisterHandlersFromContainer<IMessageHandler>, BuildOrder.VeryLate);
         }
     }
 }

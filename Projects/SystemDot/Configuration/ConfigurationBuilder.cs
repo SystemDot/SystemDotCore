@@ -30,7 +30,7 @@ namespace SystemDot.Configuration
                 .ForEach(a => a.ToBuild(container));
         }
 
-        public void RegisterBuildAction(Action<IIocContainer> toBuild, BuildOrder order = BuildOrder.Anywhere)
+        public void RegisterBuildAction(Action<IIocContainer> toBuild, BuildOrder order = BuildOrder.Anytime)
         {
             buildActions.Add(new BuildItem(toBuild, order));
         }

@@ -17,7 +17,7 @@ namespace SystemDot.Configuration
             builder.Build();
         }
 
-        public void RegisterBuildAction(Action<IIocContainer> toBuild, BuildOrder order = BuildOrder.Anywhere)
+        public void RegisterBuildAction(Action<IIocContainer> toBuild, BuildOrder order = BuildOrder.Anytime)
         {
             builder.RegisterBuildAction(toBuild, order);
         }

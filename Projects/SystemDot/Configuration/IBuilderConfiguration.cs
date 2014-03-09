@@ -7,6 +7,6 @@ namespace SystemDot.Configuration
     {
         void Initialise();
 
-        void RegisterBuildAction(Action<IIocContainer> toBuild, BuildOrder order = BuildOrder.Anywhere);
+        void RegisterBuildAction(Action<IIocContainer> toBuild, BuildOrder order = BuildOrder.Anytime);
     }
 }
