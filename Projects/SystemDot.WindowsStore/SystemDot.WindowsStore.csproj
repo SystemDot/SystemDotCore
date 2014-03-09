@@ -105,23 +105,21 @@
     <Folder Include="Logging\" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\systemdot.windows\configuration\IocContainerExtensions.cs">
+      <Link>Configuration\IocContainerExtensions.cs</Link>
+    </Compile>
     <Compile Include="Environment\Application.cs" />
-    <Compile Include="Environment\Configuration\IocContainerExtensions.cs" />
     <Compile Include="Environment\LocalMachine.cs" />
-    <Compile Include="Files\Configuration\IocContainerExtensions.cs" />
     <Compile Include="Files\FileLocationDictionary.cs" />
     <Compile Include="Files\FileSystem.cs" />
     <Compile Include="Http\Builders\HttpServerBuilder.cs" />
-    <Compile Include="Http\Configuration\IocContainerExtensions.cs" />
     <Compile Include="Http\PutSender.cs" />
     <Compile Include="Http\WebRequestor.cs" />
-    <Compile Include="Parallelism\Configuration\IocContainerExtensions.cs" />
     <Compile Include="Parallelism\ElapsedEventHandler.cs" />
     <Compile Include="Parallelism\ElapsedEventHandlerArgs.cs" />
     <Compile Include="Parallelism\TaskScheduler.cs" />
     <Compile Include="Parallelism\Timer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ThreadMarshalling\Configuration\IocContainerExtensions.cs" />
     <Compile Include="ThreadMarshalling\MainThreadMarshaller.cs" />
   </ItemGroup>
   <ItemGroup>
