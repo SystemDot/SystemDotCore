@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using SystemDot.Core;
 
 namespace SystemDot.Environment
 {
@@ -10,7 +9,20 @@ namespace SystemDot.Environment
     {
         public IEnumerable<Type> GetAllTypes()
         {
-            return GetAssemblies().SelectMany(a => a.ExportedTypes);
+            return GetAssemblies().SelectMany(GetTypes);
+                
+        }
+
+        IEnumerable<Type> GetTypes(Assembly assembly)
+        {
+            try
+            {
+                return assembly.ExportedTypes;
+            }
+            catch (NotSupportedException)
+            {
+                return new List<Type>();
+            }
         }
 
         IEnumerable<Assembly> GetAssemblies()

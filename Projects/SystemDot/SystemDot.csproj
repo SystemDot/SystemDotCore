@@ -33,13 +33,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Configuration\BuilderComponentRunner.cs" />
     <Compile Include="Configuration\BuilderConfiguration.cs" />
     <Compile Include="Configuration\BuildItem.cs" />
     <Compile Include="Configuration\BuildOrder.cs" />
     <Compile Include="Configuration\ConfigurationBuilder.cs" />
     <Compile Include="Configuration\Configure.cs" />
     <Compile Include="Configuration\ContainerConfiguration.cs" />
-    <Compile Include="Configuration\IBuilderConfiguration.cs" />
+    <Compile Include="Configuration\IConfigurationBuilderComponent.cs" />
     <Compile Include="Configuration\Reading\ConfigurationReader.cs" />
     <Compile Include="Configuration\Reading\IConfigurationReader.cs" />
     <Compile Include="Core\Collections\CouncurrentDictionaryExtensions.cs" />
@@ -79,7 +80,7 @@
     <Compile Include="Messaging\Handling\Actions\IPerMessageActionHandlerList.cs" />
     <Compile Include="Messaging\Handling\Actions\PerMessageActionHandlerList.cs" />
     <Compile Include="Messaging\Handling\Actions\WeaklyReferencedActionHandler.cs" />
-    <Compile Include="Messaging\Handling\Configuration\IocContainerExtensions.cs" />
+    <Compile Include="Messaging\Handling\Configuration\ConfigurationBuilderComponent.cs" />
     <Compile Include="Messaging\Handling\IMessageHandler.cs" />
     <Compile Include="Messaging\Handling\Instances\InstanceHandlerList.cs" />
     <Compile Include="Messaging\Handling\MessageHandlerRouter.cs" />

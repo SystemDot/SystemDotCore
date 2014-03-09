@@ -4,7 +4,7 @@ namespace SystemDot.Configuration
 {
     public class ContainerConfiguration
     {
-        public IBuilderConfiguration ResolveReferencesWith(IIocContainer toResolveWith)
+        public BuilderConfiguration ResolveReferencesWith(IIocContainer toResolveWith)
         {
             return new BuilderConfiguration(toResolveWith);
         }

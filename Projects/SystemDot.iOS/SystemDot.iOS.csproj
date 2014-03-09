@@ -37,6 +37,9 @@
     <Compile Include="..\SystemDot.Windows\*.cs">
       <Link>%(RecursiveDir)%(FileName)</Link>
     </Compile>
+    <Compile Include="..\SystemDot.Windows\Configuration\IocContainerExtensions.cs">
+      <Link>Configuration\IocContainerExtensions.cs</Link>
+    </Compile>
     <Compile Include="..\SystemDot.Windows\Environment\Application.cs">
       <Link>Environment\Application</Link>
     </Compile>
@@ -67,8 +70,17 @@
     <Compile Include="..\SystemDot.Windows\Properties\AssemblyInfo.cs">
       <Link>Properties\AssemblyInfo</Link>
     </Compile>
-    <Compile Include="..\SystemDot.Windows\*\*\*.cs">
-      <Link>%(RecursiveDir)%(FileName)</Link>
+    <Compile Include="..\SystemDot.Windows\Http\Builders\HttpServerBuilder.cs">
+      <Link>Http\Builders\HttpServerBuilder</Link>
+    </Compile>
+    <Compile Include="..\SystemDot.Windows\obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs">
+      <Link>obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92</Link>
+    </Compile>
+    <Compile Include="..\SystemDot.Windows\obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs">
+      <Link>obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1</Link>
+    </Compile>
+    <Compile Include="..\SystemDot.Windows\obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs">
+      <Link>obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3</Link>
     </Compile>
     <Compile Include="..\SystemDot.Windows\*\*\*\*.cs">
       <Link>%(RecursiveDir)%(FileName)</Link>
