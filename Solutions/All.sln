@@ -39,10 +39,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SystemDot.Storage.Changes.S
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SystemDot.Storage.Changes.Esent.WindowsStore", "..\Projects\SystemDot.Storage.Changes.Esent.WindowsStore\SystemDot.Storage.Changes.Esent.WindowsStore.csproj", "{078A8821-E418-449E-BEC6-34D7D9F05D73}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndroidApplication1", "..\Projects\AndroidApplication1\AndroidApplication1.csproj", "{6EA6BCCF-A23D-49B0-B092-3F84EFC8DE84}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Example", "Example", "{CDB2C5A0-0637-4F93-B342-A6A674A67245}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -207,18 +203,6 @@ Global
 		{078A8821-E418-449E-BEC6-34D7D9F05D73}.Release|x64.Build.0 = Release|x64
 		{078A8821-E418-449E-BEC6-34D7D9F05D73}.Release|x86.ActiveCfg = Release|x86
 		{078A8821-E418-449E-BEC6-34D7D9F05D73}.Release|x86.Build.0 = Release|x86
-		{6EA6BCCF-A23D-49B0-B092-3F84EFC8DE84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6EA6BCCF-A23D-49B0-B092-3F84EFC8DE84}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6EA6BCCF-A23D-49B0-B092-3F84EFC8DE84}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{6EA6BCCF-A23D-49B0-B092-3F84EFC8DE84}.Debug|ARM.ActiveCfg = Debug|Any CPU
-		{6EA6BCCF-A23D-49B0-B092-3F84EFC8DE84}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{6EA6BCCF-A23D-49B0-B092-3F84EFC8DE84}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{6EA6BCCF-A23D-49B0-B092-3F84EFC8DE84}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6EA6BCCF-A23D-49B0-B092-3F84EFC8DE84}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6EA6BCCF-A23D-49B0-B092-3F84EFC8DE84}.Release|Any CPU.Deploy.0 = Release|Any CPU
-		{6EA6BCCF-A23D-49B0-B092-3F84EFC8DE84}.Release|ARM.ActiveCfg = Release|Any CPU
-		{6EA6BCCF-A23D-49B0-B092-3F84EFC8DE84}.Release|x64.ActiveCfg = Release|Any CPU
-		{6EA6BCCF-A23D-49B0-B092-3F84EFC8DE84}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -236,6 +220,5 @@ Global
 		{FCF2E749-4104-4551-90A4-563A0031FEDB} = {03688A4E-474B-4FEA-9A54-C88B7FDE62A7}
 		{DED8CBCD-92A6-4798-96EB-FABE1C63B2C0} = {03688A4E-474B-4FEA-9A54-C88B7FDE62A7}
 		{30DB3B54-D590-4CB5-9540-6D811A702735} = {03688A4E-474B-4FEA-9A54-C88B7FDE62A7}
-		{6EA6BCCF-A23D-49B0-B092-3F84EFC8DE84} = {CDB2C5A0-0637-4F93-B342-A6A674A67245}
 	EndGlobalSection
 EndGlobal
