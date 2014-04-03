@@ -1,33 +1,15 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using SystemDot.Core;
-using SystemDot.Environment;
 
 namespace SystemDot.Storage.Changes.Upcasting
 {
     public class ChangeUpcasterRunner
     {
-        readonly IApplication application;
         readonly IList<IChangeUpcaster> upcasters;
 
-        public ChangeUpcasterRunner(IApplication application)
+        public ChangeUpcasterRunner(ApplicationTypeActivator applicationTypeActivator)
         {
-            this.application = application;
-            upcasters = GetUpcasters();
-        }
-
-        IList<IChangeUpcaster> GetUpcasters()
-        {
-            return GetUpcasterTypes()
-                .Select(Activator.CreateInstance)
-                .Cast<IChangeUpcaster>()
-                .ToList();
-        }
-
-        IEnumerable<Type> GetUpcasterTypes()
-        {
-            return application.GetAllTypes().ThatImplement<IChangeUpcaster>();
+            upcasters = applicationTypeActivator.InstantiateTypesOf<IChangeUpcaster>();
         }
 
         public Change UpcastIfRequired(Change toUpcast)
