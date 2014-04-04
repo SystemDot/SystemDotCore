@@ -89,7 +89,9 @@
     <Compile Include="Messaging\Handling\TypeExtensions.cs" />
     <Compile Include="Messaging\Handling\Types\HandlerType.cs" />
     <Compile Include="Messaging\Handling\Types\TypeHandlerList.cs" />
+    <Compile Include="Messaging\IBus.cs" />
     <Compile Include="Messaging\Simple\Messenger.cs" />
+    <Compile Include="Messaging\Simple\MessengerBus.cs" />
     <Compile Include="ThreadMarshalling\IMainThreadMarshaller.cs" />
     <Compile Include="Storage\Changes\Change.cs" />
     <Compile Include="Storage\Changes\ChangeDescription.cs" />
