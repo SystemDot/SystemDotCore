@@ -2,7 +2,7 @@
 {
     public class MessengerBus : IBus
     {
-        public void PublishEvent(object toPublish)
+        public void Publish(object toPublish)
         {
             Messenger.Send(toPublish);
         }

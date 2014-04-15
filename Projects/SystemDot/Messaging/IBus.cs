@@ -2,7 +2,7 @@
 {
     public interface IBus
     {
-        void PublishEvent(object toPublish);
+        void Publish(object toPublish);
         void Send(object toSend);
     }
 }
