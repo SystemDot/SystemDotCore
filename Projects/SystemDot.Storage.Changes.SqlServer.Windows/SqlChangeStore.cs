@@ -15,10 +15,18 @@ namespace SystemDot.Storage.Changes.SqlServer
         {
             return
 @"IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'ChangeStore') AND type in (N'U'))
+BEGIN
     CREATE TABLE ChangeStore(
         ChangeRootId nvarchar(1000) NOT NULL,
         Sequence int IDENTITY(1, 1) NOT NULL,
-        Change varbinary(max) NULL)";
+        Change varbinary(max) NULL)
+
+    CREATE CLUSTERED INDEX IX_ChangeRootId_Sequence ON ChangeStore 
+    (
+	    ChangeRootId ASC,
+	    Sequence ASC
+    )
+END";
         }
 
         protected override void AddParameter(DbParameterCollection collection, string name, object value)
