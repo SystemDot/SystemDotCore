@@ -103,7 +103,7 @@
     <Folder Include="Logging\" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Configuration\IocContainerExtensions.cs" />
+    <Compile Include="Configuration\BuilderConfigurationExtensions.cs" />
     <Compile Include="Environment\Application.cs" />
     <Compile Include="Environment\LocalMachine.cs" />
     <Compile Include="Files\FileLocationDictionary.cs" />
