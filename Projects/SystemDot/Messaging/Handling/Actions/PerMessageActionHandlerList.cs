@@ -12,7 +12,7 @@ namespace SystemDot.Messaging.Handling.Actions
 
         public PerMessageActionHandlerList()
         {
-            handlers = new ConcurrentDictionary<IActionSubscriptionToken, WeaklyReferencedActionHandler<TMessage>>();
+            handlers = new ConcurrentDictionary<IActionSubscriptionToken, WeaklyReferencedActionHandler<TMessage>>(new ActionSubscriptionTokenComparer());
         }
 
         public void RouteMessageToHandlers(object message)
