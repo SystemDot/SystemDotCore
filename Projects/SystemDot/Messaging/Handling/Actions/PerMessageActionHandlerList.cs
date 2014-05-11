@@ -8,11 +8,11 @@ namespace SystemDot.Messaging.Handling.Actions
 {
     internal class PerMessageActionHandlerList<TMessage> : IPerMessageActionHandlerList
     {
-        readonly ConcurrentDictionary<IActionSubscriptionToken, WeaklyReferencedActionHandler<TMessage>> handlers;
+        readonly ConcurrentDictionary<IActionSubscriptionToken, WeaklyReferencedActionHandler> handlers;
 
         public PerMessageActionHandlerList()
         {
-            handlers = new ConcurrentDictionary<IActionSubscriptionToken, WeaklyReferencedActionHandler<TMessage>>(new ActionSubscriptionTokenComparer());
+            handlers = new ConcurrentDictionary<IActionSubscriptionToken, WeaklyReferencedActionHandler>();
         }
 
         public void RouteMessageToHandlers(object message)
@@ -37,9 +37,9 @@ namespace SystemDot.Messaging.Handling.Actions
             return token;
         }
 
-        static WeaklyReferencedActionHandler<TMessage> CreateHandler(ActionSubscriptionToken<TMessage> toRegister)
+        static WeaklyReferencedActionHandler CreateHandler(ActionSubscriptionToken<TMessage> toRegister)
         {
-            return new WeaklyReferencedActionHandler<TMessage>(toRegister);
+            return new WeaklyReferencedActionHandler(toRegister);
         }
 
         public void UnregisterHandler(ActionSubscriptionToken<TMessage> toUnregister)
