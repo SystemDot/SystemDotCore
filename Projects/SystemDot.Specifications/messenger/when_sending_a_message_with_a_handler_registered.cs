@@ -19,4 +19,12 @@ namespace SystemDot.Specifications.messenger
 
         It should_handle_the_message = () => handledMessage.ShouldBeTheSameAs(message);
     }
+
+    class TestResponse
+    {
+    }
+
+    class TestRequest
+    {
+    }
 }

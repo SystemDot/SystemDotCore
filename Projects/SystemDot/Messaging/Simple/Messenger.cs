@@ -44,6 +44,19 @@ namespace SystemDot.Messaging.Simple
             Router.RouteMessageToHandlers(message);
         }
 
+        public static void Send<TRequest, TResponse>(TRequest request, Action<TResponse> responseHandler)
+        {
+            using (new ReplyContext<TResponse>(responseHandler))
+            {
+                Router.RouteMessageToHandlers(request);
+            }
+        }
+
+        public static void Reply<TResponse>(TResponse response)
+        {
+            ReplyContext<TResponse>.CallCurrentResponseHandler(response);
+        }
+
         public static void Reset()
         {
             Router.ClearAllHandlers();
