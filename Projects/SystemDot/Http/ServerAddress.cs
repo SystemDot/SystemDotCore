@@ -2,7 +2,8 @@ using System;
 using System.Diagnostics.Contracts;
 using SystemDot.Environment;
 
-namespace SystemDot.Http
+// This namespace must not change as it breaks messaging
+namespace SystemDot
 {
     public class ServerAddress
     {
