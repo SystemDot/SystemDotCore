@@ -15,10 +15,12 @@ namespace SystemDot.Messaging.Handling.Actions
             handlers = new ConcurrentDictionary<IActionSubscriptionToken, WeaklyReferencedActionHandler>();
         }
 
-        public void RouteMessageToHandlers(object message)
+        public void RouteMessageToHandlers(object message, object groupingId)
         {
             RemoveGarbageCollectedHandlers();
-            handlers.ForEach(h => h.Value.Handle(message.As<TMessage>()));
+            handlers
+                .Where(h => h.Value.GroupingId.Equals(groupingId))
+                .ForEach(h => h.Value.Handle(message.As<TMessage>()));
         }
 
         public PerMessageActionHandlerList<T> ForMessage<T>()
@@ -26,20 +28,20 @@ namespace SystemDot.Messaging.Handling.Actions
             return this.As<PerMessageActionHandlerList<T>>();
         }
 
-        public ActionSubscriptionToken<TMessage> RegisterHandler(Action<TMessage> toRegister)
+        public ActionSubscriptionToken<TMessage> RegisterHandler(Action<TMessage> toRegister, object groupingId)
         {
             RemoveGarbageCollectedHandlers();
 
             var token = new ActionSubscriptionToken<TMessage>(toRegister);
 
-            handlers.TryAdd(token, CreateHandler(token));
+            handlers.TryAdd(token, CreateHandler(token, groupingId));
 
             return token;
         }
 
-        static WeaklyReferencedActionHandler CreateHandler(ActionSubscriptionToken<TMessage> toRegister)
+        static WeaklyReferencedActionHandler CreateHandler(ActionSubscriptionToken<TMessage> toRegister, object groupingId)
         {
-            return new WeaklyReferencedActionHandler(toRegister);
+            return new WeaklyReferencedActionHandler(toRegister, groupingId);
         }
 
         public void UnregisterHandler(ActionSubscriptionToken<TMessage> toUnregister)

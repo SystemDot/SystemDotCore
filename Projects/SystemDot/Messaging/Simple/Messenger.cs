@@ -34,6 +34,11 @@ namespace SystemDot.Messaging.Simple
             return Router.RegisterHandler(toRegister);
         }
 
+        public static ActionSubscriptionToken<TMessage> RegisterHandler<TMessage, TGroupingId>(Action<TMessage> toRegister, TGroupingId groupingId)
+        {
+            return Router.RegisterHandler(toRegister, groupingId);
+        }
+
         public static void UnregisterHandler<TMessage>(ActionSubscriptionToken<TMessage> toUnregister)
         {
             Router.UnregisterHandler(toUnregister);
@@ -42,6 +47,11 @@ namespace SystemDot.Messaging.Simple
         public static void Send<TMessage>(TMessage message)
         {
             Router.RouteMessageToHandlers(message);
+        }
+
+        public static void Send<TMessage, TGroupingId>(TMessage message, TGroupingId groupingId)
+        {
+            Router.RouteMessageToHandlers(message, groupingId);
         }
 
         public static void Send<TRequest, TResponse>(TRequest request, Action<TResponse> responseHandler)

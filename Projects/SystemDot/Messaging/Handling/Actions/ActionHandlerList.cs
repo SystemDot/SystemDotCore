@@ -17,7 +17,7 @@ namespace SystemDot.Messaging.Handling.Actions
             return handlers.ContainsKey<TMessage>();
         }
 
-        public ActionSubscriptionToken<TMessage> RegisterHandler<TMessage>(Action<TMessage> toRegister)
+        public ActionSubscriptionToken<TMessage> RegisterHandler<TMessage>(Action<TMessage> toRegister, object groupingId)
         {
             if (!ContainsHandler<TMessage>())
                 AddPerMessageList<TMessage>();
@@ -26,7 +26,7 @@ namespace SystemDot.Messaging.Handling.Actions
 
             handlers.ExecuteIfExists<TMessage>(list =>
             {
-               token = list.ForMessage<TMessage>().RegisterHandler(toRegister); 
+               token = list.ForMessage<TMessage>().RegisterHandler(toRegister, groupingId); 
             });
 
             return token;
@@ -43,9 +43,9 @@ namespace SystemDot.Messaging.Handling.Actions
             handlers.ExecuteIfExists<TMessage>(list => list.ForMessage<TMessage>().UnregisterHandler(toUnregister));
         }
 
-        public void RouteMessageToHandlers(object message)
+        public void RouteMessageToHandlers(object message, object groupingId)
         {
-            handlers.ExecuteIfExists(message.GetType(), value => value.RouteMessageToHandlers(message));
+            handlers.ExecuteIfExists(message.GetType(), value => value.RouteMessageToHandlers(message, groupingId));
         }
 
         public void Clear()

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ServiceModel.Channels;
 using SystemDot.Core;
 using SystemDot.Core.Collections;
 using SystemDot.Ioc;
@@ -46,7 +47,12 @@ namespace SystemDot.Messaging.Handling
 
         public ActionSubscriptionToken<TMessage> RegisterHandler<TMessage>(Action<TMessage> toRegister)
         {
-            return handlersByAction.RegisterHandler(toRegister);
+            return RegisterHandler(toRegister, GlobalGroupingId.Default);
+        }
+
+        public ActionSubscriptionToken<TMessage> RegisterHandler<TMessage, TGroupingId>(Action<TMessage> toRegister, TGroupingId groupingId)
+        {
+            return handlersByAction.RegisterHandler(toRegister, groupingId);
         }
 
         public void UnregisterHandler<TMessage>(ActionSubscriptionToken<TMessage> toUnregister)
@@ -56,9 +62,14 @@ namespace SystemDot.Messaging.Handling
 
         public void RouteMessageToHandlers(object message)
         {
+            RouteMessageToHandlers(message, GlobalGroupingId.Default);
+        }
+
+        public void RouteMessageToHandlers(object message, object groupingId)
+        {
             handlersByInstance.RouteMessageToHandlers(message); 
             handlersByType.RouteMessageToHandlers(message);
-            handlersByAction.RouteMessageToHandlers(message);
+            handlersByAction.RouteMessageToHandlers(message, groupingId);
         }
 
         public void ClearAllHandlers()
