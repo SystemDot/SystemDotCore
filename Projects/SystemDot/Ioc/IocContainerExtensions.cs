@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Linq;
 using SystemDot.Core;
 
 namespace SystemDot.Ioc
@@ -9,6 +11,13 @@ namespace SystemDot.Ioc
             new AutoRegistrar(container)
                 .Register(typeof(TAssemblyOf)
                     .GetTypesInAssembly().WhereNormalConcrete());
+        }
+
+        public static IEnumerable<T> ResolveAllTypesThatImplement<T>(this IIocContainer resolver)
+        {
+            return resolver.GetAllRegisteredTypes()
+                .ThatImplement<T>()
+                .Select(t => resolver.Resolve(t).As<T>());
         }
     }
 }

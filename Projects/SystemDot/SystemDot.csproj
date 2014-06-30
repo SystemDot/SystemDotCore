@@ -50,10 +50,12 @@
     <Compile Include="Core\DecimalExtensions.cs" />
     <Compile Include="Core\Disposable.cs" />
     <Compile Include="Core\Equatable.cs" />
+    <Compile Include="Core\InvalidPropertyRegistrationException.cs" />
     <Compile Include="Core\ISystemTime.cs" />
     <Compile Include="Core\ObjectExtensions.cs" />
     <Compile Include="Core\SystemTime.cs" />
     <Compile Include="Core\TypeExtensions.cs" />
+    <Compile Include="Core\ValueObject.cs" />
     <Compile Include="Environment\IApplication.cs" />
     <Compile Include="Environment\ILocalMachine.cs" />
     <Compile Include="Files\FileLocation.cs" />
