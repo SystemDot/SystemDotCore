@@ -56,20 +56,24 @@ namespace SystemDot.Ioc
 
         public object Resolve(Type type)
         {
-            if (!components.ContainsKey(type))
-                throw new TypeNotRegisteredException(string.Format(
-                    IocContainerResources.TypeHasNotBeenRegisteredMessage, 
-                    type.Name));
+            try
+            {
+                if (!components.ContainsKey(type)) throw new TypeNotRegisteredException(type);
 
-            var concreteType = components[type];
+                var concreteType = components[type];
 
-            if (concreteType.ObjectInstance != null)
-                return concreteType.ObjectInstance;
+                if (concreteType.ObjectInstance != null)
+                    return concreteType.ObjectInstance;
 
-            if (concreteType.ObjectFactory != null)
-                return concreteType.SetObjectInstance(concreteType.ObjectFactory.Invoke());
+                if (concreteType.ObjectFactory != null)
+                    return concreteType.SetObjectInstance(concreteType.ObjectFactory.Invoke());
 
-            return Create(concreteType);
+                return Create(concreteType);
+            }
+            catch(Exception ex)
+            {
+                throw new CannotResolveTypeException(type, ex);
+            }
         }
 
         object Create(ConcreteInstance concreteType)

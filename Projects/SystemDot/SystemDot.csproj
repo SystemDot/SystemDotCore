@@ -67,6 +67,7 @@
     <Compile Include="Http\IWebRequestor.cs" />
     <Compile Include="Http\ServerAddress.cs" />
     <Compile Include="Ioc\AutoRegistrar.cs" />
+    <Compile Include="Ioc\CannotResolveTypeException.cs" />
     <Compile Include="Ioc\ConcreteInstance.cs" />
     <Compile Include="Ioc\IIocContainer.cs" />
     <Compile Include="Ioc\IIocResolver.cs" />
