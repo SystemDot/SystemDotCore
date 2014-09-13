@@ -22,13 +22,13 @@ namespace SystemDot.Specifications.ioc
         It should_auto_register_a_concrete_type_implementing_an_interface_by_the_concrete_type = () =>
             container.Resolve<TestTypeImplementingAnInterface>().ShouldBeOfType<TestTypeImplementingAnInterface>();
 
-        It should_not_auto_register_an_interface_without_concrete_type_implementing_it = () =>
-            Catch.Exception(() => container.Resolve<ITestInterfaceWithNoConcreteImplementation>())
-            	.ShouldBeOfType<TypeNotRegisteredException>();
+        //It should_not_auto_register_an_interface_without_concrete_type_implementing_it = () =>
+        //    Catch.Exception(() => container.Resolve<ITestInterfaceWithNoConcreteImplementation>())
+        //        .ShouldBeOfType<TypeNotRegisteredException>();
 
-        It should_not_auto_register_an_abstract_concrete_type = () =>
-            Catch.Exception(() => container.Resolve<TestAbstractConcreteType>())
-            	.ShouldBeOfType<TypeNotRegisteredException>();
+        //It should_not_auto_register_an_abstract_concrete_type = () =>
+        //    Catch.Exception(() => container.Resolve<TestAbstractConcreteType>())
+        //        .ShouldBeOfType<TypeNotRegisteredException>();
 
         //It should_auto_register_a_derived_concrete_type_against_its_interface = () =>
         //    container.Resolve<ITestInterfaceOnDerivedConcreteType>().ShouldBeOfType<TestDerivedConcreteType>();

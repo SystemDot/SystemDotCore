@@ -5,7 +5,7 @@ using Machine.Specifications;
 namespace SystemDot.Specifications.ioc
 {
     [Subject("Ioc")]
-    public class when_resolving_a_type_not_registere
+    public class when_resolving_a_type_not_registered
     {
         static Exception exception;
 

@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using SystemDot.Core.Collections;
 
 namespace SystemDot.Messaging.Handling.Instances
@@ -25,6 +26,14 @@ namespace SystemDot.Messaging.Handling.Instances
         public void RouteMessageToHandlers(object message)
         {
             inner.ForEach(handler => handler.InvokeHandler(message));
+        }
+
+        public async Task RouteMessageToHandlersAsync(object message)
+        {
+            foreach (var handler in inner)
+            {
+                await handler.InvokeHandlerAsync(message);
+            }
         }
 
         public void Clear()

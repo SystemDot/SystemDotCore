@@ -1,4 +1,5 @@
 using System;
+using System.Threading.Tasks;
 using SystemDot.Ioc;
 using SystemDot.Messaging.Handling;
 using SystemDot.Messaging.Handling.Actions;
@@ -49,6 +50,11 @@ namespace SystemDot.Messaging.Simple
             Router.RouteMessageToHandlers(message);
         }
 
+        public async static Task SendAsync<TMessage>(TMessage message)
+        {
+            await Router.RouteMessageToHandlersAsync(message);
+        }
+
         public static void Send<TMessage, TGroupingId>(TMessage message, TGroupingId groupingId)
         {
             Router.RouteMessageToHandlers(message, groupingId);
@@ -62,6 +68,14 @@ namespace SystemDot.Messaging.Simple
             }
         }
 
+        public async static Task SendAsync<TRequest, TResponse>(TRequest request, Action<TResponse> responseHandler)
+        {
+            using (new ReplyContext<TResponse>(responseHandler))
+            {
+                await Router.RouteMessageToHandlersAsync(request);
+            }
+        }
+
         public static void Reply<TResponse>(TResponse response)
         {
             ReplyContext<TResponse>.CallCurrentResponseHandler(response);
@@ -71,5 +85,7 @@ namespace SystemDot.Messaging.Simple
         {
             Router.ClearAllHandlers();
         }
+
+        
     }
 }

@@ -12,15 +12,14 @@ namespace SystemDot.Messaging.Handling.Actions
             handlers = new TypeKeyConcurrentDictionary<IPerMessageActionHandlerList>();
         }
 
-        public bool ContainsHandler<TMessage>()
+        bool ContainsHandler<TMessage>()
         {
             return handlers.ContainsKey<TMessage>();
         }
 
         public ActionSubscriptionToken<TMessage> RegisterHandler<TMessage>(Action<TMessage> toRegister, object groupingId)
         {
-            if (!ContainsHandler<TMessage>())
-                AddPerMessageList<TMessage>();
+            if (!ContainsHandler<TMessage>()) AddPerMessageList<TMessage>();
 
             ActionSubscriptionToken<TMessage> token = null;
 

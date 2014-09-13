@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ServiceModel.Channels;
+using System.Threading.Tasks;
 using SystemDot.Core;
 using SystemDot.Core.Collections;
 using SystemDot.Ioc;
@@ -65,10 +66,22 @@ namespace SystemDot.Messaging.Handling
             RouteMessageToHandlers(message, GlobalGroupingId.Default);
         }
 
+        public async Task RouteMessageToHandlersAsync(object message)
+        {
+            await RouteMessageToHandlersAsync(message, GlobalGroupingId.Default);
+        }
+
         public void RouteMessageToHandlers(object message, object groupingId)
         {
             handlersByInstance.RouteMessageToHandlers(message); 
             handlersByType.RouteMessageToHandlers(message);
+            handlersByAction.RouteMessageToHandlers(message, groupingId);
+        }
+
+        async Task RouteMessageToHandlersAsync(object message, object groupingId)
+        {
+            await handlersByInstance.RouteMessageToHandlersAsync(message);
+            await handlersByType.RouteMessageToHandlersAsync(message);
             handlersByAction.RouteMessageToHandlers(message, groupingId);
         }
 
