@@ -18,7 +18,7 @@ namespace SystemDot.Ioc
         {
             if (ComponentExists<TPlugin>()) return;
             
-            components[typeof(TPlugin)] = new ConcreteInstance(instanceFactory);
+            components[typeof(TPlugin)] = new ConcreteInstance(instanceFactory, this);
         }
 
         public void RegisterInstance<TPlugin, TConcrete>()
@@ -31,7 +31,7 @@ namespace SystemDot.Ioc
         public void RegisterInstance(Type plugin, Type concrete)
         {
             if (ComponentExists(plugin)) return;
-            components[plugin] = new ConcreteInstance(concrete);
+            components[plugin] = new ConcreteInstance(concrete, this);
         }
 
         public bool ComponentExists<TPlugin>() 
@@ -39,7 +39,7 @@ namespace SystemDot.Ioc
             return ComponentExists(typeof(TPlugin));
         }
 
-        public bool ComponentExists(Type toCheck)
+        bool ComponentExists(Type toCheck)
         {
             return components.ContainsKey(toCheck);
         }
@@ -58,17 +58,12 @@ namespace SystemDot.Ioc
         {
             try
             {
-                if (!components.ContainsKey(type)) throw new TypeNotRegisteredException(type);
+                if (!components.ContainsKey(type)) 
+                    throw new TypeNotRegisteredException(type);
 
                 var concreteType = components[type];
 
-                if (concreteType.ObjectInstance != null)
-                    return concreteType.ObjectInstance;
-
-                if (concreteType.ObjectFactory != null)
-                    return concreteType.SetObjectInstance(concreteType.ObjectFactory.Invoke());
-
-                return Create(concreteType);
+                return concreteType.Resolve();
             }
             catch(Exception ex)
             {
@@ -76,29 +71,14 @@ namespace SystemDot.Ioc
             }
         }
 
-        object Create(ConcreteInstance concreteType)
-        {
-            return concreteType.SetObjectInstance(Create(concreteType.ObjectType));
-        }
-
         public T Create<T>()
         {
-            return Create(typeof (T)).As<T>();
+            return ConcreteInstance.Create<T>(this);
         }
 
-        public object Create(Type type)
+        public void RegisterDecorator<TDecorator, TComponent>()
         {
-            var constructorInfo = type
-                .GetAllConstructors()
-                .First();
-
-            var parameters = constructorInfo.GetParameters();
-
-            var parameterInstances = new object[parameters.Count()];
-
-            for (var i = 0; i < parameters.Count(); i++) parameterInstances[i] = Resolve(parameters[i].ParameterType);
-
-            return constructorInfo.Invoke(parameterInstances);
+            components[typeof (TComponent)].DecorateWith<TDecorator>();
         }
     }
 }
