@@ -1,6 +1,5 @@
 ﻿using System;
 using System.IO;
-using SystemDot.Core;
 using Windows.Storage;
 
 namespace SystemDot.Files
@@ -35,6 +34,19 @@ namespace SystemDot.Files
                 .GetAwaiter()
                 .GetResult()
                 .AsStream();
+        }
+
+        public void CreateFile(string fileName, FileLocation location)
+        {
+            GetStorageFolder(location)
+                .CreateFileAsync(fileName)
+                .GetAwaiter()
+                .GetResult();
+        }
+
+        public string GetPath(string fileName, FileLocation location)
+        {
+            return Path.Combine(GetStorageFolder(location).Path, fileName);
         }
 
         StorageFile LoadStorageFile(string fileName, FileLocation location)

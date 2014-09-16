@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
     <metadata>
         <id>SystemDotCore</id>
-        <version>1.3.6</version>
+        <version>1.4.6</version>
         <title>SystemDotCore</title>
         <authors>Chris Sampson,James Goodenough</authors>
         <owners>Chris Sampson,James Goodenough</owners>
@@ -22,24 +22,20 @@
         <file src="Build\SystemDot.Android.dll" target="lib\MonoAndroid\SystemDot.Android.dll" />
         <file src="Build\SystemDot.Storage.Changes.Sql.Android.dll" target="lib\MonoAndroid\SystemDot.Storage.Changes.Sql.Android.dll" />
         <file src="Build\SystemDot.Storage.Changes.Sqlite.Android.dll" target="lib\MonoAndroid\SystemDot.Storage.Changes.Sqlite.Android.dll" />
-       	
-		<file src="Build\SystemDot.dll" target="lib\MonoTouch\SystemDot.dll" />
+       	<file src="Build\SystemDot.dll" target="lib\MonoTouch\SystemDot.dll" />
         <file src="Build\SystemDot.iOS.dll" target="lib\MonoTouch\SystemDot.iOS.dll" />
         <file src="Build\SystemDot.Storage.Changes.Sql.iOS.dll" target="lib\MonoTouch\SystemDot.Storage.Changes.Sql.iOS.dll" />
         <file src="Build\SystemDot.Storage.Changes.Sqlite.iOS.dll" target="lib\MonoTouch\SystemDot.Storage.Changes.Sqlite.iOS.dll" />
-        
-		<file src="Build\SystemDot.dll" target="lib\net\SystemDot.dll" />
+        <file src="Build\SystemDot.dll" target="lib\net\SystemDot.dll" />
         <file src="Build\SystemDot.Windows.dll" target="lib\net\SystemDot.Windows.dll" />
         <file src="Build\SystemDot.Storage.Changes.Sql.Windows.dll" target="lib\net\SystemDot.Storage.Changes.Sql.Windows.dll" />
         <file src="Build\SystemDot.Storage.Changes.SqlServer.Windows.dll" target="lib\net\SystemDot.Storage.Changes.SqlServer.Windows.dll" />
         <file src="Build\SystemDot.Storage.Changes.Esent.Windows.dll" target="lib\net\SystemDot.Storage.Changes.Esent.Windows.dll" />
         <file src="Build\Esent.Interop.dll" target="lib\net\Esent.Interop.dll" />
-        
         <file src="Build\SystemDot.dll" target="lib\netcore\SystemDot.dll" />
         <file src="Build\SystemDot.WindowsStore.dll" target="lib\netcore\SystemDot.WindowsStore.dll" />
-		<file src="Build\SystemDot.Storage.Changes.Esent.WindowsStore.dll" target="lib\netcore\SystemDot.Storage.Changes.Esent.WindowsStore.dll" />
+	<file src="Build\SystemDot.Storage.Changes.Esent.WindowsStore.dll" target="lib\netcore\SystemDot.Storage.Changes.Esent.WindowsStore.dll" />
         <file src="Build\Esent.Interop.dll" target="lib\netcore\Esent.Interop.dll" />
-        
-		<file src="Build\SystemDot.dll" target="lib\portable-win+net45+MonoAndroid+MonoTouch+win8\SystemDot.dll" />
+        <file src="Build\SystemDot.dll" target="lib\portable-win+net45+MonoAndroid+MonoTouch+win8\SystemDot.dll" />
     </files>
 </package>

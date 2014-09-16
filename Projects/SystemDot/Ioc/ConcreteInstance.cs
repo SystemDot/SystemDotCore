@@ -52,8 +52,6 @@ namespace SystemDot.Ioc
 
         object Create(Type type)
         {
-            if (decorators.Any()) return Create(decorators.Single());
-            
             var constructorInfo = type
                 .GetAllConstructors()
                 .First();
