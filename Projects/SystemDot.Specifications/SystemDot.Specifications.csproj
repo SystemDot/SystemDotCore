@@ -56,6 +56,7 @@
     <Compile Include="blocking_queue\when_queuing_an_item.cs" />
     <Compile Include="blocking_queue\when_queuing_two_items.cs" />
     <Compile Include="http\when_creating_a_fixed_port_address_with_a_server_specified.cs" />
+    <Compile Include="ioc\TestComponentDecorator.cs" />
     <Compile Include="ioc\TestTypes\AnotherInheritingComponent.cs" />
     <Compile Include="ioc\TestTypes\AnotherTestComponent.cs" />
     <Compile Include="ioc\TestTypes\IAnotherTestComponent.cs" />

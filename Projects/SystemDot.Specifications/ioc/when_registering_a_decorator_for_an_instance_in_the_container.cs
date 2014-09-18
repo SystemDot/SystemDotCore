@@ -20,8 +20,4 @@ namespace SystemDot.Specifications.ioc
         It should_be_able_to_be_resolved_wrapped_in_the_decorator = () =>
             container.Resolve<TestComponent>().ShouldBeOfType<TestComponentDecorator>();
     }
-
-    public class TestComponentDecorator : TestComponent
-    {
-    }
 }

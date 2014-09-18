@@ -16,7 +16,7 @@ namespace SystemDot.Specifications.messenger
             message = new object();
         };
 
-        Because of = async () => await Messenger.SendAsync(message);
+        Because of = () => Messenger.SendAsync(message).Wait();
 
         It should_handle_the_message = () => handler.HandledMessage.ShouldBeTheSameAs(message);
     }

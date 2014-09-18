@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using SystemDot.Core;
 
 namespace SystemDot.Ioc
@@ -18,7 +17,7 @@ namespace SystemDot.Ioc
         {
             if (ComponentExists<TPlugin>()) return;
             
-            components[typeof(TPlugin)] = new ConcreteInstance(instanceFactory, this);
+            components[typeof(TPlugin)] = ConcreteInstance.FromFactory(instanceFactory);
         }
 
         public void RegisterInstance<TPlugin, TConcrete>()
@@ -31,7 +30,7 @@ namespace SystemDot.Ioc
         public void RegisterInstance(Type plugin, Type concrete)
         {
             if (ComponentExists(plugin)) return;
-            components[plugin] = new ConcreteInstance(concrete, this);
+            components[plugin] = ConcreteInstance.FromType(concrete, this);
         }
 
         public bool ComponentExists<TPlugin>() 
@@ -61,7 +60,7 @@ namespace SystemDot.Ioc
                 if (!components.ContainsKey(type)) 
                     throw new TypeNotRegisteredException(type);
 
-                var concreteType = components[type];
+                ConcreteInstance concreteType = components[type];
 
                 return concreteType.Resolve();
             }

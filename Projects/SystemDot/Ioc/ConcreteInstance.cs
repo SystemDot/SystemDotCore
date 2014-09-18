@@ -2,39 +2,35 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using SystemDot.Core;
+using SystemDot.Ioc.ObjectBuilding;
 
 namespace SystemDot.Ioc
 {
     public class ConcreteInstance
     {
-        readonly IocContainer iocContainer;
         readonly List<Type> decorators;
-        readonly Type objectType;
-        readonly Func<object> objectFactory;
-        object objectInstance;
+        readonly IObjectBuilder objectBuilder;
+        object cached;
 
         public static T Create<T>(IocContainer iocContainer)
         {
-            return new ConcreteInstance(typeof (T), iocContainer).Resolve().As<T>();
+            return FromType(typeof (T), iocContainer).Resolve().As<T>();
         }
 
-        public ConcreteInstance(Type objectType, IocContainer iocContainer)
+        public static ConcreteInstance FromFactory(Func<object> instanceFactory)
         {
-            this.iocContainer = iocContainer;
+            return new ConcreteInstance(new FromFactoryObjectBuilder(instanceFactory));
+        }
+
+        public static ConcreteInstance FromType(Type concrete, IocContainer container)
+        {
+            return new ConcreteInstance(new FromTypeObjectBuilder(concrete, container));
+        }
+
+        ConcreteInstance(IObjectBuilder objectBuilder)
+        {
+            this.objectBuilder = objectBuilder;
             decorators = new List<Type>();
-            this.objectType = objectType;
-        }
-
-        public ConcreteInstance(Func<object> objectFactory, IocContainer iocContainer)
-        {
-            this.iocContainer = iocContainer;
-            decorators = new List<Type>();
-            this.objectFactory = objectFactory;
-        }
-
-        void SetObjectInstance(object instance)
-        {
-            objectInstance = instance;
         }
 
         public void DecorateWith<T>()
@@ -44,26 +40,9 @@ namespace SystemDot.Ioc
 
         public object Resolve()
         {
-            if (objectInstance == null)
-                SetObjectInstance(objectFactory != null ? objectFactory.Invoke() : Create(objectType));
+            if(decorators.Any()) return Activator.CreateInstance(decorators.First());
 
-            return objectInstance;
-        }
-
-        object Create(Type type)
-        {
-            var constructorInfo = type
-                .GetAllConstructors()
-                .First();
-
-            var parameters = constructorInfo.GetParameters();
-
-            var parameterInstances = new object[parameters.Count()];
-
-            for (var i = 0; i < parameters.Count(); i++)
-                parameterInstances[i] = iocContainer.Resolve(parameters[i].ParameterType);
-
-            return constructorInfo.Invoke(parameterInstances);
+            return cached ?? (cached = objectBuilder.Create());
         }
     }
 }
