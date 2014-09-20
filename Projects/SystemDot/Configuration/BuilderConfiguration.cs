@@ -1,4 +1,5 @@
 using System;
+using System.Threading.Tasks;
 using SystemDot.Ioc;
 
 namespace SystemDot.Configuration
@@ -23,7 +24,18 @@ namespace SystemDot.Configuration
             builder.Build();
         }
 
+        public async Task BaseInitialiseAsync()
+        {
+            builderComponentRunner.Run();
+            await builder.BuildAsync();
+        }
+
         public void RegisterBuildAction(Action<IIocContainer> toBuild, BuildOrder order = BuildOrder.Anytime)
+        {
+            builder.RegisterBuildAction(toBuild, order);
+        }
+
+        public void RegisterBuildAction(Func<IIocContainer, Task> toBuild, BuildOrder order = BuildOrder.Anytime)
         {
             builder.RegisterBuildAction(toBuild, order);
         }
