@@ -14,9 +14,13 @@ namespace SystemDot.Ioc
 
         public static T Create<T>(IocContainer iocContainer)
         {
-            return FromType(typeof (T), iocContainer).Resolve().As<T>();
+            return Create(typeof(T), iocContainer).As<T>();
         }
 
+        public static object Create(Type type, IocContainer iocContainer)
+        {
+            return FromType(type, iocContainer).Resolve();
+        }
         public static ConcreteInstance FromFactory(Func<object> instanceFactory)
         {
             return new ConcreteInstance(new FromFactoryObjectBuilder(instanceFactory));

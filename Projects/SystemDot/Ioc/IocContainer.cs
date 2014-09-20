@@ -38,7 +38,7 @@ namespace SystemDot.Ioc
             return ComponentExists(typeof(TPlugin));
         }
 
-        bool ComponentExists(Type toCheck)
+        public bool ComponentExists(Type toCheck)
         {
             return components.ContainsKey(toCheck);
         }
@@ -73,6 +73,11 @@ namespace SystemDot.Ioc
         public T Create<T>()
         {
             return ConcreteInstance.Create<T>(this);
+        }
+
+        public object Create(Type type)
+        {
+            return ConcreteInstance.Create(type, this);
         }
 
         public void RegisterDecorator<TDecorator, TComponent>()
