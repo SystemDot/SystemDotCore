@@ -19,8 +19,9 @@ namespace SystemDot.Messaging.Handling
             MethodInfo method = GetHandlerMethodInfo(handler, message);
             if (method == null) return;
 
-            await method.Invoke(handler, new[] { message }).As<Task>();
-            method.Invoke(handler, new[] { message });
+            await method
+                .Invoke(handler, new[] { message })
+                .As<Task>();
         }
 
         static MethodInfo GetHandlerMethodInfo(this object handler, object message)
