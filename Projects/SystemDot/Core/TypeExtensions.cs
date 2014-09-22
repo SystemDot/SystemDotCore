@@ -92,8 +92,18 @@ namespace SystemDot.Core
         public static IEnumerable<Type> WhereImplements<TImplemented>(this IEnumerable<Type> types)
         {
             return types.Where(t =>
-                t.GetNonBaseInterfaces().Contains(typeof(TImplemented)) 
+                t.GetNonBaseInterfaces().Contains(typeof(TImplemented))
                 || t.GetBaseInterfaces().Contains(typeof(TImplemented)));
+        }
+
+        public static IEnumerable<Type> WhereImplementsOpenType(this IEnumerable<Type> types, Type openGenericType)
+        {
+            return types.Where(t => t.GetInterfaces().Any(i => i.IsAssignableFromOpenGenericType(openGenericType)));
+        }
+
+        public static bool IsAssignableFromOpenGenericType(this Type type, Type openGenericType)
+        {
+            return type.GetTypeInfo().IsGenericType && openGenericType.GetTypeInfo().IsAssignableFrom(type.GetGenericTypeDefinition().GetTypeInfo());
         }
 
         public static IEnumerable<MethodInfo> GetMethodsByName(this Type type, string methodName)

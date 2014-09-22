@@ -9,5 +9,13 @@ namespace SystemDot.Ioc
         void RegisterInstance<TPlugin, TConcrete>()
             where TPlugin : class
             where TConcrete : class;
+
+        T Create<T>();
+
+        object Create(Type type);
+
+        void RegisterDecorator<TDecorator, TComponent>();
+
+        void RegisterOpenTypeDecorator(Type openType, Type openDecoratorType);
     }
 }

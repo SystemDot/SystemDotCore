@@ -2,18 +2,26 @@ using System;
 
 namespace SystemDot.Ioc.ObjectBuilding
 {
-    public class FromFactoryObjectBuilder : IObjectBuilder
+    public class FromFactoryObjectBuilder : ObjectBuilder
     {
         readonly Func<object> objectFactory;
+        readonly Type type;
 
-        public FromFactoryObjectBuilder(Func<object> objectFactory)
+        public FromFactoryObjectBuilder(Func<object> objectFactory, Type type, IIocContainer iocContainer)
+            : base(iocContainer)
         {
             this.objectFactory = objectFactory;
+            this.type = type;
         }
 
-        public object Create()
+        public override object Create()
         {
             return objectFactory.Invoke();
+        }
+
+        public override Type GetInnerMostType()
+        {
+            return type;
         }
     }
 }

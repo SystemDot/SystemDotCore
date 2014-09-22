@@ -16,8 +16,7 @@ namespace SystemDot.Ioc
         public void RegisterInstance<TPlugin>(Func<TPlugin> instanceFactory) where TPlugin : class
         {
             if (ComponentExists<TPlugin>()) return;
-            
-            components[typeof(TPlugin)] = ConcreteInstance.FromFactory(instanceFactory);
+            components[typeof(TPlugin)] = ConcreteInstance.FromFactory(instanceFactory, typeof(TPlugin), this);
         }
 
         public void RegisterInstance<TPlugin, TConcrete>()
@@ -83,6 +82,11 @@ namespace SystemDot.Ioc
         public void RegisterDecorator<TDecorator, TComponent>()
         {
             components[typeof (TComponent)].DecorateWith<TDecorator>();
+        }
+
+        public void RegisterOpenTypeDecorator(Type componentType, Type openDecoratorType)
+        {
+            //components[componentType].DecorateWith(openDecoratorType.MakeGenericType(componentType));
         }
     }
 }

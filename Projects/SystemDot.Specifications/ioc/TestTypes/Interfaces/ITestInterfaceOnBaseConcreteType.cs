@@ -1,4 +1,4 @@
-namespace SystemDot.Specifications.ioc.TestTypes
+namespace SystemDot.Specifications.ioc.TestTypes.Interfaces
 {
     internal interface ITestInterfaceOnBaseConcreteType
     {

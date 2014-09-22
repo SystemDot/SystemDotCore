@@ -1,6 +1,7 @@
 ﻿using SystemDot.Core;
 using SystemDot.Ioc;
 using SystemDot.Specifications.ioc.TestTypes;
+using SystemDot.Specifications.ioc.TestTypes.Interfaces;
 using Machine.Specifications;
 
 namespace SystemDot.Specifications.ioc
@@ -15,7 +16,11 @@ namespace SystemDot.Specifications.ioc
             container = new IocContainer();
        
             container.RegisterInstance<ITestComponent, TestComponent>();
-            container.RegisterInstance<IAnotherTestComponent>(() => new AnotherTestComponent(container.Resolve<IThirdTestComponent>(), new AnotherInheritingComponent()));
+
+            container.RegisterInstance<IAnotherTestComponent>(() => new AnotherTestComponentOnAnotherInterface(
+                container.Resolve<IThirdTestComponent>(),
+                new AnotherInheritingComponent()));
+
             container.RegisterInstance<IThirdTestComponent, ThirdTestComponent>();
         };
 
@@ -30,10 +35,10 @@ namespace SystemDot.Specifications.ioc
 
         It should_have_the_correct_second_parameter = () => 
             container.Resolve<ITestComponentWithParameters>().As<TestComponentWithParameters>()
-                .SecondParameter.ShouldBeOfType<AnotherTestComponent>();
+                .SecondParameter.ShouldBeOfType<AnotherTestComponentOnAnotherInterface>();
 
         It should_have_the_correct_dependency_in_the_second_parameter = () =>
             container.Resolve<ITestComponentWithParameters>().As<TestComponentWithParameters>()
-                .SecondParameter.As<AnotherTestComponent>().FirstParameter.ShouldBeOfType<ThirdTestComponent>();
+                .SecondParameter.As<AnotherTestComponentOnAnotherInterface>().FirstParameter.ShouldBeOfType<ThirdTestComponent>();
     }
 }

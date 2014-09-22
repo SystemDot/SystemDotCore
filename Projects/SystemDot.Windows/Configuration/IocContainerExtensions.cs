@@ -8,13 +8,23 @@ namespace SystemDot.Configuration
     {
         public static void Initialise(this BuilderConfiguration configuration)
         {
-            configuration.GetIocContainer().RegisterFromAssemblyOf<Application>();
+            configuration.GetIocContainer()
+                .RegisterMultipleTypes()
+                .FromAssemblyOf<Application>()
+                .AllTypes()
+                .ByClassAndInterface();
+
             configuration.BaseInitialise();
         }
 
         public static async Task InitialiseAsync(this BuilderConfiguration configuration)
         {
-            configuration.GetIocContainer().RegisterFromAssemblyOf<Application>();
+            configuration.GetIocContainer()
+                .RegisterMultipleTypes()
+                .FromAssemblyOf<Application>()
+                .AllTypes()
+                .ByClassAndInterface();
+
             await configuration.BaseInitialiseAsync();
         }
     }

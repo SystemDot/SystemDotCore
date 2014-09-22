@@ -56,17 +56,28 @@
     <Compile Include="blocking_queue\when_queuing_an_item.cs" />
     <Compile Include="blocking_queue\when_queuing_two_items.cs" />
     <Compile Include="http\when_creating_a_fixed_port_address_with_a_server_specified.cs" />
-    <Compile Include="ioc\TestComponentDecorator.cs" />
+    <Compile Include="ioc\Decorators\OtherTestComponentDecorator.cs" />
+    <Compile Include="ioc\Decorators\TestComponentDecorator.cs" />
+    <Compile Include="ioc\MultpleTypes\when_registering_all_implementations_of_open_generic_types_in_the_container_by_interface.cs" />
+    <Compile Include="ioc\MultpleTypes\when_registering_all_types_in_the_container_that_implement_a_specific_interface_from_an_assembly_by_interface.cs" />
+    <Compile Include="ioc\MultpleTypes\when_resolving_all_types_that_implement_an_specific_open_generic_type.cs" />
+    <Compile Include="ioc\MultpleTypes\when_resolving_all_types_that_implement_an_specific_type.cs" />
     <Compile Include="ioc\TestTypes\AnotherInheritingComponent.cs" />
     <Compile Include="ioc\TestTypes\AnotherTestComponent.cs" />
+    <Compile Include="ioc\TestTypes\AnotherTestComponentOnAnotherInterface.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="ioc\TestTypes\IAnotherTestComponent.cs" />
-    <Compile Include="ioc\TestTypes\ITestComponent.cs" />
-    <Compile Include="ioc\TestTypes\ITestComponentWithParameters.cs" />
-    <Compile Include="ioc\TestTypes\ITestInterface1.cs" />
-    <Compile Include="ioc\TestTypes\ITestInterfaceOnBaseConcreteType.cs" />
-    <Compile Include="ioc\TestTypes\ITestInterfaceOnDerivedConcreteType.cs" />
-    <Compile Include="ioc\TestTypes\ITestInterfaceWithNoConcreteImplementation.cs" />
-    <Compile Include="ioc\TestTypes\IThirdTestComponent.cs" />
+    <Compile Include="ioc\TestTypes\Interfaces\ITestComponent.cs" />
+    <Compile Include="ioc\TestTypes\Interfaces\ITestComponentWithParameters.cs" />
+    <Compile Include="ioc\TestTypes\Interfaces\ITestInterface1.cs" />
+    <Compile Include="ioc\TestTypes\Interfaces\ITestInterfaceOnBaseConcreteType.cs" />
+    <Compile Include="ioc\TestTypes\Interfaces\ITestInterfaceOnDerivedConcreteType.cs" />
+    <Compile Include="ioc\TestTypes\Interfaces\ITestInterfaceWithNoConcreteImplementation.cs" />
+    <Compile Include="ioc\TestTypes\Interfaces\IThirdTestComponent.cs" />
+    <Compile Include="ioc\MultpleTypes\IOpenTypeComponent.cs" />
+    <Compile Include="ioc\MultpleTypes\OpenTypeComponent.cs" />
+    <Compile Include="ioc\MultpleTypes\OtherOpenTypeComponent.cs" />
     <Compile Include="ioc\TestTypes\TestAbstractConcreteType.cs" />
     <Compile Include="ioc\TestTypes\TestBaseConcreteType.cs" />
     <Compile Include="ioc\TestTypes\TestComponent.cs" />
@@ -77,17 +88,21 @@
     <Compile Include="ioc\TestTypes\TestTypeImplementingAnInterface.cs" />
     <Compile Include="ioc\TestTypes\TestTypeNotImplementingAnInterface.cs" />
     <Compile Include="ioc\TestTypes\ThirdTestComponent.cs" />
-    <Compile Include="ioc\when_auto_registering_types_in_the_container_from_an_assembly.cs" />
-    <Compile Include="ioc\when_auto_registering_types_in_the_container_from_an_assembly_containing_a.cs" />
-    <Compile Include="ioc\when_auto_registering_types_in_the_container_from_an_assembly_containing_an_open_generic_type.cs" />
-    <Compile Include="ioc\when_auto_registering_types_in_the_container_from_an_assembly_the_second_time.cs" />
+    <Compile Include="ioc\MultpleTypes\when_registering_all_types_in_the_container_from_an_assembly_by_implementation.cs" />
+    <Compile Include="ioc\MultpleTypes\when_registering_all_types_in_the_container_from_an_assembly_by_implementation_and_interface.cs" />
+    <Compile Include="ioc\MultpleTypes\when_registering_all_implementations_of_open_generic_types_in_the_container_by_implementation.cs" />
+    <Compile Include="ioc\MultpleTypes\when_registering_all_types_in_the_container_from_an_assembly_by_interface.cs" />
+    <Compile Include="ioc\MultpleTypes\when_registering_all_types_in_the_container_from_an_assembly_the_second_time.cs" />
     <Compile Include="ioc\when_manually_registering_an_instance_in_the_container.cs" />
     <Compile Include="ioc\when_manually_registering_an_instance_in_the_container_explicitly_by_type.cs" />
     <Compile Include="ioc\when_manually_registering_an_instance_in_the_container_for_the_second_time.cs" />
     <Compile Include="ioc\when_registering_an_instance_in_the_container.cs" />
     <Compile Include="ioc\when_registering_an_instance_in_the_container_for_the_second_time.cs" />
     <Compile Include="ioc\when_registering_an_instance_with_parameters_in_the_container.cs" />
-    <Compile Include="ioc\when_registering_a_decorator_for_an_instance_in_the_container.cs" />
+    <Compile Include="ioc\Decorators\when_registering_a_decorator_for_an_instance_already_decorated_in_the_container.cs" />
+    <Compile Include="ioc\Decorators\when_registering_a_decorator_for_an_instance_in_the_container.cs" />
+    <Compile Include="ioc\Decorators\when_registering_a_decorator_for_an_instance_registered_by_factory_in_the_container.cs" />
+    <Compile Include="ioc\Decorators\when_registering_decorators_from_open_types_in_the_container.cs" />
     <Compile Include="ioc\when_resolving_an_instance_in_the_container_for_the_second_time.cs" />
     <Compile Include="ioc\when_resolving_a_type_not_registered.cs" />
     <Compile Include="messenger\SpecificationGroup.cs" />
@@ -128,6 +143,7 @@
       <Name>SystemDot</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

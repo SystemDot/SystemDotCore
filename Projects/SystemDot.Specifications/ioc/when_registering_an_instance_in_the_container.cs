@@ -1,6 +1,7 @@
 ﻿using SystemDot.Core;
 using SystemDot.Ioc;
 using SystemDot.Specifications.ioc.TestTypes;
+using SystemDot.Specifications.ioc.TestTypes.Interfaces;
 using Machine.Specifications;
 
 namespace SystemDot.Specifications.ioc

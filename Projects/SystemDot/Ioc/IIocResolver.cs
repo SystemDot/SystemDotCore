@@ -11,6 +11,8 @@ namespace SystemDot.Ioc
 
         bool ComponentExists<TPlugin>();
 
+        bool ComponentExists(Type toCheck);
+
         IEnumerable<Type> GetAllRegisteredTypes();
     }
 }

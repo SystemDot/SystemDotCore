@@ -1,6 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using SystemDot.Core;
 using SystemDot.Ioc.ObjectBuilding;
 
@@ -8,8 +6,7 @@ namespace SystemDot.Ioc
 {
     public class ConcreteInstance
     {
-        readonly List<Type> decorators;
-        readonly IObjectBuilder objectBuilder;
+        ObjectBuilder objectBuilder;
         object cached;
 
         public static T Create<T>(IocContainer iocContainer)
@@ -21,9 +18,10 @@ namespace SystemDot.Ioc
         {
             return FromType(type, iocContainer).Resolve();
         }
-        public static ConcreteInstance FromFactory(Func<object> instanceFactory)
+
+        public static ConcreteInstance FromFactory(Func<object> instanceFactory, Type concrete, IocContainer container)
         {
-            return new ConcreteInstance(new FromFactoryObjectBuilder(instanceFactory));
+            return new ConcreteInstance(new FromFactoryObjectBuilder(instanceFactory, concrete, container));
         }
 
         public static ConcreteInstance FromType(Type concrete, IocContainer container)
@@ -31,21 +29,18 @@ namespace SystemDot.Ioc
             return new ConcreteInstance(new FromTypeObjectBuilder(concrete, container));
         }
 
-        ConcreteInstance(IObjectBuilder objectBuilder)
+        ConcreteInstance(ObjectBuilder objectBuilder)
         {
             this.objectBuilder = objectBuilder;
-            decorators = new List<Type>();
         }
 
-        public void DecorateWith<T>()
+        public void DecorateWith<TDecorator>()
         {
-            decorators.Add(typeof(T));
+            objectBuilder = objectBuilder.DecorateWith<TDecorator>();
         }
 
         public object Resolve()
         {
-            if(decorators.Any()) return Activator.CreateInstance(decorators.First());
-
             return cached ?? (cached = objectBuilder.Create());
         }
     }

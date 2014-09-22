@@ -66,14 +66,18 @@
     <Compile Include="Http\IHttpServer.cs" />
     <Compile Include="Http\IWebRequestor.cs" />
     <Compile Include="Http\ServerAddress.cs" />
-    <Compile Include="Ioc\AutoRegistrar.cs" />
     <Compile Include="Ioc\CannotResolveTypeException.cs" />
     <Compile Include="Ioc\ConcreteInstance.cs" />
+    <Compile Include="Ioc\Multiples\MultipleTypesRegistration.cs" />
+    <Compile Include="Ioc\Multiples\MultpleTypesInAssemblyFilteredRegistration.cs" />
+    <Compile Include="Ioc\Multiples\MultpleTypesInAssemblyRegistration.cs" />
+    <Compile Include="Ioc\Multiples\MutlipleTypeResolver.cs" />
+    <Compile Include="Ioc\ObjectBuilding\DecoratorObjectBuilder.cs" />
     <Compile Include="Ioc\ObjectBuilding\FromFactoryObjectBuilder.cs" />
     <Compile Include="Ioc\ObjectBuilding\FromTypeObjectBuilder.cs" />
     <Compile Include="Ioc\IIocContainer.cs" />
     <Compile Include="Ioc\IIocResolver.cs" />
-    <Compile Include="Ioc\ObjectBuilding\IObjectBuilder.cs" />
+    <Compile Include="Ioc\ObjectBuilding\ObjectBuilder.cs" />
     <Compile Include="Ioc\IocContainer.cs" />
     <Compile Include="Ioc\IocContainerExtensions.cs" />
     <Compile Include="Ioc\IocContainerResources.cs" />
@@ -132,6 +136,7 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
