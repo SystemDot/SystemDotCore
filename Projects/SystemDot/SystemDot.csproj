@@ -74,6 +74,7 @@
     <Compile Include="Ioc\Multiples\MultpleTypesInAssemblyFilteredRegistration.cs" />
     <Compile Include="Ioc\Multiples\MultpleTypesInAssemblyRegistration.cs" />
     <Compile Include="Ioc\Multiples\MutlipleTypeResolver.cs" />
+    <Compile Include="Ioc\Multiples\TypeExtensions.cs" />
     <Compile Include="Ioc\ObjectBuilding\DecoratorObjectBuilder.cs" />
     <Compile Include="Ioc\ObjectBuilding\FromFactoryObjectBuilder.cs" />
     <Compile Include="Ioc\ObjectBuilding\FromTypeObjectBuilder.cs" />
@@ -83,6 +84,7 @@
     <Compile Include="Ioc\IocContainer.cs" />
     <Compile Include="Ioc\IocContainerExtensions.cs" />
     <Compile Include="Ioc\IocContainerResources.cs" />
+    <Compile Include="Ioc\TypeExtensions.cs" />
     <Compile Include="Ioc\TypeNotRegisteredException.cs" />
     <Compile Include="Logging\Configuration\BuilderConfigurationExtensions.cs" />
     <Compile Include="Logging\ILoggingMechanism.cs" />
@@ -100,8 +102,6 @@
     <Compile Include="Messaging\Handling\MessageHandlerRouter.cs" />
     <Compile Include="Messaging\Handling\ObjectExtensions.cs" />
     <Compile Include="Messaging\Handling\TypeExtensions.cs" />
-    <Compile Include="Messaging\Handling\Types\HandlerType.cs" />
-    <Compile Include="Messaging\Handling\Types\TypeHandlerList.cs" />
     <Compile Include="Messaging\IBus.cs" />
     <Compile Include="Messaging\Simple\Messenger.cs" />
     <Compile Include="Messaging\Simple\MessengerBus.cs" />

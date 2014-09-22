@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using SystemDot.Core;
 
 namespace SystemDot.Ioc
@@ -44,7 +45,7 @@ namespace SystemDot.Ioc
 
         public IEnumerable<Type> GetAllRegisteredTypes()
         {
-            return components.Keys.WhereNormalConcrete();
+            return components.Keys;
         }
 
         public TPlugin Resolve<TPlugin>()
@@ -86,7 +87,7 @@ namespace SystemDot.Ioc
 
         public void RegisterOpenTypeDecorator(Type componentType, Type openDecoratorType)
         {
-            //components[componentType].DecorateWith(openDecoratorType.MakeGenericType(componentType));
+            components[componentType].DecorateWith(openDecoratorType.MakeGenericTypeFrom(componentType));
         }
     }
 }

@@ -32,7 +32,7 @@ namespace SystemDot.Ioc
         }
 
         [Obsolete]
-        public static IEnumerable<T> ResolveAllTypesThatImplement<T>(this IIocContainer resolver)
+        public static IEnumerable<T> ResolveAllTypesThatImplement<T>(this IocContainer resolver)
         {
             return resolver.ResolveMutipleTypes().ThatImplement<T>();
         }

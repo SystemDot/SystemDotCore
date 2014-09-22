@@ -36,7 +36,12 @@ namespace SystemDot.Ioc
 
         public void DecorateWith<TDecorator>()
         {
-            objectBuilder = objectBuilder.DecorateWith<TDecorator>();
+            objectBuilder = objectBuilder.DecorateWith(typeof(TDecorator));
+        }
+
+        public void DecorateWith(Type decoratorType)
+        {
+            objectBuilder = objectBuilder.DecorateWith(decoratorType);
         }
 
         public object Resolve()

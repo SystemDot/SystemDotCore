@@ -1,6 +1,6 @@
+using System;
 using SystemDot.Core;
 using SystemDot.Ioc;
-using SystemDot.Specifications.ioc.MultpleTypes;
 using SystemDot.Specifications.ioc.TestTypes;
 using Machine.Specifications;
 
@@ -24,10 +24,5 @@ namespace SystemDot.Specifications.ioc.Decorators
 
         It should_be_able_to_be_resolved_decorated_with_two_decorators = () =>
             container.Resolve<TestComponent>().As<OtherTestComponentDecorator>().Target.As<TestComponentDecorator>().Target.ShouldBeTheSameAs(decorated);
-    }
-
-    public class OpenTypeComponentDecorator<T> : IOpenTypeComponent<T>
-    {
-        public IOpenTypeComponent<T> Target { get; private set; }
     }
 }

@@ -1,14 +1,19 @@
 using System;
+using System.Reflection;
 
 namespace SystemDot.Ioc.ObjectBuilding
 {
-    public class DecoratorObjectBuilder<TDecorator> : FromTypeObjectBuilder
+    public class DecoratorObjectBuilder : FromTypeObjectBuilder
     {
         readonly ObjectBuilder inner;
         readonly Type decoratedType;
 
-        public DecoratorObjectBuilder(ObjectBuilder inner, Type decoratedType, IIocContainer iocContainer)
-            : base(typeof(TDecorator), iocContainer)
+        public DecoratorObjectBuilder(
+            Type decoratorType, 
+            ObjectBuilder inner, 
+            Type decoratedType, 
+            IIocContainer iocContainer)
+            : base(decoratorType, iocContainer)
         {
             this.inner = inner;
             this.decoratedType = decoratedType;
@@ -16,7 +21,7 @@ namespace SystemDot.Ioc.ObjectBuilding
 
         protected override object ResolveParameter(Type parameterType)
         {
-            return parameterType == decoratedType 
+            return parameterType.GetTypeInfo().IsAssignableFrom(decoratedType.GetTypeInfo())
                 ? inner.Create() 
                 : base.ResolveParameter(parameterType);
         }

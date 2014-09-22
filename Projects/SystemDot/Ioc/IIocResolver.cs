@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 
 namespace SystemDot.Ioc
 {
@@ -12,7 +11,5 @@ namespace SystemDot.Ioc
         bool ComponentExists<TPlugin>();
 
         bool ComponentExists(Type toCheck);
-
-        IEnumerable<Type> GetAllRegisteredTypes();
     }
 }

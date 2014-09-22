@@ -15,11 +15,6 @@ namespace SystemDot.Messaging.Simple
             Router = new MessageHandlerRouter();
         }
 
-        public static void RegisterHandlersFromContainer<TMessageHandler>(IIocContainer container)
-        {
-            Router.RegisterHandlersFromContainer<TMessageHandler>(container);
-        }
-
         public static void RegisterHandler(object handlerInstance)
         {
             Router.RegisterHandler(handlerInstance);

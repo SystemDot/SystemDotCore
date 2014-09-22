@@ -13,9 +13,9 @@ namespace SystemDot.Ioc.ObjectBuilding
 
         public abstract object Create();
         
-        public ObjectBuilder DecorateWith<T>()
+        public ObjectBuilder DecorateWith(Type decoratorType)
         {
-            return new DecoratorObjectBuilder<T>(this, GetInnerMostType(), iocContainer);
+            return new DecoratorObjectBuilder(decoratorType, this, GetInnerMostType(), iocContainer);
         }
 
         public abstract Type GetInnerMostType();

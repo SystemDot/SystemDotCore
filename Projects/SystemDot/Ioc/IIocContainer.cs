@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace SystemDot.Ioc
 {
@@ -17,5 +18,7 @@ namespace SystemDot.Ioc
         void RegisterDecorator<TDecorator, TComponent>();
 
         void RegisterOpenTypeDecorator(Type openType, Type openDecoratorType);
+
+        IEnumerable<Type> GetAllRegisteredTypes();
     }
 }

@@ -1,5 +1,4 @@
 using System;
-using SystemDot.Core;
 
 namespace SystemDot.Ioc.Multiples
 {
@@ -14,7 +13,9 @@ namespace SystemDot.Ioc.Multiples
 
         public MultipleDecoratorToDecorateRegistration ThatImplementOpenType(Type openType)
         {
-            return new MultipleDecoratorToDecorateRegistration(container, container.GetAllRegisteredTypes().WhereImplementsOpenType(openType));
+            return new MultipleDecoratorToDecorateRegistration(
+                container, 
+                container.GetAllRegisteredTypes().WhereImplementsOpenType(openType));
         }
     }
 }

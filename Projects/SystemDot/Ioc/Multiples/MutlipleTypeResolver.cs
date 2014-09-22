@@ -8,25 +8,25 @@ namespace SystemDot.Ioc.Multiples
 {
     public class MutlipleTypeResolver
     {
-        readonly IIocContainer resolver;
+        readonly IIocContainer container;
 
-        public MutlipleTypeResolver(IIocContainer resolver)
+        public MutlipleTypeResolver(IIocContainer container)
         {
-            this.resolver = resolver;
+            this.container = container;
         }
 
         public IEnumerable<T> ThatImplement<T>()
         {
-            return resolver.GetAllRegisteredTypes()
+            return container.GetAllRegisteredTypes()
                 .ThatImplement<T>()
-                .Select(t => resolver.Resolve(t).As<T>());
+                .Select(t => container.Resolve(t).As<T>());
         }
 
         public IEnumerable ThatImplementOpenType(Type openType)
         {
-            return resolver.GetAllRegisteredTypes()
+            return container.GetAllRegisteredTypes()
                 .WhereNormalConcrete().WhereImplementsOpenType(openType)
-                .Select(t => resolver.Resolve(t));
+                .Select(t => container.Resolve(t));
         }
     }
 }
