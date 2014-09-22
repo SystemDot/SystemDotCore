@@ -2,14 +2,14 @@ using System;
 using System.Collections.Generic;
 using SystemDot.Core.Collections;
 
-namespace SystemDot.Ioc
+namespace SystemDot.Ioc.Multiples
 {
-    public class MultipleDecoratorWithRegistration
+    public class MultipleDecoratorToDecorateRegistration
     {
         readonly IIocContainer container;
         readonly IEnumerable<Type> typesToDecorate;
 
-        public MultipleDecoratorWithRegistration(IIocContainer container, IEnumerable<Type> typesToDecorate)
+        public MultipleDecoratorToDecorateRegistration(IIocContainer container, IEnumerable<Type> typesToDecorate)
         {
             this.container = container;
             this.typesToDecorate = typesToDecorate;

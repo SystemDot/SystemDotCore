@@ -18,7 +18,9 @@ namespace SystemDot.Specifications.ioc.Decorators
             container.RegisterInstance<IOpenTypeComponent<string>>(() => decorated);
         };
 
-        Because of = () => container.RegisterOpenTypeDecorators(typeof(IOpenTypeComponent<>), typeof(OpenTypeComponentDecorator<>));
+        Because of = () => container.DecorateMultipleTypes()
+            .ThatImplementOpenType(typeof(IOpenTypeComponent<>))
+            .WithOpenTypeDecorator(typeof(OpenTypeComponentDecorator<>));
 
         It should_be_able_to_be_resolve_the_first_implementor_of_the_open_type_decorated_with_the_open_type_decorator = () =>
             container.Resolve<IOpenTypeComponent<string>>().As<OpenTypeComponentDecorator<string>>().Target.ShouldBeTheSameAs(decorated);

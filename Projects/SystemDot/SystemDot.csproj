@@ -68,6 +68,8 @@
     <Compile Include="Http\ServerAddress.cs" />
     <Compile Include="Ioc\CannotResolveTypeException.cs" />
     <Compile Include="Ioc\ConcreteInstance.cs" />
+    <Compile Include="Ioc\Multiples\MultipleDecoratorRegistration.cs" />
+    <Compile Include="Ioc\Multiples\MultipleDecoratorToDecorateRegistration.cs" />
     <Compile Include="Ioc\Multiples\MultipleTypesRegistration.cs" />
     <Compile Include="Ioc\Multiples\MultpleTypesInAssemblyFilteredRegistration.cs" />
     <Compile Include="Ioc\Multiples\MultpleTypesInAssemblyRegistration.cs" />

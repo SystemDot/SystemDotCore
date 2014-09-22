@@ -1,7 +1,7 @@
 using System;
 using SystemDot.Core;
 
-namespace SystemDot.Ioc
+namespace SystemDot.Ioc.Multiples
 {
     public class MultipleDecoratorRegistration
     {
@@ -12,9 +12,9 @@ namespace SystemDot.Ioc
             this.container = container;
         }
 
-        public MultipleDecoratorWithRegistration ThatImplementOpenType(Type openType)
+        public MultipleDecoratorToDecorateRegistration ThatImplementOpenType(Type openType)
         {
-            return new MultipleDecoratorWithRegistration(container, container.GetAllRegisteredTypes().WhereImplementsOpenType(openType));
+            return new MultipleDecoratorToDecorateRegistration(container, container.GetAllRegisteredTypes().WhereImplementsOpenType(openType));
         }
     }
 }
