@@ -1,7 +1,4 @@
 using SystemDot.Configuration;
-using SystemDot.Core.Collections;
-using SystemDot.Ioc;
-using SystemDot.Messaging.Simple;
 
 namespace SystemDot.Messaging.Handling.Configuration
 {
@@ -10,9 +7,11 @@ namespace SystemDot.Messaging.Handling.Configuration
         public void Configure(ConfigurationBuilder builder)
         {
             builder.RegisterBuildAction(
-                c => c.ResolveMutipleTypes()
-                    .ThatImplementOpenType(typeof(IMessageHandler<>))
-                    .ForEach(Messenger.RegisterHandler), 
+                c => c.RegisterOpenTypeHandlersWithMessenger(typeof(IMessageHandler<>)),
+                BuildOrder.VeryLate);
+
+            builder.RegisterBuildAction(
+                c => c.RegisterOpenTypeHandlersWithMessenger(typeof(IAsyncMessageHandler<>)),
                 BuildOrder.VeryLate);
         }
     }

@@ -96,6 +96,7 @@
     <Compile Include="Messaging\Handling\Actions\PerMessageActionHandlerList.cs" />
     <Compile Include="Messaging\Handling\Actions\WeaklyReferencedActionHandler.cs" />
     <Compile Include="Messaging\Handling\Configuration\ConfigurationBuilderComponent.cs" />
+    <Compile Include="Messaging\Handling\Configuration\IocConfigurationExtensions.cs" />
     <Compile Include="Messaging\Handling\GlobalGroupingId.cs" />
     <Compile Include="Messaging\Handling\IMessageHandler.cs" />
     <Compile Include="Messaging\Handling\Instances\InstanceHandlerList.cs" />
