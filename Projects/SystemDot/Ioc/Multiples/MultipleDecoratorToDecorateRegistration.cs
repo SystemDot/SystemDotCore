@@ -19,5 +19,10 @@ namespace SystemDot.Ioc.Multiples
         {
             typesToDecorate.ForEach(t => container.RegisterOpenTypeDecorator(t, openDecoratorType));
         }
+
+        public void WithOpenTypeDecorators(params Type[] openTypeDeccorators)
+        {
+            openTypeDeccorators.ForEach(WithOpenTypeDecorator);
+        }
     }
 }

@@ -6,7 +6,7 @@ using Machine.Specifications;
 namespace SystemDot.Specifications.ioc.Decorators
 {
     [Subject("Ioc")]
-    public class when_registering_a_open_type_decorator_for_an_instance_in_the_container
+    public class when_registering_an_open_type_decorator_for_an_instance_in_the_container
     {
         static IocContainer container;
         static OpenTypeComponent decorated;

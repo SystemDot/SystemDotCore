@@ -8,6 +8,7 @@ namespace SystemDot.Ioc
     {
         ObjectBuilder objectBuilder;
         object cached;
+        public Type ActualConcreteType { get; private set; }
 
         public static T Create<T>(IocContainer iocContainer)
         {
@@ -21,16 +22,17 @@ namespace SystemDot.Ioc
 
         public static ConcreteInstance FromFactory(Func<object> instanceFactory, Type concrete, IocContainer container)
         {
-            return new ConcreteInstance(new FromFactoryObjectBuilder(instanceFactory, concrete, container));
+            return new ConcreteInstance(concrete, new FromFactoryObjectBuilder(instanceFactory, concrete, container));
         }
 
         public static ConcreteInstance FromType(Type concrete, IocContainer container)
         {
-            return new ConcreteInstance(new FromTypeObjectBuilder(concrete, container));
+            return new ConcreteInstance(concrete, new FromTypeObjectBuilder(concrete, container));
         }
 
-        ConcreteInstance(ObjectBuilder objectBuilder)
+        ConcreteInstance(Type actualConcreteType, ObjectBuilder objectBuilder)
         {
+            ActualConcreteType = actualConcreteType;
             this.objectBuilder = objectBuilder;
         }
 

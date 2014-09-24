@@ -1,4 +1,4 @@
-using System;
+using System.Linq;
 
 namespace SystemDot.Ioc.Multiples
 {
@@ -11,11 +11,21 @@ namespace SystemDot.Ioc.Multiples
             this.container = container;
         }
 
-        public MultipleDecoratorToDecorateRegistration ThatImplementOpenType(Type openType)
+        public MultipleDecoratorForAssembliesRegistration FromAllAssemblies()
         {
-            return new MultipleDecoratorToDecorateRegistration(
+            return new MultipleDecoratorForAssembliesRegistration(
+                container,
+                container.GetAllRegisteredTypes().Select(t => t.ActualConcreteType));
+        }
+
+        public MultipleDecoratorForAssembliesRegistration FromAssemblyOf<T>()
+        {
+            return new MultipleDecoratorForAssembliesRegistration(
                 container, 
-                container.GetAllRegisteredTypes().WhereImplementsOpenType(openType));
+                container
+                    .GetAllRegisteredTypes()
+                    .Select(t => t.ActualConcreteType)
+                    .WhereInAssemblyOf<T>());
         }
     }
 }

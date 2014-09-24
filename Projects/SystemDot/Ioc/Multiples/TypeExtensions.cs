@@ -28,5 +28,10 @@ namespace SystemDot.Ioc.Multiples
         {
             return type.GetTypeInfo().DeclaredMethods.Where(m => m.Name == methodName);
         }
+
+        public static IEnumerable<Type> WhereInAssemblyOf<T>(this IEnumerable<Type> types)
+        {
+            return types.Where(t => t.GetAssembly().FullName == typeof(T).GetAssembly().FullName);
+        }
     }
 }

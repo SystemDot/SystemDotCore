@@ -19,6 +19,8 @@ namespace SystemDot.Ioc
 
         void RegisterOpenTypeDecorator(Type openType, Type openDecoratorType);
 
-        IEnumerable<Type> GetAllRegisteredTypes();
+        IEnumerable<RegisteredType> GetAllRegisteredTypes();
+
+        void Verify();
     }
 }

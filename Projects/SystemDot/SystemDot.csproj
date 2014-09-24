@@ -68,6 +68,8 @@
     <Compile Include="Http\ServerAddress.cs" />
     <Compile Include="Ioc\CannotResolveTypeException.cs" />
     <Compile Include="Ioc\ConcreteInstance.cs" />
+    <Compile Include="Ioc\ContainerUnverifiableException.cs" />
+    <Compile Include="Ioc\Multiples\MultipleDecoratorForAssembliesRegistration.cs" />
     <Compile Include="Ioc\Multiples\MultipleDecoratorRegistration.cs" />
     <Compile Include="Ioc\Multiples\MultipleDecoratorToDecorateRegistration.cs" />
     <Compile Include="Ioc\Multiples\MultipleTypesRegistration.cs" />
@@ -84,6 +86,7 @@
     <Compile Include="Ioc\IocContainer.cs" />
     <Compile Include="Ioc\IocContainerExtensions.cs" />
     <Compile Include="Ioc\IocContainerResources.cs" />
+    <Compile Include="Ioc\RegisteredType.cs" />
     <Compile Include="Ioc\TypeExtensions.cs" />
     <Compile Include="Ioc\TypeNotRegisteredException.cs" />
     <Compile Include="Logging\Configuration\BuilderConfigurationExtensions.cs" />

@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using SystemDot.Core;
+using SystemDot.Core.Collections;
 
 namespace SystemDot.Ioc
 {
@@ -43,9 +44,21 @@ namespace SystemDot.Ioc
             return components.ContainsKey(toCheck);
         }
 
-        public IEnumerable<Type> GetAllRegisteredTypes()
+        public IEnumerable<RegisteredType> GetAllRegisteredTypes()
         {
-            return components.Keys;
+            return components.Select(c => new RegisteredType(c.Key, c.Value.ActualConcreteType));
+        }
+
+        public void Verify()
+        {
+            try
+            {
+                components.ForEach(pair => Resolve(pair.Key));
+            }
+            catch (Exception ex)
+            {
+                throw new ContainerUnverifiableException(ex);
+            }
         }
 
         public TPlugin Resolve<TPlugin>()
