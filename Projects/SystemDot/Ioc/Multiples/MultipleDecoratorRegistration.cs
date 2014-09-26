@@ -15,17 +15,18 @@ namespace SystemDot.Ioc.Multiples
         {
             return new MultipleDecoratorForAssembliesRegistration(
                 container,
-                container.GetAllRegisteredTypes().Select(t => t.ActualConcreteType));
+                container.GetAllRegisteredTypes()
+                .Select(t => t.ResolveBy));
         }
 
         public MultipleDecoratorForAssembliesRegistration FromAssemblyOf<T>()
         {
             return new MultipleDecoratorForAssembliesRegistration(
-                container, 
+                container,
                 container
                     .GetAllRegisteredTypes()
-                    .Select(t => t.ActualConcreteType)
-                    .WhereInAssemblyOf<T>());
+                    .Where(t => t.ActualConcreteType.IsInAssemblyOf<T>())
+                    .Select(t => t.ResolveBy));
         }
     }
 }

@@ -103,7 +103,12 @@
     <Folder Include="Logging\" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Configuration\BuilderConfigurationExtensions.cs" />
+    <Compile Include="..\SystemDot.Windows\Configuration\BuilderConfigurationExtensions.cs">
+      <Link>Configuration\BuilderConfigurationExtensions.cs</Link>
+    </Compile>
+    <Compile Include="..\SystemDot.Windows\Configuration\IocContainerExtensions.cs">
+      <Link>Configuration\IocContainerExtensions.cs</Link>
+    </Compile>
     <Compile Include="Environment\Application.cs" />
     <Compile Include="Environment\LocalMachine.cs" />
     <Compile Include="Files\FileLocationDictionary.cs" />

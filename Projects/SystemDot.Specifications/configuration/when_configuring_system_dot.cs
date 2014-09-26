@@ -1,14 +1,10 @@
 using SystemDot.Configuration;
-using SystemDot.Core;
 using SystemDot.Environment;
 using SystemDot.Files;
 using SystemDot.Http;
 using SystemDot.Http.Builders;
 using SystemDot.Ioc;
-using SystemDot.Messaging;
-using SystemDot.Messaging.Simple;
 using SystemDot.Serialisation;
-using SystemDot.Storage.Changes;
 using SystemDot.Storage.Changes.Upcasting;
 using SystemDot.ThreadMarshalling;
 using Machine.Specifications;
@@ -25,7 +21,7 @@ namespace SystemDot.Specifications.configuration
         Because of = () => Configure
             .SystemDot()
             .ResolveReferencesWith(container)
-            .Initialise();
+            .InitialiseAsync().Wait();
 
         It should_have_correctly_registered_the_file_system_components = () =>
             container.Resolve<IFileSystem>().ShouldNotBeNull();

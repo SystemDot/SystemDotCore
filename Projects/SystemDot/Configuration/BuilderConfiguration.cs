@@ -6,43 +6,40 @@ namespace SystemDot.Configuration
 {
     public class BuilderConfiguration
     {
-        readonly IIocContainer externalContainer;
+        readonly IIocContainer container;
         readonly ConfigurationBuilder builder;
         readonly BuilderComponentRunner builderComponentRunner;
 
-        public BuilderConfiguration(IIocContainer externalContainer)
+        public BuilderConfiguration(IIocContainer container)
         {
-            this.externalContainer = externalContainer;
+            this.container = container;
 
-            builder = new ConfigurationBuilder(externalContainer);
-            builderComponentRunner = new BuilderComponentRunner(externalContainer, builder);
-        }
-
-        public void BaseInitialise()
-        {
-            builderComponentRunner.Run();
-            builder.Build();
+            builder = new ConfigurationBuilder(container);
+            builderComponentRunner = new BuilderComponentRunner(container, builder);
         }
 
         public async Task BaseInitialiseAsync()
         {
             builderComponentRunner.Run();
             await builder.BuildAsync();
+            container.Verify();
         }
 
-        public void RegisterBuildAction(Action<IIocContainer> toBuild, BuildOrder order = BuildOrder.Anytime)
+        public BuilderConfiguration RegisterBuildAction(Action<IIocContainer> toBuild, BuildOrder order = BuildOrder.Anytime)
         {
             builder.RegisterBuildAction(toBuild, order);
+            return this;
         }
 
-        public void RegisterBuildAction(Func<IIocContainer, Task> toBuild, BuildOrder order = BuildOrder.Anytime)
+        public BuilderConfiguration RegisterBuildAction(Func<IIocContainer, Task> toBuild, BuildOrder order = BuildOrder.Anytime)
         {
             builder.RegisterBuildAction(toBuild, order);
+            return this;
         }
 
         public IIocContainer GetIocContainer()
         {
-            return externalContainer;
+            return container;
         }
     }
 }

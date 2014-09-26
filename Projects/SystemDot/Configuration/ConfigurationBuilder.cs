@@ -26,13 +26,6 @@ namespace SystemDot.Configuration
             }  
         }
 
-        public void Build()
-        {
-            buildActions
-                .OrderBy(a => a.Order)
-                .ForEach(a => a.ToBuild(container));
-        }
-
         public void RegisterBuildAction(Action<IIocContainer> toBuild, BuildOrder order = BuildOrder.Anytime)
         {
             buildActions.Add(new BuildItem(toBuild, order));

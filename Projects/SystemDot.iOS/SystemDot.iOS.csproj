@@ -37,6 +37,9 @@
     <Compile Include="..\SystemDot.Windows\*.cs">
       <Link>%(RecursiveDir)%(FileName)</Link>
     </Compile>
+    <Compile Include="..\SystemDot.Windows\Configuration\BuilderConfigurationExtensions.cs">
+      <Link>Configuration\BuilderConfigurationExtensions.cs</Link>
+    </Compile>
     <Compile Include="..\SystemDot.Windows\Configuration\IocContainerExtensions.cs">
       <Link>Configuration\IocContainerExtensions.cs</Link>
     </Compile>

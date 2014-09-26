@@ -57,6 +57,7 @@
     <Compile Include="blocking_queue\when_queuing_two_items.cs" />
     <Compile Include="configuration\SpecificationGroup.cs" />
     <Compile Include="configuration\when_configuring_system_dot.cs" />
+    <Compile Include="configuration\when_configuring_system_dot_with_the_container_in_an_incomplete_state.cs" />
     <Compile Include="http\when_creating_a_fixed_port_address_with_a_server_specified.cs" />
     <Compile Include="ioc\Decorators\OpenTypeComponentDecorator.cs" />
     <Compile Include="ioc\Decorators\OtherOpenTypeComponentDecorator.cs" />

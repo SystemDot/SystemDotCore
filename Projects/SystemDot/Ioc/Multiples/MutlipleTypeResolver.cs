@@ -18,7 +18,7 @@ namespace SystemDot.Ioc.Multiples
         public IEnumerable<T> ThatImplement<T>()
         {
             return container.GetAllRegisteredTypes()
-                .Select(t => t.ActualConcreteType)
+                .Select(t => t.ResolveBy)
                 .ThatImplement<T>()
                 .Select(t => container.Resolve(t).As<T>());
         }
@@ -26,7 +26,7 @@ namespace SystemDot.Ioc.Multiples
         public IEnumerable ThatImplementOpenType(Type openType)
         {
             return container.GetAllRegisteredTypes()
-                .Select(t => t.ActualConcreteType)
+                .Select(t => t.ResolveBy)
                 .WhereImplementsOpenType(openType)
                 .Select(t => container.Resolve(t));
         }
