@@ -30,5 +30,10 @@ namespace SystemDot.Ioc.ObjectBuilding
         {
             return inner.GetInnerMostType();
         }
+
+        public override string ToString()
+        {
+            return string.Format("{0} decorates {1}", base.ToString(), decoratedType.Name);
+        }
     }
 }

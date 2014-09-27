@@ -41,5 +41,10 @@ namespace SystemDot.Ioc.ObjectBuilding
         {
             return iocContainer.Resolve(parameterType);
         }
+
+        public override string ToString()
+        {
+            return type.Name;
+        }
     }
 }

@@ -34,7 +34,7 @@ namespace SystemDot.Ioc
             components[plugin] = ConcreteInstance.FromType(concrete, this);
         }
 
-        public bool ComponentExists<TPlugin>() 
+        public bool ComponentExists<TPlugin>()
         {
             return ComponentExists(typeof(TPlugin));
         }
@@ -70,14 +70,14 @@ namespace SystemDot.Ioc
         {
             try
             {
-                if (!components.ContainsKey(type)) 
+                if (!components.ContainsKey(type))
                     throw new TypeNotRegisteredException(type);
 
                 ConcreteInstance concreteType = components[type];
 
                 return concreteType.Resolve();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 throw new CannotResolveTypeException(type, ex);
             }
@@ -95,12 +95,13 @@ namespace SystemDot.Ioc
 
         public void RegisterDecorator<TDecorator, TComponent>()
         {
-            components[typeof (TComponent)].DecorateWith<TDecorator>();
+            components[typeof(TComponent)].DecorateWith<TDecorator>();
         }
 
         public void RegisterOpenTypeDecorator(Type componentType, Type openDecoratorType)
         {
             components[componentType].DecorateWith(openDecoratorType.MakeGenericTypeFrom(componentType));
         }
+
     }
 }

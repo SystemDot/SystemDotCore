@@ -23,5 +23,10 @@ namespace SystemDot.Ioc.ObjectBuilding
         {
             return type;
         }
+
+        public override string ToString()
+        {
+            return type.Name;
+        }
     }
 }

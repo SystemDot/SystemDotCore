@@ -50,5 +50,10 @@ namespace SystemDot.Ioc
         {
             return cached ?? (cached = objectBuilder.Create());
         }
+
+        public override string ToString()
+        {
+            return objectBuilder.ToString();
+        }
     }
 }
