@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using SystemDot.Core;
 using SystemDot.Core.Collections;
+using System.Text;
 
 namespace SystemDot.Ioc
 {
@@ -103,5 +104,11 @@ namespace SystemDot.Ioc
             components[componentType].DecorateWith(openDecoratorType.MakeGenericTypeFrom(componentType));
         }
 
+        public string Describe()
+        {
+            StringBuilder sb = new StringBuilder();
+            components.ForEach(c => sb.AppendFormat("Resolve with: {0}  Actual type: {1}", c.Key.Name, c.Value.ToString()).AppendLine());
+            return sb.ToString();
+        }
     }
 }
