@@ -107,7 +107,11 @@ namespace SystemDot.Ioc
         public string Describe()
         {
             StringBuilder sb = new StringBuilder();
-            components.ForEach(c => sb.AppendFormat("Resolve with: {0}  Actual type: {1}", c.Key.Name, c.Value.ToString()).AppendLine());
+            for (int i = 0; i < components.Count; i++)
+            {
+                var c = components.ElementAt(i);
+                sb.AppendFormat("{0} Resolve with: {1}  Actual type: {2}", i, c.Key.Name, c.Value.ToString()).AppendLine();
+            }
             return sb.ToString();
         }
     }

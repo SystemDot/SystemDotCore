@@ -22,5 +22,7 @@ namespace SystemDot.Ioc
         IEnumerable<RegisteredType> GetAllRegisteredTypes();
 
         void Verify();
+
+        string Describe();
     }
 }
