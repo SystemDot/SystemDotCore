@@ -13,6 +13,5 @@ namespace SystemDot.Specifications.messenger
             HandledMessage = message;
             await Task.Delay(TimeSpan.FromSeconds(1));
         }
-        
     }
 }

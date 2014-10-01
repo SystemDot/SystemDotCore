@@ -15,6 +15,7 @@ namespace SystemDot.Messaging.Handling.Instances
 
         public void RegisterHandler(object handlerInstance)
         {
+            if(inner.Contains(handlerInstance)) return;
             inner.Add(handlerInstance);
         }
 

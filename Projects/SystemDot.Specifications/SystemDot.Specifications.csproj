@@ -117,10 +117,12 @@
     <Compile Include="ioc\when_veryfying_the_container_in_a_complete_state.cs" />
     <Compile Include="messenger\SpecificationGroup.cs" />
     <Compile Include="messenger\TestAsyncHandler.cs" />
+    <Compile Include="messenger\TestHandler.cs" />
     <Compile Include="messenger\TestRequest.cs" />
     <Compile Include="messenger\TestResponse.cs" />
     <Compile Include="messenger\when_resetting_the_messenger_after_registering_a_handler_and_then_sending_a_message.cs" />
     <Compile Include="messenger\when_sending_a_message_asynchronously_with_a_handler_registered.cs" />
+    <Compile Include="messenger\when_sending_a_message_a_handler_registered_twice.cs" />
     <Compile Include="messenger\when_sending_a_message_to_a_registered_handler_that_replies_and_the_reply_is_handled_in_the_call.cs" />
     <Compile Include="messenger\when_sending_a_message_with_a_handler_for_another_message_type_registered.cs" />
     <Compile Include="messenger\when_sending_a_message_with_a_handler_registered.cs" />
