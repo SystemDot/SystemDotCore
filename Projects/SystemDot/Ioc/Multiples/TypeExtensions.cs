@@ -20,7 +20,8 @@ namespace SystemDot.Ioc.Multiples
 
         static bool ImplementsOpenType(this Type type, Type openGenericType)
         {
-            return type.IsAssignableFromOpenGenericType(openGenericType) 
+            return type.IsAssignableFromOpenGenericType(openGenericType)
+                || (type.GetTypeInfo().BaseType != null && type.GetTypeInfo().BaseType.IsAssignableFromOpenGenericType(openGenericType))
                 || type.GetInterfaces().Any(i => i.IsAssignableFromOpenGenericType(openGenericType));
         }
 
