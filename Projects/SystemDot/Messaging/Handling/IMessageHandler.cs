@@ -2,16 +2,12 @@ using System.Threading.Tasks;
 
 namespace SystemDot.Messaging.Handling
 {
-    public interface IMessageHandler
-    {
-    }
-
-    public interface IMessageHandler<in T> : IMessageHandler
+    public interface IMessageHandler<in T>
     {
         void Handle(T message);
     }
 
-    public interface IAsyncMessageHandler<in T> : IMessageHandler
+    public interface IAsyncMessageHandler<in T>
     {
         Task Handle(T message);
     }
