@@ -66,6 +66,8 @@
     <Compile Include="ioc\Decorators\when_registering_an_open_type_decorator_for_an_instance_in_the_container.cs" />
     <Compile Include="ioc\Decorators\when_registering_a_decorator_from_open_types_for_a_specific_assembly_in_the_container.cs" />
     <Compile Include="ioc\Decorators\when_registering_a_decorator_from_open_types_for_a_specific_assembly_in_the_container_where_no_implemenations_exist.cs" />
+    <Compile Include="ioc\MultpleTypes\ConcreteOpenTypeComponent.cs" />
+    <Compile Include="ioc\MultpleTypes\when_registering_all_implementations_of_concrete_open_generic_types_in_the_container_by_implementation.cs" />
     <Compile Include="ioc\MultpleTypes\when_registering_all_implementations_of_open_generic_types_in_the_container_by_interface.cs" />
     <Compile Include="ioc\MultpleTypes\when_registering_all_types_in_the_container_that_implement_a_specific_interface_from_an_assembly_by_interface.cs" />
     <Compile Include="ioc\MultpleTypes\when_resolving_all_types_that_implement_an_specific_open_generic_type.cs" />

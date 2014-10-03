@@ -1,6 +1,6 @@
 namespace SystemDot.Specifications.ioc.MultpleTypes
 {
-    public class OtherOpenTypeComponent : IOpenTypeComponent<int>
+    public class OtherOpenTypeComponent : ConcreteOpenTypeComponent<string>, IOpenTypeComponent<int>
     {
     }
 }
