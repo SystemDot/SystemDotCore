@@ -46,6 +46,11 @@ namespace SystemDot.Messaging.Handling
             RouteMessageToHandlers(message, GlobalGroupingId.Default);
         }
 
+        public object RouteMessageToOnlyHandler(object message)
+        {
+            return handlersByInstance.RouteMessageToOnlyHandler(message); 
+        }
+
         public async Task RouteMessageToHandlersAsync(object message)
         {
             await RouteMessageToHandlersAsync(message, GlobalGroupingId.Default);

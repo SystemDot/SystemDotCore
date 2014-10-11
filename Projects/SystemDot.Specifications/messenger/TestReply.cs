@@ -1,6 +1,6 @@
 namespace SystemDot.Specifications.messenger
 {
-    class TestResponse
+    public class TestReply
     {
     }
 }

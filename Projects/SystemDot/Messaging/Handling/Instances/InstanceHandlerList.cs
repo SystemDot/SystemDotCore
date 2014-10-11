@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using SystemDot.Core.Collections;
@@ -22,6 +23,19 @@ namespace SystemDot.Messaging.Handling.Instances
         public void Unregister(object toUnregister)
         {
             inner.Remove(toUnregister);
+        }
+
+        public object RouteMessageToOnlyHandler(object message)
+        {
+            object reply = null;
+
+            foreach (var handler in inner)
+            {
+                reply = handler.InvokeHandler(message);
+                if (reply != null) break;
+            }
+
+            return reply;
         }
 
         public void RouteMessageToHandlers(object message)

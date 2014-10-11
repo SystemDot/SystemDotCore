@@ -1,6 +1,6 @@
 using System;
 using System.Threading.Tasks;
-using SystemDot.Ioc;
+using SystemDot.Core;
 using SystemDot.Messaging.Handling;
 using SystemDot.Messaging.Handling.Actions;
 
@@ -45,9 +45,21 @@ namespace SystemDot.Messaging.Simple
             Router.RouteMessageToHandlers(message);
         }
 
+        public static TReply SendAndReceiveReply<TRequest, TReply>(TRequest request)
+        {
+            return Router.RouteMessageToOnlyHandler(request).As<TReply>();
+        }
+
         public async static Task SendAsync<TMessage>(TMessage message)
         {
             await Router.RouteMessageToHandlersAsync(message);
+        }
+
+        public async static Task<TReply> Send<TRequest, TReply>(TRequest request)
+        {
+            TReply reply = default(TReply);
+            await SendAsync<TRequest, TReply>(request, r => reply = r);
+            return reply;
         }
 
         public static void Send<TMessage, TGroupingId>(TMessage message, TGroupingId groupingId)

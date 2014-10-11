@@ -1,6 +1,12 @@
 namespace SystemDot.Specifications.messenger
 {
-    class TestRequest
-    {
+    public class TestRequest
+    { 
+        public TestReply Reply { get; private set; }
+
+        public TestRequest()
+        {
+            Reply = new TestReply();
+        }
     }
 }

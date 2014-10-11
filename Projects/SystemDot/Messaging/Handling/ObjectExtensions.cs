@@ -6,12 +6,13 @@ namespace SystemDot.Messaging.Handling
 {
     static class ObjectExtensions
     {
-        public static void InvokeHandler(this object handler, object message)
+        public static object InvokeHandler(this object handler, object message)
         {
             MethodInfo method = GetHandlerMethodInfo(handler, message);
-            if (method == null) return;
 
-            method.Invoke(handler, new[] { message });
+            return method == null 
+                ? null 
+                : method.Invoke(handler, new[] { message });
         }
 
         public async static Task InvokeHandlerAsync(this object handler, object message)

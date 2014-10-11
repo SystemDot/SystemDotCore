@@ -41,6 +41,7 @@
     <Compile Include="Configuration\ConfigurationBuilder.cs" />
     <Compile Include="Configuration\Configure.cs" />
     <Compile Include="Configuration\ContainerConfiguration.cs" />
+    <Compile Include="Configuration\IBuilderConfiguration.cs" />
     <Compile Include="Configuration\IConfigurationBuilderComponent.cs" />
     <Compile Include="Configuration\Reading\ConfigurationReader.cs" />
     <Compile Include="Configuration\Reading\IConfigurationReader.cs" />
@@ -69,6 +70,11 @@
     <Compile Include="Ioc\CannotResolveTypeException.cs" />
     <Compile Include="Ioc\ConcreteInstance.cs" />
     <Compile Include="Ioc\ContainerUnverifiableException.cs" />
+    <Compile Include="Ioc\IIocContainer.cs" />
+    <Compile Include="Ioc\IIocResolver.cs" />
+    <Compile Include="Ioc\IocContainer.cs" />
+    <Compile Include="Ioc\IocContainerExtensions.cs" />
+    <Compile Include="Ioc\IocContainerResources.cs" />
     <Compile Include="Ioc\Multiples\MultipleDecoratorForAssembliesRegistration.cs" />
     <Compile Include="Ioc\Multiples\MultipleDecoratorRegistration.cs" />
     <Compile Include="Ioc\Multiples\MultipleDecoratorToDecorateRegistration.cs" />
@@ -80,12 +86,7 @@
     <Compile Include="Ioc\ObjectBuilding\DecoratorObjectBuilder.cs" />
     <Compile Include="Ioc\ObjectBuilding\FromFactoryObjectBuilder.cs" />
     <Compile Include="Ioc\ObjectBuilding\FromTypeObjectBuilder.cs" />
-    <Compile Include="Ioc\IIocContainer.cs" />
-    <Compile Include="Ioc\IIocResolver.cs" />
     <Compile Include="Ioc\ObjectBuilding\ObjectBuilder.cs" />
-    <Compile Include="Ioc\IocContainer.cs" />
-    <Compile Include="Ioc\IocContainerExtensions.cs" />
-    <Compile Include="Ioc\IocContainerResources.cs" />
     <Compile Include="Ioc\RegisteredType.cs" />
     <Compile Include="Ioc\TypeExtensions.cs" />
     <Compile Include="Ioc\TypeNotRegisteredException.cs" />
@@ -140,6 +141,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Configuration\IBuilderConfiguration.cs.orig" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />

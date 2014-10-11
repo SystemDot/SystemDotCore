@@ -117,11 +117,12 @@
     <Compile Include="ioc\when_resolving_a_type_not_registered.cs" />
     <Compile Include="ioc\when_veryfying_the_container_in_an_incomplete_state.cs" />
     <Compile Include="ioc\when_veryfying_the_container_in_a_complete_state.cs" />
+    <Compile Include="messenger\TestRequestReplyHandler.cs" />
     <Compile Include="messenger\SpecificationGroup.cs" />
     <Compile Include="messenger\TestAsyncHandler.cs" />
     <Compile Include="messenger\TestHandler.cs" />
     <Compile Include="messenger\TestRequest.cs" />
-    <Compile Include="messenger\TestResponse.cs" />
+    <Compile Include="messenger\TestReply.cs" />
     <Compile Include="messenger\when_resetting_the_messenger_after_registering_a_handler_and_then_sending_a_message.cs" />
     <Compile Include="messenger\when_sending_a_message_asynchronously_with_a_handler_registered.cs" />
     <Compile Include="messenger\when_sending_a_message_a_handler_registered_twice.cs" />
@@ -131,6 +132,7 @@
     <Compile Include="messenger\when_sending_a_message_with_a_handler_registered_for_a_different_grouping.cs" />
     <Compile Include="messenger\when_sending_a_message_with_a_handler_registered_for_a_particular_grouping.cs" />
     <Compile Include="messenger\when_sending_a_message_with_two_handlers_registered.cs" />
+    <Compile Include="messenger\when_sending_a_request_expecting_a_reply_with_a_request_reply_handler_registered.cs" />
     <Compile Include="messenger\when_unregistering_an_action_after_registering_it_and_then_sending_a_message.cs" />
     <Compile Include="messenger\when_unregistering_an_unregistered_action_and_then_sending_a_message.cs" />
     <Compile Include="parallelism\when_starting_task_repeating_with_a_task_registered_and_the_time_delay_has_passed_twice.cs" />
