@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>SystemDotCore</id>
+    <version>3.0.0</version>
+    <title>SystemDotCore</title>
+    <authors>Chris Sampson,James Goodenough</authors>
+    <owners>Chris Sampson,James Goodenough</owners>
+    <projectUrl>https://github.com/SystemDot/SystemDotCore</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Core components for cross platform development on Android, iOS and WinRT</description>
+    <summary>Core components for cross platform development on Android, iOS and WinRT</summary>
+    <copyright>SystemDot 2014</copyright>
+    <language>en-GB</language>
+    <tags>Cross Platform</tags>
+  </metadata>
+  <files>
+    <file src="Build\SystemDot.Core.dll" target="lib\MonoAndroid\SystemDot.Core.dll" />
+    <file src="Build\SystemDot.Core.pdb" target="lib\MonoAndroid\SystemDot.Core.pdb" />
+    <file src="Build\SystemDot.Core.dll" target="lib\MonoTouch\SystemDot.Core.dll" />
+    <file src="Build\SystemDot.Core.pdb" target="lib\MonoTouch\SystemDot.Core.pdb" />
+    <file src="Build\SystemDot.Core.dll" target="lib\net\SystemDot.Core.dll" />
+    <file src="Build\SystemDot.Core.pdb" target="lib\net\SystemDot.Core.pdb" />
+    <file src="Build\SystemDot.Core.dll" target="lib\netcore\SystemDot.Core.dll" />
+    <file src="Build\SystemDot.Core.pdb" target="lib\netcore\SystemDot.Core.pdb" />
+    <file src="Build\SystemDot.Core.dll" target="lib\portable-win+net45+MonoAndroid+MonoTouch+win8\SystemDot.Core.dll" />
+    <file src="Build\SystemDot.Core.pdb" target="lib\portable-win+net45+MonoAndroid+MonoTouch+win8\SystemDot.Core.pdb" />
+  </files>
+</package>

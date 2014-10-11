@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 
-namespace SystemDot.Core
+namespace SystemDot.Reflection
 {
     public static class TypeExtensions
     {

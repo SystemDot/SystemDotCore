@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+    <metadata>
+        <id>SystemDotIoc</id>
+        <version>1.0.0</version>
+        <title>SystemDotIoc</title>
+        <authors>Chris Sampson,James Goodenough</authors>
+        <owners>Chris Sampson,James Goodenough</owners>
+        <projectUrl>https://github.com/SystemDot/SystemDotCore</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>Inversion of control container for cross platform development on Android, iOS and WinRT</description>
+        <summary>Inversion of control container for cross platform development on Android, iOS and WinRT</summary>
+        <copyright>SystemDot 2014</copyright>
+        <language>en-GB</language>
+        <tags>Ioc, Cross Platform</tags>
+    </metadata>
+    <files>
+        <file src="Build\SystemDot.Ioc.dll" target="lib\portable-win+net45+MonoAndroid+MonoTouch+win8\SystemDot.Ioc.dll" />
+	      <file src="Build\SystemDot.Ioc.pdb" target="lib\portable-win+net45+MonoAndroid+MonoTouch+win8\SystemDot.Ioc.pdb" />
+    </files>
+</package>

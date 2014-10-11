@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+    <metadata>
+        <id>SystemDotReflection</id>
+        <version>1.0.0</version>
+        <title>SystemDotReflection</title>
+        <authors>Chris Sampson,James Goodenough</authors>
+        <owners>Chris Sampson,James Goodenough</owners>
+        <projectUrl>https://github.com/SystemDot/SystemDotCore</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>Type reflection library for cross platform development on Android, iOS and WinRT</description>
+        <summary>Type reflection library for cross platform development on Android, iOS and WinRT</summary>
+        <copyright>SystemDot 2014</copyright>
+        <language>en-GB</language>
+        <tags>Reflection, Cross Platform</tags>
+    </metadata>
+    <files>
+        <file src="Build\SystemDot.Reflection.dll" target="lib\MonoAndroid\SystemDot.Reflection.dll" />
+        <file src="Build\SystemDot.Reflection.pdb" target="lib\MonoAndroid\SystemDot.Reflection.pdb" />
+        <file src="Build\SystemDot.Reflection.Android.dll" target="lib\MonoAndroid\SystemDot.Reflection.Android.dll" />
+        <file src="Build\SystemDot.Reflection.Android.pdb" target="lib\MonoAndroid\SystemDot.Reflection.Android.pdb" />
+        <file src="Build\SystemDot.Reflection.dll" target="lib\MonoTouch\SystemDot.Reflection.dll" />
+        <file src="Build\SystemDot.Reflection.pdb" target="lib\MonoTouch\SystemDot.Reflection.pdb" />
+        <file src="Build\SystemDot.Reflection.iOS.dll" target="lib\MonoTouch\SystemDot.Reflection.iOS.dll" />
+        <file src="Build\SystemDot.Reflection.iOS.pdb" target="lib\MonoTouch\SystemDot.Reflection.iOS.pdb" />
+        <file src="Build\SystemDot.Reflection.dll" target="lib\net\SystemDot.Reflection.dll" />
+        <file src="Build\SystemDot.Reflection.pdb" target="lib\net\SystemDot.Reflection.pdb" />
+        <file src="Build\SystemDot.Reflection.Windows.dll" target="lib\net\SystemDot.Reflection.Windows.dll" />
+        <file src="Build\SystemDot.Reflection.Windows.pdb" target="lib\net\SystemDot.Reflection.Windows.pdb" />
+        <file src="Build\SystemDot.Reflection.dll" target="lib\netcore\SystemDot.Reflection.dll" />
+        <file src="Build\SystemDot.Reflection.pdb" target="lib\netcore\SystemDot.Reflection.pdb" />
+        <file src="Build\SystemDot.Reflection.WindowsStore.dll" target="lib\netcore\SystemDot.Reflection.WindowsStore.dll" />
+        <file src="Build\SystemDot.Reflection.WindowsStore.pdb" target="lib\netcore\SystemDot.Reflection.WindowsStore.pdb" />
+        <file src="Build\SystemDot.Reflection.dll" target="lib\portable-win+net45+MonoAndroid+MonoTouch+win8\SystemDot.Reflection.dll" />
+        <file src="Build\SystemDot.Reflection.pdb" target="lib\portable-win+net45+MonoAndroid+MonoTouch+win8\SystemDot.Reflection.pdb" />
+      </files>
+</package>
