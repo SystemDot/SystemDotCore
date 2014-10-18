@@ -47,7 +47,16 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="SystemDot.Ioc">
-      <HintPath>..\packages\SystemDotIoc.1.0.0\lib\portable-win+net45+MonoAndroid+MonoTouch+win8\SystemDot.Ioc.dll</HintPath>
+      <HintPath>..\packages\SystemDotIoc.1.0.1\lib\portable-win+net45+MonoAndroid+MonoTouch+win8\SystemDot.Ioc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SystemDot.Reflection">
+      <HintPath>..\packages\SystemDotReflection.1.0.1\lib\net\SystemDot.Reflection.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SystemDot.Reflection.Windows">
+      <HintPath>..\packages\SystemDotReflection.1.0.1\lib\net\SystemDot.Reflection.Windows.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="TechTalk.SpecFlow">
       <HintPath>..\Solutions\packages\SpecFlow.1.9.0\lib\net35\TechTalk.SpecFlow.dll</HintPath>

@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+    <metadata>
+        <id>SystemDotSerialisation</id>
+        <version>1.0.0</version>
+        <title>SystemDotSerialisation</title>
+        <authors>Chris Sampson,James Goodenough</authors>
+        <owners>Chris Sampson,James Goodenough</owners>
+        <projectUrl>https://github.com/SystemDot/SystemDotCore</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>Serialisation components for cross platform development on Android, iOS and WinRT</description>
+        <summary>Serialisation components of control container for cross platform development on Android, iOS and WinRT</summary>
+        <copyright>SystemDot 2014</copyright>
+        <language>en-GB</language>
+        <tags>Serialisation, Cross Platform</tags>
+        <dependencies>
+          <dependency id="Newtonsoft.Json" version="6.0.5" />
+        </dependencies>
+    </metadata>
+    <files>
+        <file src="Build\SystemDot.Serialisation.dll" target="lib\portable-win+net45+MonoAndroid+MonoTouch+win8\SystemDot.Serialisation.dll" />
+	      <file src="Build\SystemDot.Serialisation.pdb" target="lib\portable-win+net45+MonoAndroid+MonoTouch+win8\SystemDot.Serialisation.pdb" />
+    </files>
+</package>

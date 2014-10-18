@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
     <metadata>
         <id>SystemDotBootstrapping</id>
-        <version>1.0.2</version>
+        <version>1.0.3</version>
         <title>SystemDotBootstrapping</title>
         <authors>Chris Sampson,James Goodenough</authors>
         <owners>Chris Sampson,James Goodenough</owners>
@@ -14,8 +14,8 @@
         <language>en-GB</language>
         <tags>Bootstrapping, Cross Platform</tags>
         <dependencies>
-          <dependency id="SystemDotIoc" version="1.0.0" />
-          <dependency id="SystemDotReflection" version="1.0.0" />
+          <dependency id="SystemDotIoc" version="1.0.1" />
+          <dependency id="SystemDotReflection" version="1.0.1" />
         </dependencies>
     </metadata>
     <files>

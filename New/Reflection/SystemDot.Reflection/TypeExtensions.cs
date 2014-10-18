@@ -57,22 +57,47 @@ namespace SystemDot.Reflection
 
         static IEnumerable<Type> WhereNonAbstract(this IEnumerable<Type> types)
         {
-            return types.Where(t => !t.GetTypeInfo().IsAbstract);
+            return types.Where(t => !t.IsAbstract());
+        }
+
+        static bool IsAbstract(this Type type)
+        {
+            return type.GetTypeInfo().IsAbstract;
         }
 
         static IEnumerable<Type> WhereConcrete(this IEnumerable<Type> types)
         {
-            return types.Where(t => !t.GetTypeInfo().IsInterface && t.GetTypeInfo().IsClass);
+            return types.Where(IsConcrete);
+        }
+
+        public static bool IsNormalConcrete(this Type type)
+        {
+            return !type.IsAbstract() && !type.IsGeneric() && type.IsConcrete();
+        }
+
+        static bool IsConcrete(this Type type)
+        {
+            return !type.GetTypeInfo().IsInterface && type.GetTypeInfo().IsClass;
         }
 
         static IEnumerable<Type> WhereNonGeneric(this IEnumerable<Type> types)
         {
-            return types.Where(t => !t.GetTypeInfo().ContainsGenericParameters);
+            return types.Where(t => !t.IsGeneric());
+        }
+
+        static bool IsGeneric(this Type type)
+        {
+            return type.GetTypeInfo().ContainsGenericParameters;
         }
 
         public static MethodInfo GetMethod(this Type type, string methodName, Type[] args)
         {
             return type.GetRuntimeMethod(methodName, args);
+        }
+
+        public static IEnumerable<MethodInfo> GetMethods(this Type type)
+        {
+            return type.GetRuntimeMethods();
         }
     }
 }

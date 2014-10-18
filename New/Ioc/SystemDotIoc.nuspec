@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
     <metadata>
         <id>SystemDotIoc</id>
-        <version>1.0.0</version>
+        <version>1.0.1</version>
         <title>SystemDotIoc</title>
         <authors>Chris Sampson,James Goodenough</authors>
         <owners>Chris Sampson,James Goodenough</owners>
@@ -13,6 +13,9 @@
         <copyright>SystemDot 2014</copyright>
         <language>en-GB</language>
         <tags>Ioc, Cross Platform</tags>
+        <dependencies>
+          <dependency id="SystemDotReflection" version="1.0.1" />
+        </dependencies>
     </metadata>
     <files>
         <file src="Build\SystemDot.Ioc.dll" target="lib\portable-win+net45+MonoAndroid+MonoTouch+win8\SystemDot.Ioc.dll" />

@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+    <metadata>
+        <id>SystemDotThreadMarshalling</id>
+        <version>1.0.2</version>
+        <title>SystemDotThreadMarshalling</title>
+        <authors>Chris Sampson,James Goodenough</authors>
+        <owners>Chris Sampson,James Goodenough</owners>
+        <projectUrl>https://github.com/SystemDot/SystemDotCore</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>Thread marshalling for cross platform development on Android, iOS and WinRT</description>
+        <summary>Thread marshalling for cross platform development on Android, iOS and WinRT</summary>
+        <copyright>SystemDot 2014</copyright>
+        <language>en-GB</language>
+        <tags>ThreadMarshalling, Cross Platform</tags>
+        <dependencies>
+          <dependency id="SystemDotBootstrapping" version="1.0.3" />
+          <dependency id="SystemDotIoc" version="1.0.1" />
+        </dependencies>
+    </metadata>
+    <files>
+        <file src="Build\SystemDot.ThreadMarshalling.dll" target="lib\MonoAndroid\SystemDot.ThreadMarshalling.dll" />
+        <file src="Build\SystemDot.ThreadMarshalling.pdb" target="lib\MonoAndroid\SystemDot.ThreadMarshalling.pdb" />
+        <file src="Build\SystemDot.ThreadMarshalling.Android.dll" target="lib\MonoAndroid\SystemDot.ThreadMarshalling.Android.dll" />
+        <file src="Build\SystemDot.ThreadMarshalling.Android.pdb" target="lib\MonoAndroid\SystemDot.ThreadMarshalling.Android.pdb" />
+        <file src="Build\SystemDot.ThreadMarshalling.dll" target="lib\MonoTouch\SystemDot.ThreadMarshalling.dll" />
+        <file src="Build\SystemDot.ThreadMarshalling.pdb" target="lib\MonoTouch\SystemDot.ThreadMarshalling.pdb" />
+        <file src="Build\SystemDot.ThreadMarshalling.iOS.dll" target="lib\MonoTouch\SystemDot.ThreadMarshalling.iOS.dll" />
+        <file src="Build\SystemDot.ThreadMarshalling.iOS.pdb" target="lib\MonoTouch\SystemDot.ThreadMarshalling.iOS.pdb" />
+        <file src="Build\SystemDot.ThreadMarshalling.dll" target="lib\net\SystemDot.ThreadMarshalling.dll" />
+        <file src="Build\SystemDot.ThreadMarshalling.pdb" target="lib\net\SystemDot.ThreadMarshalling.pdb" />
+        <file src="Build\SystemDot.ThreadMarshalling.Windows.dll" target="lib\net\SystemDot.ThreadMarshalling.Windows.dll" />
+        <file src="Build\SystemDot.ThreadMarshalling.Windows.pdb" target="lib\net\SystemDot.ThreadMarshalling.Windows.pdb" />
+        <file src="Build\SystemDot.ThreadMarshalling.dll" target="lib\netcore\SystemDot.ThreadMarshalling.dll" />
+        <file src="Build\SystemDot.ThreadMarshalling.pdb" target="lib\netcore\SystemDot.ThreadMarshalling.pdb" />
+        <file src="Build\SystemDot.ThreadMarshalling.WindowsStore.dll" target="lib\netcore\SystemDot.ThreadMarshalling.WindowsStore.dll" />
+        <file src="Build\SystemDot.ThreadMarshalling.WindowsStore.pdb" target="lib\netcore\SystemDot.ThreadMarshalling.WindowsStore.pdb" />
+        <file src="Build\SystemDot.ThreadMarshalling.dll" target="lib\portable-win+net45+MonoAndroid+MonoTouch+win8\SystemDot.ThreadMarshalling.dll" />
+        <file src="Build\SystemDot.ThreadMarshalling.pdb" target="lib\portable-win+net45+MonoAndroid+MonoTouch+win8\SystemDot.ThreadMarshalling.pdb" />
+      </files>
+</package>

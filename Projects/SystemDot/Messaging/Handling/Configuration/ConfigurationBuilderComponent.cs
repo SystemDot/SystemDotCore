@@ -1,10 +1,10 @@
-using SystemDot.Configuration;
+using SystemDot.Bootstrapping;
 
 namespace SystemDot.Messaging.Handling.Configuration
 {
-    public class ConfigurationBuilderComponent : IConfigurationBuilderComponent
+    public class BootstrapBuilderComponent : IBootstrapBuilderComponent
     {
-        public void Configure(ConfigurationBuilder builder)
+        public void Configure(BootstrapBuilder builder)
         {
             builder.RegisterBuildAction(
                 c => c.RegisterOpenTypeHandlersWithMessenger(typeof(IMessageHandler<>)),

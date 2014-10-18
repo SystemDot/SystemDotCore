@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using SystemDot.Reflection;
 
 namespace SystemDot.Ioc
 {
@@ -69,17 +70,25 @@ namespace SystemDot.Ioc
         {
             try
             {
-                if (!components.ContainsKey(type))
-                    throw new TypeNotRegisteredException(type);
-
-                ConcreteInstance concreteType = components[type];
-
-                return concreteType.Resolve();
+                return GetComponent(type).Resolve();
             }
             catch (Exception ex)
             {
                 throw new CannotResolveTypeException(type, ex);
             }
+        }
+
+        ConcreteInstance GetComponent(Type type)
+        {
+            if (!ComponentExists(type)) CreateComponentIfConcrete(type);
+            if (!ComponentExists(type)) throw new TypeNotRegisteredException(type);
+            return components[type];
+        }
+
+        void CreateComponentIfConcrete(Type type)
+        {
+            if (!type.IsNormalConcrete()) return;
+            components[type] = ConcreteInstance.FromType(type, this);
         }
 
         public T Create<T>()
@@ -104,7 +113,7 @@ namespace SystemDot.Ioc
 
         public string Describe()
         {
-            StringBuilder sb = new StringBuilder();
+            var sb = new StringBuilder();
             for (int i = 0; i < components.Count; i++)
             {
                 var c = components.ElementAt(i);

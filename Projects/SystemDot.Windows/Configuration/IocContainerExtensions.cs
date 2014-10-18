@@ -7,7 +7,7 @@ using SystemDot.Serialisation;
 using SystemDot.Storage.Changes.Upcasting;
 using SystemDot.ThreadMarshalling;
 
-namespace SystemDot.Configuration
+namespace SystemDot.Bootstrapping
 {
     public static class IocContainerExtensions
     {

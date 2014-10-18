@@ -1,10 +1,10 @@
 using System.Threading.Tasks;
 
-namespace SystemDot.Configuration
+namespace SystemDot.Bootstrapping
 {
-    public static class BuilderConfigurationExtensions
+    public static class BootstrapBuilderConfigurationExtensions
     {
-        public static async Task InitialiseAsync(this BuilderConfiguration configuration)
+        public static async Task InitialiseAsync(this BootstrapBuilderConfiguration configuration)
         {
             configuration.GetIocContainer().RegisterComponents(); 
             await configuration.BaseInitialiseAsync();

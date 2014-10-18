@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+    <metadata>
+        <id>SystemDotFileSystem</id>
+        <version>1.0.2</version>
+        <title>SystemDotFileSystem</title>
+        <authors>Chris Sampson,James Goodenough</authors>
+        <owners>Chris Sampson,James Goodenough</owners>
+        <projectUrl>https://github.com/SystemDot/SystemDotCore</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>File handling functions for cross platform development on Android, iOS and WinRT</description>
+        <summary>File handling functions for cross platform development on Android, iOS and WinRT</summary>
+        <copyright>SystemDot 2014</copyright>
+        <language>en-GB</language>
+        <tags>File, Cross Platform</tags>
+        <dependencies>
+          <dependency id="SystemDotSerialisation" version="1.0.0" />
+          <dependency id="SystemDotBootstrapping" version="1.0.3" />
+          <dependency id="SystemDotIoc" version="1.0.1" />
+        </dependencies>
+    </metadata>
+    <files>
+        <file src="Build\SystemDot.FileSystem.dll" target="lib\MonoAndroid\SystemDot.FileSystem.dll" />
+        <file src="Build\SystemDot.FileSystem.pdb" target="lib\MonoAndroid\SystemDot.FileSystem.pdb" />
+        <file src="Build\SystemDot.FileSystem.Android.dll" target="lib\MonoAndroid\SystemDot.FileSystem.Android.dll" />
+        <file src="Build\SystemDot.FileSystem.Android.pdb" target="lib\MonoAndroid\SystemDot.FileSystem.Android.pdb" />
+        <file src="Build\SystemDot.FileSystem.dll" target="lib\MonoTouch\SystemDot.FileSystem.dll" />
+        <file src="Build\SystemDot.FileSystem.pdb" target="lib\MonoTouch\SystemDot.FileSystem.pdb" />
+        <file src="Build\SystemDot.FileSystem.iOS.dll" target="lib\MonoTouch\SystemDot.FileSystem.iOS.dll" />
+        <file src="Build\SystemDot.FileSystem.iOS.pdb" target="lib\MonoTouch\SystemDot.FileSystem.iOS.pdb" />
+        <file src="Build\SystemDot.FileSystem.dll" target="lib\net\SystemDot.FileSystem.dll" />
+        <file src="Build\SystemDot.FileSystem.pdb" target="lib\net\SystemDot.FileSystem.pdb" />
+        <file src="Build\SystemDot.FileSystem.Windows.dll" target="lib\net\SystemDot.FileSystem.Windows.dll" />
+        <file src="Build\SystemDot.FileSystem.Windows.pdb" target="lib\net\SystemDot.FileSystem.Windows.pdb" />
+        <file src="Build\SystemDot.FileSystem.dll" target="lib\netcore\SystemDot.FileSystem.dll" />
+        <file src="Build\SystemDot.FileSystem.pdb" target="lib\netcore\SystemDot.FileSystem.pdb" />
+        <file src="Build\SystemDot.FileSystem.WindowsStore.dll" target="lib\netcore\SystemDot.FileSystem.WindowsStore.dll" />
+        <file src="Build\SystemDot.FileSystem.WindowsStore.pdb" target="lib\netcore\SystemDot.FileSystem.WindowsStore.pdb" />
+        <file src="Build\SystemDot.FileSystem.dll" target="lib\portable-win+net45+MonoAndroid+MonoTouch+win8\SystemDot.FileSystem.dll" />
+        <file src="Build\SystemDot.FileSystem.pdb" target="lib\portable-win+net45+MonoAndroid+MonoTouch+win8\SystemDot.FileSystem.pdb" />
+      </files>
+</package>

@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{64C9484E-CC64-4C6D-AAB6-62CCA020D4DC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SystemDot.Ioc.Specifications</RootNamespace>
+    <AssemblyName>SystemDot.Ioc.Specifications</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\..\Solutions\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Decorators\OpenTypeComponentDecorator.cs" />
+    <Compile Include="Decorators\OtherOpenTypeComponentDecorator.cs" />
+    <Compile Include="Decorators\OtherTestComponentDecorator.cs" />
+    <Compile Include="Decorators\TestComponentDecorator.cs" />
+    <Compile Include="Decorators\when_registering_an_open_type_decorator_for_an_instance_in_the_container.cs" />
+    <Compile Include="Decorators\when_registering_a_decorator_for_an_instance_already_decorated_in_the_container.cs" />
+    <Compile Include="Decorators\when_registering_a_decorator_for_an_instance_in_the_container.cs" />
+    <Compile Include="Decorators\when_registering_a_decorator_for_an_instance_registered_by_factory_in_the_container.cs" />
+    <Compile Include="Decorators\when_registering_a_decorator_from_open_types_for_a_specific_assembly_in_the_container.cs" />
+    <Compile Include="Decorators\when_registering_a_decorator_from_open_types_for_a_specific_assembly_in_the_container_where_no_implemenations_exist.cs" />
+    <Compile Include="Decorators\when_registering_a_decorator_from_open_types_in_all_assemblies_in_the_container.cs" />
+    <Compile Include="MultpleTypes\ConcreteOpenTypeComponent.cs" />
+    <Compile Include="MultpleTypes\IOpenTypeComponent.cs" />
+    <Compile Include="MultpleTypes\OpenTypeComponent.cs" />
+    <Compile Include="MultpleTypes\OtherOpenTypeComponent.cs" />
+    <Compile Include="MultpleTypes\when_registering_all_implementations_of_concrete_open_generic_types_in_the_container_by_implementation.cs" />
+    <Compile Include="MultpleTypes\when_registering_all_implementations_of_open_generic_types_in_the_container_by_implementation.cs" />
+    <Compile Include="MultpleTypes\when_registering_all_implementations_of_open_generic_types_in_the_container_by_interface.cs" />
+    <Compile Include="MultpleTypes\when_registering_all_types_in_the_container_from_an_assembly_by_implementation.cs" />
+    <Compile Include="MultpleTypes\when_registering_all_types_in_the_container_from_an_assembly_by_implementation_and_interface.cs" />
+    <Compile Include="MultpleTypes\when_registering_all_types_in_the_container_from_an_assembly_by_interface.cs" />
+    <Compile Include="MultpleTypes\when_registering_all_types_in_the_container_from_an_assembly_the_second_time.cs" />
+    <Compile Include="MultpleTypes\when_registering_all_types_in_the_container_that_implement_a_specific_interface_from_an_assembly_by_interface.cs" />
+    <Compile Include="MultpleTypes\when_resolving_all_types_that_implement_an_specific_open_generic_type.cs" />
+    <Compile Include="MultpleTypes\when_resolving_all_types_that_implement_an_specific_type.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestTypes\AnotherInheritingComponent.cs" />
+    <Compile Include="TestTypes\AnotherTestComponent.cs" />
+    <Compile Include="TestTypes\AnotherTestComponentOnAnotherInterface.cs" />
+    <Compile Include="TestTypes\IAnotherTestComponent.cs" />
+    <Compile Include="TestTypes\Interfaces\ITestComponent.cs" />
+    <Compile Include="TestTypes\Interfaces\ITestComponentWithParameters.cs" />
+    <Compile Include="TestTypes\Interfaces\ITestInterface1.cs" />
+    <Compile Include="TestTypes\Interfaces\ITestInterfaceOnBaseConcreteType.cs" />
+    <Compile Include="TestTypes\Interfaces\ITestInterfaceOnDerivedConcreteType.cs" />
+    <Compile Include="TestTypes\Interfaces\ITestInterfaceWithNoConcreteImplementation.cs" />
+    <Compile Include="TestTypes\Interfaces\IThirdTestComponent.cs" />
+    <Compile Include="TestTypes\TestAbstractConcreteType.cs" />
+    <Compile Include="TestTypes\TestBaseConcreteType.cs" />
+    <Compile Include="TestTypes\TestComponent.cs" />
+    <Compile Include="TestTypes\TestComponentWithConcreteDependency.cs" />
+    <Compile Include="TestTypes\TestComponentWithParameters.cs" />
+    <Compile Include="TestTypes\TestDerivedConcreteType.cs" />
+    <Compile Include="TestTypes\TestOpenGenericType.cs" />
+    <Compile Include="TestTypes\TestStruct.cs" />
+    <Compile Include="TestTypes\TestTypeImplementingAnInterface.cs" />
+    <Compile Include="TestTypes\TestTypeNotImplementingAnInterface.cs" />
+    <Compile Include="TestTypes\ThirdTestComponent.cs" />
+    <Compile Include="when_manually_registering_an_instance_in_the_container.cs" />
+    <Compile Include="when_manually_registering_an_instance_in_the_container_explicitly_by_type.cs" />
+    <Compile Include="when_manually_registering_an_instance_in_the_container_for_the_second_time.cs" />
+    <Compile Include="when_registering_an_instance_in_the_container.cs" />
+    <Compile Include="when_registering_an_instance_in_the_container_for_the_second_time.cs" />
+    <Compile Include="when_registering_an_instance_with_parameters_in_the_container.cs" />
+    <Compile Include="when_resolving_an_instance_in_the_container_for_the_second_time.cs" />
+    <Compile Include="when_resolving_a_type_by_interface_that_is_not_registered.cs" />
+    <Compile Include="when_resolving_a_type_that_has_a_dependency_on_a_concrete_type_that_is_not_registered.cs" />
+    <Compile Include="when_veryfying_the_container_in_an_incomplete_state.cs" />
+    <Compile Include="when_veryfying_the_container_in_a_complete_state.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SystemDot.Ioc\SystemDot.Ioc.csproj">
+      <Project>{13c1252a-c54d-42d3-862c-6bb78a7adac6}</Project>
+      <Name>SystemDot.Ioc</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Machine.Specifications">
+      <HintPath>..\packages\Machine.Specifications.0.9.0-Unstable0070\lib\net45\Machine.Specifications.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications.Clr4">
+      <HintPath>..\packages\Machine.Specifications.0.9.0-Unstable0070\lib\net45\Machine.Specifications.Clr4.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications.Should">
+      <HintPath>..\packages\Machine.Specifications.Should.0.8.0-Unstable0011\lib\net45\Machine.Specifications.Should.dll</HintPath>
+    </Reference>
+    <Reference Include="SystemDot.Core">
+      <HintPath>..\packages\SystemDotCore.3.0.0\lib\net\SystemDot.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="SystemDot.Reflection">
+      <HintPath>..\packages\SystemDotReflection.1.0.1\lib\net\SystemDot.Reflection.dll</HintPath>
+    </Reference>
+    <Reference Include="SystemDot.Reflection.Windows">
+      <HintPath>..\packages\SystemDotReflection.1.0.1\lib\net\SystemDot.Reflection.Windows.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
