@@ -46,7 +46,9 @@ namespace SystemDot.Ioc
 
         public IEnumerable<RegisteredType> GetAllRegisteredTypes()
         {
-            return components.Select(c => new RegisteredType(c.Key, c.Value.ActualConcreteType));
+            return components
+                .Select(c => new RegisteredType(c.Key, c.Value.ActualConcreteType))
+                .ToList();
         }
 
         public void Verify()
