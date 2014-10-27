@@ -2,8 +2,8 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>SystemDotMessaging</id>
-    <version>1.0.1</version>
-    <title>SystemDotMessaging</title>
+    <version>1.0.2</version>
+    <title>SystemDot.Messaging</title>
     <authors>Chris Sampson,James Goodenough</authors>
     <owners>Chris Sampson,James Goodenough</owners>
     <projectUrl>https://github.com/SystemDot/SystemDotMessaging</projectUrl>
