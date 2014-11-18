@@ -10,6 +10,10 @@ namespace SystemDot.Ioc
         void RegisterInstance<TPlugin, TConcrete>()
             where TPlugin : class
             where TConcrete : class;
+        
+        void RegisterInstance<TPlugin, TConcrete>(DependencyLifecycle lifecycle)
+            where TPlugin : class
+            where TConcrete : class;
 
         T Create<T>();
 

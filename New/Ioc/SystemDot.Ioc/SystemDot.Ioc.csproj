@@ -39,6 +39,7 @@
     <Compile Include="CannotResolveTypeException.cs" />
     <Compile Include="ConcreteInstance.cs" />
     <Compile Include="ContainerUnverifiableException.cs" />
+    <Compile Include="DependencyLifecycle.cs" />
     <Compile Include="IIocContainer.cs" />
     <Compile Include="IIocResolver.cs" />
     <Compile Include="IocContainer.cs" />

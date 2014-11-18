@@ -61,7 +61,8 @@ namespace SystemDot.Ioc.Multiples
 
         MethodInfo GetRegisterInstanceConcreteByInterface(Type plugin, Type concrete)
         {
-            return GetMethodByGenericParamentName(GetRegisterInstanceTConcreteMethod(), "TPlugin", "TConcrete")
+            return GetMethodsByGenericParamentName(GetRegisterInstanceTConcreteMethod(), "TPlugin", "TConcrete")
+                .Single(m => !m.GetParameters().Any())
                 .MakeGenericMethod(plugin, concrete);
         }
 
@@ -75,10 +76,10 @@ namespace SystemDot.Ioc.Multiples
             return iocContainer.RegisterInstance<object, object>;
         }
 
-        static MethodInfo GetMethodByGenericParamentName(IEnumerable<MethodInfo> methods, params string[] names)
+        static IEnumerable<MethodInfo> GetMethodsByGenericParamentName(IEnumerable<MethodInfo> methods, params string[] names)
         {
             return methods
-                .Single(m => m.GetGenericArguments()
+                .Where(m => m.GetGenericArguments()
                     .All(a => names.Contains(a.Name)) && m.GetGenericArguments().Count() == names.Count());
         }
     }

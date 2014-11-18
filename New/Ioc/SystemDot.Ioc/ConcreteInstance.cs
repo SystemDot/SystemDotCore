@@ -5,33 +5,35 @@ namespace SystemDot.Ioc
 {
     public class ConcreteInstance
     {
+        readonly DependencyLifecycle lifecycle;
         ObjectBuilder objectBuilder;
         object cached;
         public Type ActualConcreteType { get; private set; }
 
         public static T Create<T>(IocContainer iocContainer)
         {
-            return Create(typeof(T), iocContainer).As<T>();
+            return Create(typeof(T), iocContainer, DependencyLifecycle.SingletonInstance).As<T>();
         }
 
-        public static object Create(Type type, IocContainer iocContainer)
+        public static object Create(Type type, IocContainer iocContainer, DependencyLifecycle lifecycle)
         {
-            return FromType(type, iocContainer).Resolve();
+            return FromType(type, iocContainer, lifecycle).Resolve();
         }
 
         public static ConcreteInstance FromFactory(Func<object> instanceFactory, Type concrete, IocContainer container)
         {
-            return new ConcreteInstance(concrete, new FromFactoryObjectBuilder(instanceFactory, concrete, container));
+            return new ConcreteInstance(concrete, DependencyLifecycle.SingletonInstance, new FromFactoryObjectBuilder(instanceFactory, concrete, container));
         }
 
-        public static ConcreteInstance FromType(Type concrete, IocContainer container)
+        public static ConcreteInstance FromType(Type concrete, IocContainer container, DependencyLifecycle lifecycle)
         {
-            return new ConcreteInstance(concrete, new FromTypeObjectBuilder(concrete, container));
+            return new ConcreteInstance(concrete, lifecycle, new FromTypeObjectBuilder(concrete, container));
         }
 
-        ConcreteInstance(Type actualConcreteType, ObjectBuilder objectBuilder)
+        ConcreteInstance(Type actualConcreteType, DependencyLifecycle lifecycle, ObjectBuilder objectBuilder)
         {
             ActualConcreteType = actualConcreteType;
+            this.lifecycle = lifecycle;
             this.objectBuilder = objectBuilder;
         }
 
@@ -47,7 +49,19 @@ namespace SystemDot.Ioc
 
         public object Resolve()
         {
-            return cached ?? (cached = objectBuilder.Create());
+            return lifecycle == DependencyLifecycle.SingletonInstance 
+                ? GetCachedInstance()
+                : CreateInstance();
+        }
+
+        object GetCachedInstance()
+        {
+            return cached ?? (cached = CreateInstance());
+        }
+
+        object CreateInstance()
+        {
+            return objectBuilder.Create();
         }
 
         public override string ToString()

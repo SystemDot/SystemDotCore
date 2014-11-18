@@ -87,6 +87,7 @@
     <Compile Include="when_registering_an_instance_in_the_container_for_the_second_time.cs" />
     <Compile Include="when_registering_an_instance_with_parameters_in_the_container.cs" />
     <Compile Include="when_resolving_an_instance_in_the_container_for_the_second_time.cs" />
+    <Compile Include="when_resolving_an_instance_registered_as_instance_per_dependency_for_the_second_time_.cs" />
     <Compile Include="when_resolving_a_type_by_interface_that_is_not_registered.cs" />
     <Compile Include="when_resolving_a_type_that_has_a_dependency_on_a_concrete_type_that_is_not_registered.cs" />
     <Compile Include="when_veryfying_the_container_in_an_incomplete_state.cs" />

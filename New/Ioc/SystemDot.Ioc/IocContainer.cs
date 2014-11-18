@@ -25,13 +25,25 @@ namespace SystemDot.Ioc
             where TPlugin : class
             where TConcrete : class
         {
-            RegisterInstance(typeof(TPlugin), typeof(TConcrete));
+            RegisterInstance(typeof(TPlugin), typeof(TConcrete), DependencyLifecycle.SingletonInstance);
+        }
+
+        public void RegisterInstance<TPlugin, TConcrete>(DependencyLifecycle lifecycle)
+            where TPlugin : class
+            where TConcrete : class
+        {
+            RegisterInstance(typeof(TPlugin), typeof(TConcrete), lifecycle);
         }
 
         public void RegisterInstance(Type plugin, Type concrete)
         {
+            RegisterInstance(plugin, concrete, DependencyLifecycle.SingletonInstance);
+        } 
+        
+        void RegisterInstance(Type plugin, Type concrete, DependencyLifecycle lifecycle)
+        {
             if (ComponentExists(plugin)) return;
-            components[plugin] = ConcreteInstance.FromType(concrete, this);
+            components[plugin] = ConcreteInstance.FromType(concrete, this, lifecycle);
         }
 
         public bool ComponentExists<TPlugin>()
@@ -55,7 +67,7 @@ namespace SystemDot.Ioc
         {
             try
             {
-                components.ForEach(pair => Resolve(pair.Key));
+                components.ToList().ForEach(pair => Resolve(pair.Key));
             }
             catch (Exception ex)
             {
@@ -90,7 +102,7 @@ namespace SystemDot.Ioc
         void CreateComponentIfConcrete(Type type)
         {
             if (!type.IsNormalConcrete()) return;
-            components[type] = ConcreteInstance.FromType(type, this);
+            components[type] = ConcreteInstance.FromType(type, this, DependencyLifecycle.SingletonInstance);
         }
 
         public T Create<T>()
@@ -100,7 +112,7 @@ namespace SystemDot.Ioc
 
         public object Create(Type type)
         {
-            return ConcreteInstance.Create(type, this);
+            return ConcreteInstance.Create(type, this, DependencyLifecycle.SingletonInstance);
         }
 
         public void RegisterDecorator<TDecorator, TComponent>()
@@ -119,7 +131,7 @@ namespace SystemDot.Ioc
             for (int i = 0; i < components.Count; i++)
             {
                 var c = components.ElementAt(i);
-                sb.AppendFormat("{0} Resolve with: {1}  Actual type: {2}", i, c.Key.Name, c.Value.ToString()).AppendLine();
+                sb.AppendFormat("{0} Resolve with: {1}  Actual type: {2}", i, c.Key.Name, c.Value).AppendLine();
             }
             return sb.ToString();
         }
