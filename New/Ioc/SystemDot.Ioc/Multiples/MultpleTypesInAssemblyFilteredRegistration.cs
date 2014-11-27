@@ -53,16 +53,37 @@ namespace SystemDot.Ioc.Multiples
             }
         }
 
+        public void ByClass(DependencyLifecycle lifecycle)
+        {
+            foreach (var type in typesToRegister)
+            {
+                RegisterConcreteByConcrete(type, lifecycle);
+            }
+        }
+
         void RegisterConcreteByConcrete(Type type)
         {
             GetRegisterInstanceConcreteByInterface(type, type)
                 .Invoke(container, null);
+        }
+        
+        void RegisterConcreteByConcrete(Type type, DependencyLifecycle lifecycle)
+        {
+            GetRegisterInstanceWithDependencyLifecycleConcreteByInterface(type, type)
+                .Invoke(container, new object[] { lifecycle} );
         }
 
         MethodInfo GetRegisterInstanceConcreteByInterface(Type plugin, Type concrete)
         {
             return GetMethodsByGenericParamentName(GetRegisterInstanceTConcreteMethod(), "TPlugin", "TConcrete")
                 .Single(m => !m.GetParameters().Any())
+                .MakeGenericMethod(plugin, concrete);
+        }
+
+        MethodInfo GetRegisterInstanceWithDependencyLifecycleConcreteByInterface(Type plugin, Type concrete)
+        {
+            return GetMethodsByGenericParamentName(GetRegisterInstanceTConcreteMethod(), "TPlugin", "TConcrete")
+                .Single(m => m.GetParameters()[0].Member.DeclaringType == typeof(DependencyLifecycle))
                 .MakeGenericMethod(plugin, concrete);
         }
 
