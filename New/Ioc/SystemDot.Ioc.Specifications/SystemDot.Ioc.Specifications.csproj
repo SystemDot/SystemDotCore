@@ -57,6 +57,7 @@
     <Compile Include="MultpleTypes\when_registering_all_types_in_the_container_that_implement_a_specific_interface_from_an_assembly_by_interface.cs" />
     <Compile Include="MultpleTypes\when_resolving_all_types_that_implement_an_specific_open_generic_type.cs" />
     <Compile Include="MultpleTypes\when_resolving_all_types_that_implement_an_specific_type.cs" />
+    <Compile Include="MultpleTypes\when_resolving_all_types_that_implement_an_specific_type_with_an_instance_per_dependency_lifecycle.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestTypes\AnotherInheritingComponent.cs" />
     <Compile Include="TestTypes\AnotherTestComponent.cs" />

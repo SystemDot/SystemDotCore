@@ -83,8 +83,14 @@ namespace SystemDot.Ioc.Multiples
         MethodInfo GetRegisterInstanceWithDependencyLifecycleConcreteByInterface(Type plugin, Type concrete)
         {
             return GetMethodsByGenericParamentName(GetRegisterInstanceTConcreteMethod(), "TPlugin", "TConcrete")
-                .Single(m => m.GetParameters()[0].Member.DeclaringType == typeof(DependencyLifecycle))
+                .Single(MethodHasDependencyLifecycleParameter)
                 .MakeGenericMethod(plugin, concrete);
+        }
+
+        static bool MethodHasDependencyLifecycleParameter(MethodInfo method)
+        {
+            return method.GetParameters().Any() 
+                && method.GetParameters()[0].ParameterType == typeof(DependencyLifecycle);
         }
 
         IEnumerable<MethodInfo> GetRegisterInstanceTConcreteMethod()
