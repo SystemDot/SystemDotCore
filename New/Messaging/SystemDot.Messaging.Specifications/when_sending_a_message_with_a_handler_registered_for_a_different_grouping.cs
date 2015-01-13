@@ -11,14 +11,16 @@ namespace SystemDot.Messaging.Specifications
         static object message;
         const int GroupingId = 1;
         const int OtherGroupingId = 2;
+        static Dispatcher dispatcher;
 
         Establish context = () =>
         {
-            Messenger.RegisterHandler<object, int>(m => handledMessage = m, GroupingId);
+            dispatcher = new Dispatcher();
+            dispatcher.RegisterHandler<object, int>(m => handledMessage = m, GroupingId);
             message = new object();
         };
 
-        Because of = () => Messenger.Send<object, int>(message, OtherGroupingId);
+        Because of = () => dispatcher.Send<object, int>(message, OtherGroupingId);
 
         It should_not_handle_the_message = () => handledMessage.Should().BeNull();
     }

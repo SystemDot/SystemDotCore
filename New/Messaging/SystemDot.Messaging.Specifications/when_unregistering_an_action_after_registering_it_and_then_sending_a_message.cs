@@ -11,16 +11,18 @@ namespace SystemDot.Messaging.Specifications
     {
         static object handledMessage;
         static object message;
+        static Dispatcher dispatcher;
 
         Establish context = () =>
         {
+            dispatcher = new Dispatcher();
             Action<object> action = m => handledMessage = m;
-            ActionSubscriptionToken<object> token = Messenger.RegisterHandler(action);
-            Messenger.UnregisterHandler(token);
+            ActionSubscriptionToken<object> token = dispatcher.RegisterHandler(action);
+            dispatcher.UnregisterHandler(token);
             message = new object();
         };
 
-        Because of = () => Messenger.Send(message);
+        Because of = () => dispatcher.Send(message);
 
         It should_not_handle_the_message = () => handledMessage.Should().BeNull();
     }

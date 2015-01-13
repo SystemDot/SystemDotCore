@@ -10,14 +10,16 @@ namespace SystemDot.Messaging.Specifications
         static object handledMessage;
         static object message;
         const int GroupingId = 1;
+        static Dispatcher dispatcher;
 
         Establish context = () =>
         {
-            Messenger.RegisterHandler<object, int>(m => handledMessage = m, GroupingId);
+            dispatcher = new Dispatcher();
+            dispatcher.RegisterHandler<object, int>(m => handledMessage = m, GroupingId);
             message = new object();
         };
 
-        Because of = () => Messenger.Send<object, int>(message, GroupingId);
+        Because of = () => dispatcher.Send<object, int>(message, GroupingId);
 
         It should_handle_the_message = () => handledMessage.Should().BeSameAs(message);
     }

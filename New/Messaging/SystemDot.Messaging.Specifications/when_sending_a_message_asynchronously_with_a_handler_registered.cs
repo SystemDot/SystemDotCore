@@ -9,15 +9,18 @@ namespace SystemDot.Messaging.Specifications
     {
         static object message;
         static TestAsyncHandler<object> handler;
+        static Dispatcher dispatcher;
 
         Establish context = () =>
         {
+            dispatcher = new Dispatcher();
+            
             handler = new TestAsyncHandler<object>();
-            Messenger.RegisterHandler(handler);
+            dispatcher.RegisterHandler(handler);
             message = new object();
         };
 
-        Because of = () => Messenger.SendAsync(message).Wait();
+        Because of = () => dispatcher.SendAsync(message).Wait();
 
         It should_handle_the_message = () => handler.HandledMessage.Should().BeSameAs(message);
     }

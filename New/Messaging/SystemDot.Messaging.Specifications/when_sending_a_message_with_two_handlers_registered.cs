@@ -10,16 +10,18 @@ namespace SystemDot.Messaging.Specifications
         static object handledMessage1;
         static object handledMessage2;
         static object message;
+        static Dispatcher dispatcher;
 
         Establish context = () =>
         {
-            Messenger.RegisterHandler<object>(m => handledMessage1 = m);
-            Messenger.RegisterHandler<object>(m => handledMessage2 = m);
+            dispatcher = new Dispatcher();
+            dispatcher.RegisterHandler<object>(m => handledMessage1 = m);
+            dispatcher.RegisterHandler<object>(m => handledMessage2 = m);
 
             message = new object();
         };
 
-        Because of = () => Messenger.Send(message);
+        Because of = () => dispatcher.Send(message);
 
         It should_handle_the_message_with_the_first_handler = () => handledMessage1.Should().BeSameAs(message);
 

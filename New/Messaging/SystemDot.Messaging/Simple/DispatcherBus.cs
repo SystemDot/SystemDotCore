@@ -4,46 +4,53 @@ using SystemDot.Messaging.Handling.Actions;
 
 namespace SystemDot.Messaging.Simple
 {
-    public class MessengerBus : IBus
+    public class DispatcherBus : IBus
     {
+        readonly Dispatcher dispatcher;
+
+        public DispatcherBus(Dispatcher dispatcher)
+        {
+            this.dispatcher = dispatcher;
+        }
+
         public void Publish(object toPublish)
         {
-            Messenger.Send(toPublish);
+            dispatcher.Send(toPublish);
         }
 
         public async Task PublishAsync(object toPublish)
         {
-            await Messenger.SendAsync(toPublish);
+            await dispatcher.SendAsync(toPublish);
         }
 
         public void Send(object toSend)
         {
-            Messenger.Send(toSend);
+            dispatcher.Send(toSend);
         }
 
         public async Task SendAsync(object toSend)
         {
-            await Messenger.SendAsync(toSend);
+            await dispatcher.SendAsync(toSend);
         }
 
         public void Reply<TReply>(TReply toSend)
         {
-            Messenger.Reply(toSend);
+            dispatcher.Reply(toSend);
         }
 
         public void Send<TRequest, TResponse>(TRequest request, Action<TResponse> responseHandler)
         {
-            Messenger.Send(request, responseHandler);
+            dispatcher.Send(request, responseHandler);
         }
 
         public async Task SendAsync<TRequest, TResponse>(TRequest request, Action<TResponse> responseHandler)
         {
-            await Messenger.SendAsync(request, responseHandler);
+            await dispatcher.SendAsync(request, responseHandler);
         }
 
         public ActionSubscriptionToken<TMessage> RegisterHandler<TMessage>(Action<TMessage> toRegister)
         {
-            return Messenger.RegisterHandler(toRegister);
+            return dispatcher.RegisterHandler(toRegister);
         }
     }
 }

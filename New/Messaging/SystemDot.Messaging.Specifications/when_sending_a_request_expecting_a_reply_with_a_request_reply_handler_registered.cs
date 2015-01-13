@@ -9,14 +9,17 @@ namespace SystemDot.Messaging.Specifications
     {
         static TestRequest request;
         static TestReply reply;
+        static Dispatcher dispatcher;
 
         Establish context = () =>
         {
+            dispatcher = new Dispatcher();
+            
             request = new TestRequest();
-            Messenger.RegisterHandler(new TestRequestReplyHandler());
+            dispatcher.RegisterHandler(new TestRequestReplyHandler());
         };
 
-        Because of = () => reply = Messenger.SendAndReceiveReply<TestRequest, TestReply>(request);
+        Because of = () => reply = dispatcher.SendAndReceiveReply<TestRequest, TestReply>(request);
 
         It should_handle_the_request_and_return_the_reply = () => reply.Should().BeSameAs(request.Reply);
     }

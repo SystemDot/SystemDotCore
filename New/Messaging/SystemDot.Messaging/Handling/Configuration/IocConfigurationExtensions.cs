@@ -13,7 +13,7 @@ namespace SystemDot.Messaging.Handling.Configuration
         {
             container.ResolveMutipleTypes()
                 .ThatImplementOpenType(openType)
-                .ForEach(Messenger.RegisterHandler);
+                .ForEach(container.Resolve<Dispatcher>().RegisterHandler);
         }
     }
 }
