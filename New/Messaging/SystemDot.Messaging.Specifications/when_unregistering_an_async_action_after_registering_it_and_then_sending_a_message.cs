@@ -1,5 +1,6 @@
 using System;
-using SystemDot.Messaging.Handling.Actions;
+using System.Threading.Tasks;
+using SystemDot.Messaging.Handling.Actions.Async;
 using SystemDot.Messaging.Simple;
 using FluentAssertions;
 using Machine.Specifications;
@@ -7,7 +8,7 @@ using Machine.Specifications;
 namespace SystemDot.Messaging.Specifications
 {
     [Subject(SpecificationGroup.Description)]
-    public class when_unregistering_an_action_after_registering_it_and_then_sending_a_message
+    public class when_unregistering_an_async_action_after_registering_it_and_then_sending_a_message
     {
         static object handledMessage;
         static object message;
@@ -16,8 +17,14 @@ namespace SystemDot.Messaging.Specifications
         Establish context = () =>
         {
             dispatcher = new Dispatcher();
-            Action<object> action = m => handledMessage = m;
-            ActionHandlerSubscriptionToken<object> token = dispatcher.RegisterHandler(action);
+            
+            Func<object, Task> action = m =>
+            {
+                handledMessage = m;
+                return Task.FromResult(false);
+            };
+
+            AsyncActionHandlerSubscriptionToken<object> token = dispatcher.RegisterHandler(action);
             dispatcher.UnregisterHandler(token);
             message = new object();
         };

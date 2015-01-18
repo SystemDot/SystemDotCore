@@ -13,6 +13,6 @@ namespace SystemDot.Messaging
         void Reply<TReply>(TReply toSend);
         void Send<TRequest, TResponse>(TRequest request, Action<TResponse> responseHandler);
         Task SendAsync<TRequest, TResponse>(TRequest request, Action<TResponse> responseHandler);
-        ActionSubscriptionToken<TMessage> RegisterHandler<TMessage>(Action<TMessage> toRegister);
+        ActionHandlerSubscriptionToken<TMessage> RegisterHandler<TMessage>(Action<TMessage> toRegister);
     }
 }

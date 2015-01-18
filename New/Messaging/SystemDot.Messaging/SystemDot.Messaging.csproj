@@ -37,7 +37,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Handling\Actions\ActionHandlerList.cs" />
-    <Compile Include="Handling\Actions\ActionSubscriptionToken.cs" />
+    <Compile Include="Handling\Actions\ActionHandlerSubscriptionToken.cs" />
+    <Compile Include="Handling\Actions\Async\AsyncActionHandlerList.cs" />
+    <Compile Include="Handling\Actions\Async\AsyncActionHandlerSubscriptionToken.cs" />
+    <Compile Include="Handling\Actions\Async\IAsyncPerMessageActionHandlerList.cs" />
+    <Compile Include="Handling\Actions\Async\AsyncWeaklyReferencedActionHandler.cs" />
+    <Compile Include="Handling\Actions\Async\AsyncPerMessageActionHandlerList.cs" />
     <Compile Include="Handling\Actions\IActionSubscriptionToken.cs" />
     <Compile Include="Handling\Actions\IPerMessageActionHandlerList.cs" />
     <Compile Include="Handling\Actions\PerMessageActionHandlerList.cs" />

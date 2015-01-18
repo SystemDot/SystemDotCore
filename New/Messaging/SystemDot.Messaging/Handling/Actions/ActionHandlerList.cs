@@ -1,5 +1,4 @@
 using System;
-using SystemDot.Core.Collections;
 
 namespace SystemDot.Messaging.Handling.Actions
 {
@@ -17,11 +16,11 @@ namespace SystemDot.Messaging.Handling.Actions
             return handlers.ContainsKey<TMessage>();
         }
 
-        public ActionSubscriptionToken<TMessage> RegisterHandler<TMessage>(Action<TMessage> toRegister, object groupingId)
+        public ActionHandlerSubscriptionToken<TMessage> RegisterHandler<TMessage>(Action<TMessage> toRegister, object groupingId)
         {
             if (!ContainsHandler<TMessage>()) AddPerMessageList<TMessage>();
 
-            ActionSubscriptionToken<TMessage> token = null;
+            ActionHandlerSubscriptionToken<TMessage> token = null;
 
             handlers.ExecuteIfExists<TMessage>(list =>
             {
@@ -36,7 +35,7 @@ namespace SystemDot.Messaging.Handling.Actions
             handlers.TryAdd<TMessage>(new PerMessageActionHandlerList<TMessage>());
         }
 
-        public void UnregisterHandler<TMessage>(ActionSubscriptionToken<TMessage> toUnregister)
+        public void UnregisterHandler<TMessage>(ActionHandlerSubscriptionToken<TMessage> toUnregister)
         {
             if (!ContainsHandler<TMessage>()) return;
             handlers.ExecuteIfExists<TMessage>(list => list.ForMessage<TMessage>().UnregisterHandler(toUnregister));

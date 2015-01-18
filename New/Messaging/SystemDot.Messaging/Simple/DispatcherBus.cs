@@ -48,7 +48,7 @@ namespace SystemDot.Messaging.Simple
             await dispatcher.SendAsync(request, responseHandler);
         }
 
-        public ActionSubscriptionToken<TMessage> RegisterHandler<TMessage>(Action<TMessage> toRegister)
+        public ActionHandlerSubscriptionToken<TMessage> RegisterHandler<TMessage>(Action<TMessage> toRegister)
         {
             return dispatcher.RegisterHandler(toRegister);
         }

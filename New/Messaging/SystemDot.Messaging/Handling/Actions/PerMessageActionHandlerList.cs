@@ -28,23 +28,23 @@ namespace SystemDot.Messaging.Handling.Actions
             return this.As<PerMessageActionHandlerList<T>>();
         }
 
-        public ActionSubscriptionToken<TMessage> RegisterHandler(Action<TMessage> toRegister, object groupingId)
+        public ActionHandlerSubscriptionToken<TMessage> RegisterHandler(Action<TMessage> toRegister, object groupingId)
         {
             RemoveGarbageCollectedHandlers();
 
-            var token = new ActionSubscriptionToken<TMessage>(toRegister);
+            var token = new ActionHandlerSubscriptionToken<TMessage>(toRegister);
 
             handlers.TryAdd(token, CreateHandler(token, groupingId));
 
             return token;
         }
 
-        static WeaklyReferencedActionHandler CreateHandler(ActionSubscriptionToken<TMessage> toRegister, object groupingId)
+        static WeaklyReferencedActionHandler CreateHandler(ActionHandlerSubscriptionToken<TMessage> toRegister, object groupingId)
         {
             return new WeaklyReferencedActionHandler(toRegister, groupingId);
         }
 
-        public void UnregisterHandler(ActionSubscriptionToken<TMessage> toUnregister)
+        public void UnregisterHandler(ActionHandlerSubscriptionToken<TMessage> toUnregister)
         {
             RemoveGarbageCollectedHandlers();
             handlers.TryRemove(toUnregister);

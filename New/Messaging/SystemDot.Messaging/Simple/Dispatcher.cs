@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using SystemDot.Core;
 using SystemDot.Messaging.Handling;
 using SystemDot.Messaging.Handling.Actions;
+using SystemDot.Messaging.Handling.Actions.Async;
 
 namespace SystemDot.Messaging.Simple
 {
@@ -25,17 +26,22 @@ namespace SystemDot.Messaging.Simple
             router.UnregisterHandler(toUnregister);
         }
 
-        public ActionSubscriptionToken<TMessage> RegisterHandler<TMessage>(Action<TMessage> toRegister)
+        public ActionHandlerSubscriptionToken<TMessage> RegisterHandler<TMessage>(Action<TMessage> toRegister)
+        {
+            return router.RegisterHandler(toRegister);
+        }
+        
+        public AsyncActionHandlerSubscriptionToken<TMessage> RegisterHandler<TMessage>(Func<TMessage, Task> toRegister)
         {
             return router.RegisterHandler(toRegister);
         }
 
-        public ActionSubscriptionToken<TMessage> RegisterHandler<TMessage, TGroupingId>(Action<TMessage> toRegister, TGroupingId groupingId)
+        public ActionHandlerSubscriptionToken<TMessage> RegisterHandler<TMessage, TGroupingId>(Action<TMessage> toRegister, TGroupingId groupingId)
         {
             return router.RegisterHandler(toRegister, groupingId);
         }
-
-        public void UnregisterHandler<TMessage>(ActionSubscriptionToken<TMessage> toUnregister)
+        
+        public void UnregisterHandler<TMessage>(ActionHandlerSubscriptionToken<TMessage> toUnregister)
         {
             router.UnregisterHandler(toUnregister);
         }

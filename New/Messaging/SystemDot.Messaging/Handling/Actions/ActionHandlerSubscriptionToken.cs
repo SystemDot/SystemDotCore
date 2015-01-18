@@ -3,11 +3,11 @@ using SystemDot.Core;
 
 namespace SystemDot.Messaging.Handling.Actions
 {
-    public class ActionSubscriptionToken<TMessage> : Disposable, IActionSubscriptionToken
+    public class ActionHandlerSubscriptionToken<TMessage> : Disposable, IActionSubscriptionToken
     {
         Action<TMessage> handler;
 
-        public ActionSubscriptionToken(Action<TMessage> handler)
+        public ActionHandlerSubscriptionToken(Action<TMessage> handler)
         {
             this.handler = handler;
         }

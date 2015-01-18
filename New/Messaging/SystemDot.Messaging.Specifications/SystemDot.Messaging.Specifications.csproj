@@ -74,6 +74,7 @@
     <Compile Include="when_sending_a_message_with_two_handlers_registered.cs" />
     <Compile Include="when_sending_a_request_expecting_a_reply_with_a_request_reply_handler_registered.cs" />
     <Compile Include="when_unregistering_an_action_after_registering_it_and_then_sending_a_message.cs" />
+    <Compile Include="when_unregistering_an_async_action_after_registering_it_and_then_sending_a_message.cs" />
     <Compile Include="when_unregistering_an_unregistered_action_and_then_sending_a_message.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -14,7 +14,7 @@ namespace SystemDot.Messaging.Handling.Actions
 
         public void Handle<T>(T message)
         {
-            if (IsAlive) Target.As<ActionSubscriptionToken<T>>().Handle(message);
+            if (IsAlive) Target.As<ActionHandlerSubscriptionToken<T>>().Handle(message);
         }
     }
 }

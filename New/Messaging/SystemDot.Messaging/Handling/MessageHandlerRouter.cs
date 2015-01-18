@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using SystemDot.Messaging.Handling.Actions;
+using SystemDot.Messaging.Handling.Actions.Async;
 using SystemDot.Messaging.Handling.Instances;
 
 namespace SystemDot.Messaging.Handling
@@ -9,11 +10,13 @@ namespace SystemDot.Messaging.Handling
     {
         readonly InstanceHandlerList handlersByInstance;
         readonly ActionHandlerList handlersByAction;
+        readonly AsyncActionHandlerList handlersByAsyncAction;
 
         public MessageHandlerRouter()
         {
             handlersByInstance = new InstanceHandlerList();
             handlersByAction = new ActionHandlerList();
+            handlersByAsyncAction = new AsyncActionHandlerList();
         }
 
         public void RegisterHandler(object handlerInstance)
@@ -26,19 +29,34 @@ namespace SystemDot.Messaging.Handling
             handlersByInstance.Unregister(toUnregister);
         }
 
-        public ActionSubscriptionToken<TMessage> RegisterHandler<TMessage>(Action<TMessage> toRegister)
+        public ActionHandlerSubscriptionToken<TMessage> RegisterHandler<TMessage>(Action<TMessage> toRegister)
+        {
+            return RegisterHandler(toRegister, GlobalGroupingId.Default);
+        }
+        
+        public AsyncActionHandlerSubscriptionToken<TMessage> RegisterHandler<TMessage>(Func<TMessage, Task> toRegister)
         {
             return RegisterHandler(toRegister, GlobalGroupingId.Default);
         }
 
-        public ActionSubscriptionToken<TMessage> RegisterHandler<TMessage, TGroupingId>(Action<TMessage> toRegister, TGroupingId groupingId)
+        public ActionHandlerSubscriptionToken<TMessage> RegisterHandler<TMessage, TGroupingId>(Action<TMessage> toRegister, TGroupingId groupingId)
         {
             return handlersByAction.RegisterHandler(toRegister, groupingId);
         }
 
-        public void UnregisterHandler<TMessage>(ActionSubscriptionToken<TMessage> toUnregister)
+        AsyncActionHandlerSubscriptionToken<TMessage> RegisterHandler<TMessage, TGroupingId>(Func<TMessage, Task> toRegister, TGroupingId groupingId)
+        {
+            return handlersByAsyncAction.RegisterHandler(toRegister, groupingId);
+        }
+
+        public void UnregisterHandler<TMessage>(ActionHandlerSubscriptionToken<TMessage> toUnregister)
         {
             handlersByAction.UnregisterHandler(toUnregister);
+        }
+
+        public void UnregisterHandler<TMessage>(AsyncActionHandlerSubscriptionToken<TMessage> toUnregister)
+        {
+            handlersByAsyncAction.UnregisterHandler(toUnregister);
         }
 
         public void RouteMessageToHandlers(object message)
@@ -65,6 +83,7 @@ namespace SystemDot.Messaging.Handling
         async Task RouteMessageToHandlersAsync(object message, object groupingId)
         {
             await handlersByInstance.RouteMessageToHandlersAsync(message);
+            await handlersByAsyncAction.RouteMessageToHandlers(message, groupingId);
             handlersByAction.RouteMessageToHandlers(message, groupingId);
         }
 
@@ -72,6 +91,7 @@ namespace SystemDot.Messaging.Handling
         {
             handlersByInstance.Clear();
             handlersByAction.Clear();
+            handlersByAsyncAction.Clear();
         }
     }
 }
