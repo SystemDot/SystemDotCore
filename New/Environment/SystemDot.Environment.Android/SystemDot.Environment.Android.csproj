@@ -15,7 +15,7 @@
     <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
     <AndroidUseLatestPlatformSdk />
-    <TargetFrameworkVersion>v2.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0.3</TargetFrameworkVersion>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
   </PropertyGroup>
@@ -45,17 +45,22 @@
     <Reference Include="SystemDot.Bootstrapping.Android">
       <HintPath>..\packages\SystemDotBootstrapping.1.0.4\lib\MonoAndroid\SystemDot.Bootstrapping.Android.dll</HintPath>
     </Reference>
-    <Reference Include="SystemDot.Ioc">
-      <HintPath>..\packages\SystemDotIoc.1.0.1\lib\portable-win+net45+MonoAndroid+MonoTouch+win8\SystemDot.Ioc.dll</HintPath>
+    <Reference Include="SystemDot.Ioc, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\SystemDotIoc.1.2.0\lib\portable-win+net45+MonoAndroid+MonoTouch+win8\SystemDot.Ioc.dll</HintPath>
     </Reference>
-    <Reference Include="SystemDot.Reflection">
-      <HintPath>..\packages\SystemDotReflection.1.0.1\lib\MonoAndroid\SystemDot.Reflection.dll</HintPath>
+    <Reference Include="SystemDot.Reflection, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\SystemDotReflection.1.0.2\lib\MonoAndroid\SystemDot.Reflection.dll</HintPath>
     </Reference>
     <Reference Include="SystemDot.Reflection.Android">
-      <HintPath>..\packages\SystemDotReflection.1.0.1\lib\MonoAndroid\SystemDot.Reflection.Android.dll</HintPath>
+      <HintPath>..\packages\SystemDotReflection.1.0.2\lib\MonoAndroid\SystemDot.Reflection.Android.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\SystemDot.Environment.Windows\BuilderConfigurationExtensions.cs">
+      <Link>BuilderConfigurationExtensions.cs</Link>
+    </Compile>
     <Compile Include="..\SystemDot.Environment.Windows\LocalMachine.cs">
       <Link>LocalMachine.cs</Link>
     </Compile>

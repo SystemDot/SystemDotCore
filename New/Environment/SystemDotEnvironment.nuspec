@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+    <metadata>
+        <id>SystemDotEnvironment</id>
+        <version>1.0.1</version>
+        <title>SystemDot.Environment</title>
+        <authors>Chris Sampson,James Goodenough</authors>
+        <owners>Chris Sampson,James Goodenough</owners>
+        <projectUrl>https://github.com/SystemDot/SystemDotCore</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>Environment functions (such as device name) for cross platform development on Android, iOS and WinRT</description>
+        <summary>Environment functions (such as device name) for cross platform development on Android, iOS and WinRT</summary>
+        <copyright>SystemDot 2015</copyright>
+        <language>en-GB</language>
+        <tags>Environment, Cross Platform</tags>
+        <dependencies>
+          <dependency id="SystemDotReflection" version="1.0.2" />
+          <dependency id="SystemDotBootstrapping" version="1.0.4" />
+          <dependency id="SystemDotIoc" version="1.2.0" />
+        </dependencies>
+    </metadata>
+    <files>
+        <file src="Build\SystemDot.Environment.dll" target="lib\MonoAndroid\SystemDot.Environment.dll" />
+        <file src="Build\SystemDot.Environment.pdb" target="lib\MonoAndroid\SystemDot.Environment.pdb" />
+        <file src="Build\SystemDot.Environment.Android.dll" target="lib\MonoAndroid\SystemDot.Environment.Android.dll" />
+        <file src="Build\SystemDot.Environment.Android.pdb" target="lib\MonoAndroid\SystemDot.Environment.Android.pdb" />
+        <file src="Build\SystemDot.Environment.dll" target="lib\MonoTouch\SystemDot.Environment.dll" />
+        <file src="Build\SystemDot.Environment.pdb" target="lib\MonoTouch\SystemDot.Environment.pdb" />
+        <file src="Build\SystemDot.Environment.iOS.dll" target="lib\MonoTouch\SystemDot.Environment.iOS.dll" />
+        <file src="Build\SystemDot.Environment.iOS.pdb" target="lib\MonoTouch\SystemDot.Environment.iOS.pdb" />
+        <file src="Build\SystemDot.Environment.dll" target="lib\net\SystemDot.Environment.dll" />
+        <file src="Build\SystemDot.Environment.pdb" target="lib\net\SystemDot.Environment.pdb" />
+        <file src="Build\SystemDot.Environment.Windows.dll" target="lib\net\SystemDot.Environment.Windows.dll" />
+        <file src="Build\SystemDot.Environment.Windows.pdb" target="lib\net\SystemDot.Environment.Windows.pdb" />
+        <file src="Build\SystemDot.Environment.dll" target="lib\netcore\SystemDot.Environment.dll" />
+        <file src="Build\SystemDot.Environment.pdb" target="lib\netcore\SystemDot.Environment.pdb" />
+        <file src="Build\SystemDot.Environment.WindowsStore.dll" target="lib\netcore\SystemDot.Environment.WindowsStore.dll" />
+        <file src="Build\SystemDot.Environment.WindowsStore.pdb" target="lib\netcore\SystemDot.Environment.WindowsStore.pdb" />
+        <file src="Build\SystemDot.Environment.dll" target="lib\portable-win+net45+MonoAndroid+MonoTouch+win8\SystemDot.Environment.dll" />
+        <file src="Build\SystemDot.Environment.pdb" target="lib\portable-win+net45+MonoAndroid+MonoTouch+win8\SystemDot.Environment.pdb" />
+      </files>
+</package>
