@@ -38,6 +38,7 @@
     <Compile Include="DecimalExtensions.cs" />
     <Compile Include="Disposable.cs" />
     <Compile Include="Equatable.cs" />
+    <Compile Include="Int32Extensions.cs" />
     <Compile Include="ISystemTime.cs" />
     <Compile Include="NotMandatory.cs" />
     <Compile Include="ObjectExtensions.cs" />
