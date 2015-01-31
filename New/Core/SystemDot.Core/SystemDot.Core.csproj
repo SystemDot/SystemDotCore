@@ -41,6 +41,7 @@
     <Compile Include="Int32Extensions.cs" />
     <Compile Include="ISystemTime.cs" />
     <Compile Include="NotMandatory.cs" />
+    <Compile Include="NotMandatoryHasNoValueException.cs" />
     <Compile Include="ObjectExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SystemTime.cs" />
