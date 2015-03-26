@@ -18,6 +18,13 @@ namespace SystemDot.Bootstrapping
             bootstrapBuilderComponentRunner = new BootstrapBuilderComponentRunner(container, builder);
         }
 
+        public BootstrapBuilderConfiguration(BootstrapBuilderConfiguration from)
+        {
+            container = from.container;
+            builder = from.builder;
+            bootstrapBuilderComponentRunner = from.bootstrapBuilderComponentRunner;
+        }
+
         public async Task BaseInitialiseAsync()
         {
             bootstrapBuilderComponentRunner.Run();
