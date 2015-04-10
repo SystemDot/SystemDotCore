@@ -1,17 +1,24 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using SystemDot.Reflection;
 
 namespace SystemDot.Ioc
 {
+    using System.Globalization;
+
     public class IocContainer : IIocContainer
     {
         readonly Dictionary<Type, ConcreteInstance> components = new Dictionary<Type, ConcreteInstance>();
+        private readonly ITypeDescriber typeDescriber;
 
-        public IocContainer()
+        public IocContainer() : this(new PassThroughTypeDescriber())
         {
+        }
+
+        public IocContainer(ITypeDescriber typeDescriber)
+        {
+            this.typeDescriber = typeDescriber;
             RegisterInstance<IIocContainer>(() => this);
         }
 
@@ -127,13 +134,16 @@ namespace SystemDot.Ioc
 
         public string Describe()
         {
-            var sb = new StringBuilder();
-            for (int i = 0; i < components.Count; i++)
-            {
-                var c = components.ElementAt(i);
-                sb.AppendFormat("{0} Resolve with: {1}  Actual type: {2}", i, c.Key.Name, c.Value).AppendLine();
-            }
-            return sb.ToString();
+            return string.Join(Environment.NewLine, GetRegisteredTypeDescriptions());
+        }
+
+        private IEnumerable<string> GetRegisteredTypeDescriptions()
+        {
+            return GetAllRegisteredTypes().Select(x => string.Format(
+                CultureInfo.InvariantCulture,
+                "Requests for: {1} will use actual type: {0}",
+                typeDescriber.Describe(x.ActualConcreteType),
+                typeDescriber.Describe(x.ResolveBy)));
         }
     }
 }
