@@ -45,7 +45,6 @@
     <Compile Include="IocContainer.cs" />
     <Compile Include="IocContainerExtensions.cs" />
     <Compile Include="IocContainerResources.cs" />
-    <Compile Include="ITypeDescriber.cs" />
     <Compile Include="Multiples\MultipleDecoratorForAssembliesRegistration.cs" />
     <Compile Include="Multiples\MultipleDecoratorRegistration.cs" />
     <Compile Include="Multiples\MultipleDecoratorToDecorateRegistration.cs" />
@@ -59,7 +58,6 @@
     <Compile Include="ObjectBuilding\FromTypeObjectBuilder.cs" />
     <Compile Include="ObjectBuilding\ObjectBuilder.cs" />
     <Compile Include="ObjectExtensions.cs" />
-    <Compile Include="PassThroughTypeDescriber.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RegisteredType.cs" />
     <Compile Include="TypeExtensions.cs" />

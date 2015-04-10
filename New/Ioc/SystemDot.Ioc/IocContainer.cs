@@ -10,13 +10,13 @@ namespace SystemDot.Ioc
     public class IocContainer : IIocContainer
     {
         readonly Dictionary<Type, ConcreteInstance> components = new Dictionary<Type, ConcreteInstance>();
-        private readonly ITypeDescriber typeDescriber;
+        private readonly Func<Type, string> typeDescriber;
 
-        public IocContainer() : this(new PassThroughTypeDescriber())
+        public IocContainer() : this(t => t.Name)
         {
         }
 
-        public IocContainer(ITypeDescriber typeDescriber)
+        public IocContainer(Func<Type, string> typeDescriber)
         {
             this.typeDescriber = typeDescriber;
             RegisterInstance<IIocContainer>(() => this);
@@ -142,8 +142,8 @@ namespace SystemDot.Ioc
             return GetAllRegisteredTypes().Select(x => string.Format(
                 CultureInfo.InvariantCulture,
                 "Requests for: {1} will use actual type: {0}",
-                typeDescriber.Describe(x.ActualConcreteType),
-                typeDescriber.Describe(x.ResolveBy)));
+                typeDescriber(x.ActualConcreteType),
+                typeDescriber(x.ResolveBy)));
         }
     }
 }
