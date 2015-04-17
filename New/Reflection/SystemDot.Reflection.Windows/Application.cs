@@ -15,6 +15,8 @@ namespace SystemDot.Reflection
 
         IEnumerable<Type> GetTypes(Assembly assembly)
         {
+            if (assembly.IsDynamic) return new List<Type>();
+
             try
             {
                 return assembly.ExportedTypes;
