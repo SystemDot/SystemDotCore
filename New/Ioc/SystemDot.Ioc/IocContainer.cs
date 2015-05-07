@@ -95,7 +95,7 @@ namespace SystemDot.Ioc
             }
             catch (Exception ex)
             {
-                throw new CannotResolveTypeException(type, ex);
+                throw new CannotResolveTypeException(typeDescriber, type, ex);
             }
         }
 

@@ -4,13 +4,14 @@ namespace SystemDot.Ioc
 {
     public class CannotResolveTypeException : Exception
     {
-        public CannotResolveTypeException(Type type, Exception inner) : base(GetMessage(type), inner)
+        
+        public CannotResolveTypeException(Func<Type, string> typeDescriber, Type type, Exception inner) : base(GetMessage(typeDescriber, type), inner)
         {
         }
 
-        static string GetMessage(Type type)
+        static string GetMessage(Func<Type, string> typeDescriber, Type type)
         {
-            return string.Format(IocContainerResources.CannotResolveTypeMessage, type.Name);
+            return string.Format(IocContainerResources.CannotResolveTypeMessage, typeDescriber(type));
         }
     }
 }
