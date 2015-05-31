@@ -115,6 +115,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="DeviceInfo.Plugin">
+      <HintPath>..\packages\Xam.Plugin.DeviceInfo.1.0.0.2\lib\win8\DeviceInfo.Plugin.dll</HintPath>
+    </Reference>
+    <Reference Include="DeviceInfo.Plugin.Abstractions">
+      <HintPath>..\packages\Xam.Plugin.DeviceInfo.1.0.0.2\lib\win8\DeviceInfo.Plugin.Abstractions.dll</HintPath>
+    </Reference>
     <Reference Include="SystemDot.Bootstrapping">
       <HintPath>..\packages\SystemDotBootstrapping.1.0.4\lib\netcore\SystemDot.Bootstrapping.dll</HintPath>
     </Reference>

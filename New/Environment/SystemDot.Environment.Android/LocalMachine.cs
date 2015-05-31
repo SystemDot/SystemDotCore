@@ -1,20 +1,23 @@
-﻿namespace SystemDot.Environment
+﻿
+namespace SystemDot.Environment
 {
+    using DeviceInfo.Plugin;
+
     public class LocalMachine : ILocalMachine
     {
         public string GetName()
         {
-            return System.Environment.MachineName;
+            return CrossDeviceInfo.Current.Id;
         }
 
         public string GetModel()
         {
-            return "Computer";
+            return CrossDeviceInfo.Current.Model;
         }
 
         public string GetVersion()
         {
-            return "1";
+            return CrossDeviceInfo.Current.Version;
         }
     }
 }

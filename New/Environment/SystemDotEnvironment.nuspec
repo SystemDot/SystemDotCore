@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
     <metadata>
         <id>SystemDotEnvironment</id>
-        <version>1.0.1</version>
+        <version>1.2.0</version>
         <title>SystemDot.Environment</title>
         <authors>Chris Sampson,James Goodenough</authors>
         <owners>Chris Sampson,James Goodenough</owners>
@@ -14,6 +14,7 @@
         <language>en-GB</language>
         <tags>Environment, Cross Platform</tags>
         <dependencies>
+          <dependency id="Xam.Plugin.DeviceInfo" version="1.0.0.2" />
           <dependency id="SystemDotReflection" version="1.0.2" />
           <dependency id="SystemDotBootstrapping" version="1.0.4" />
           <dependency id="SystemDotIoc" version="1.2.0" />

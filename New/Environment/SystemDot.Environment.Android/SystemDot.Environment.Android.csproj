@@ -37,6 +37,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DeviceInfo.Plugin">
+      <HintPath>..\packages\Xam.Plugin.DeviceInfo.1.0.0.2\lib\MonoAndroid10\DeviceInfo.Plugin.dll</HintPath>
+    </Reference>
+    <Reference Include="DeviceInfo.Plugin.Abstractions">
+      <HintPath>..\packages\Xam.Plugin.DeviceInfo.1.0.0.2\lib\MonoAndroid10\DeviceInfo.Plugin.Abstractions.dll</HintPath>
+    </Reference>
     <Reference Include="mscorlib" />
     <Reference Include="System.Core" />
     <Reference Include="SystemDot.Bootstrapping">
@@ -61,15 +67,13 @@
     <Compile Include="..\SystemDot.Environment.Windows\BuilderConfigurationExtensions.cs">
       <Link>BuilderConfigurationExtensions.cs</Link>
     </Compile>
-    <Compile Include="..\SystemDot.Environment.Windows\LocalMachine.cs">
-      <Link>LocalMachine.cs</Link>
-    </Compile>
     <Compile Include="..\SystemDot.Windows\*.cs">
       <Link>%(RecursiveDir)%(FileName)</Link>
     </Compile>
     <Compile Include="..\SystemDot.Windows\*\*\*\*.cs">
       <Link>%(RecursiveDir)%(FileName)</Link>
     </Compile>
+    <Compile Include="LocalMachine.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

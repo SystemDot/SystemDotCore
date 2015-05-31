@@ -4,6 +4,8 @@ using Windows.Networking.Connectivity;
 
 namespace SystemDot.Environment
 {
+    using System;
+
     public class LocalMachine : ILocalMachine
     {
         public string GetName()
@@ -13,6 +15,16 @@ namespace SystemDot.Environment
                 .DisplayName.Split('.')
                 .First()
                 .ToUpper();
+        }
+
+        public string GetModel()
+        {
+            throw new NotImplementedException();
+        }
+
+        public string GetVersion()
+        {
+            throw new NotImplementedException();
         }
     }
 }
