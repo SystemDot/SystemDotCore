@@ -5,6 +5,8 @@ using System.Reflection;
 
 namespace SystemDot.Reflection
 {
+    using System.IO;
+
     public class Application : IApplication
     {
         public IEnumerable<Type> GetAllTypes()
@@ -20,6 +22,10 @@ namespace SystemDot.Reflection
             try
             {
                 return assembly.ExportedTypes;
+            }
+            catch (FileLoadException)
+            {
+                return new List<Type>();
             }
             catch (NotSupportedException)
             {
